@@ -12,7 +12,7 @@ function App() {
   }, []);
   return (
       <div className="App">
-          백엔드 데이터 : {hello}
+          백엔드 데이터d : {hello}
       </div>
   );
 }
