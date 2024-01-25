@@ -7,9 +7,9 @@ module.exports = {
         '400': '400px'
       },
       gradientColorStops: theme => ({
-        'story-start': '#ff758c',  // 시작 색상
-        'story-middle': '#ff7eb3', // 중간 색상
-        'story-end': '#ff85be',    // 끝 색상
+        'story-start': '#feda75', // 노란색
+        'story-middle': '#fa7e1e', // 주황색
+        'story-end': '#d66d75', // 보라색
       }),
     },
   },
