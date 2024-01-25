@@ -1,8 +1,13 @@
 import React from "react";
 
-import HeaderRecycle from "./header_recycle"; // Header 재사용
+// Header 재사용
+import HeaderRecycle from "./header_recycle";
 
-import mainImage from "../../image/main.png"; // 메인 이미지
+// Header 이미지 import
+import Main from "../../image/header_image/main.png";
+import Club from "../../image/header_image/club.png";
+import Location from "../../image/header_image/location.png";
+import Event from "../../image/header_image/event.png";
 
 
 function Header() {
@@ -11,25 +16,25 @@ function Header() {
       <div className="flex justify-center items-center space-x-10 mb-3">
         <HeaderRecycle
           href="/main"
-          imageSrc={mainImage}
+          imageSrc={Main}
           altText="메인"
           label="메인"
         />
         <HeaderRecycle
           href="/main"
-          imageSrc={mainImage}
+          imageSrc={Club}
           altText="핵심 동아리"
           label="핵심 동아리"
         />
         <HeaderRecycle
           href="/main"
-          imageSrc={mainImage}
+          imageSrc={Location}
           altText="부스 위치"
-          label="이벤트"
+          label="부스 위치"
         />
         <HeaderRecycle
           href="/main"
-          imageSrc={mainImage}
+          imageSrc={Event}
           altText="이벤트"
           label="이벤트"
         />
