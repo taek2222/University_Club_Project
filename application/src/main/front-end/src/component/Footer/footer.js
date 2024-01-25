@@ -11,11 +11,19 @@ function Footer() {
         <img src={Youtube} alt="Youtube" className="h-8 w-8" />
       </div>
 
-      <p className="mt-4">
+      <p className="mt-3 text-sm">
         강릉원주대학교 원주 캠퍼스 | TEL : 033-642-7001
       </p>
 
-      <p className="mt-4 mb-5">
+      <p className="mt-3 text-sm">
+        컴퓨터공학과 오연택 | e-mail : oot309@naver.com
+      </p>
+
+      <p className="mt-3 text-sm">
+        컴퓨터공학과 유재현 | e-mail : jhyoo1203@gmail.com
+      </p>
+
+      <p className="mt-3 mb-5">
         Copyright D:D:D 2024. All Rights Reserved.
       </p>
     </footer>
