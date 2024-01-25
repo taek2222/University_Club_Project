@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import Header from "./component/Header/header.js";
+import Footer from "./component/Footer/footer.js";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           ))}
         </section>
       </main>
+      <Footer/>
     </div>
   );
 }
