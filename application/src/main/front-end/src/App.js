@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import Header from "./component/header.js";
+import Header from "./component/Header/header.js";
 
 function App() {
   return (
