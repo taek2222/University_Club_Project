@@ -5,7 +5,7 @@ import Youtube from "../../image/footer_image/youtube.png";
 
 function Footer() {
   return (
-    <footer className="flex flex-col items-center mt-10 mb-10 bg-slate-800 text-white">
+    <footer className="flex flex-col items-center mt-10 mb-0 bg-slate-800 text-white">
       <div className="flex space-x-4 mt-5">
         <img src={Instagram} alt="Instagram" className="h-8 w-8" />
         <img src={Youtube} alt="Youtube" className="h-8 w-8" />
