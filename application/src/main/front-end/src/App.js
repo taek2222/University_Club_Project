@@ -10,7 +10,7 @@ function App() {
   const [activeMainContent, setActiveMainContent] = useState('Main');
 
   return (
-    <div className="max-w-400 container mx-auto bg-white">
+    <div className="w-full mx-auto bg-white">
       <Header setActiveMainContent={setActiveMainContent} /> {/* Header 컴포넌트 */}
       {activeMainContent === 'Main' && <Main />}
       {activeMainContent === 'Club' && <Club />}
