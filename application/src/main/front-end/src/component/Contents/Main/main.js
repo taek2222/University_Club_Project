@@ -11,8 +11,8 @@ function Main() {
 
   const tileClassName = ({ date, view }) => {
     // 토요일인 경우 클래스 추가
-    if (view === 'month' && date.getDay() === 6) {
-      return 'custom-saturday';
+    if (view === 'month' && date.getDay() === 0) {
+      return 'custom-sunday';
     }
 
     // 선택된 날짜인 경우 클래스 추가
