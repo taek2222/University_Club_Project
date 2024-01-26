@@ -10,7 +10,7 @@ import Location from "../../image/header_image/location.png";
 import Event from "../../image/header_image/event.png";
 
 
-function Header() {
+function Header({ setActiveMainContent }) {
   return (
     <header className="flex flex-col items-center mb-10">
       <div className="flex justify-center items-center space-x-10 mb-3">
@@ -19,12 +19,14 @@ function Header() {
           imageSrc={Main}
           altText="메인"
           label="메인"
+          onClick={() => setActiveMainContent('Main')}
         />
         <HeaderRecycle
-          href="/main"
+          href="/Club"
           imageSrc={Club}
           altText="핵심 동아리"
           label="핵심 동아리"
+          onClick={() => setActiveMainContent('Club')}
         />
         <HeaderRecycle
           href="/main"
