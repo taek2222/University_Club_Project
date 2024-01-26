@@ -12,7 +12,7 @@ import Event from "../../image/header_image/event.png";
 
 function Header({ setActiveMainContent }) {
   return (
-    <header className="flex flex-col items-center pt-7 pb-3 mb-10 bg-slate-100">
+    <header className="flex flex-col items-center pt-3 pb-3 mb-2 bg-white">
       <div className="flex justify-center items-center space-x-10 mb-3">
         <HeaderRecycle
           imageSrc={Main}
