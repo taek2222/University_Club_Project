@@ -1,32 +1,35 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from "react";
+import React, { useState } from "react";
+import Feed from "./feed";
 
-function Club() {
+function Club() { // 동아리 소개 컴포넌트
+
+    // 선택된 분류 추적
+    const [selectedCategory, setSelectedCategory] = useState("ALL");
+
+    // 분류 선택 핸들러
+    const handleCategorySelect = (category) => {
+      setSelectedCategory(category);
+    };
+
   return (
     <>
-      <div className="flex justify-center space-x-4 mb-1">
-        <div className="px-3 py-2 border border-black rounded-xl">ALL</div>
-        <div className="px-3 py-2 border border-black rounded-xl">공연</div>
-        <div className="px-3 py-2 border border-black rounded-xl">체육</div>
-        <div className="px-3 py-2 border border-black rounded-xl">취미</div>
-        <div className="px-3 py-2 border border-black rounded-xl">학술</div>
-      </div>
-      
-      <section className="grid grid-cols-3 gap-5 p-5">
-        {Array.from({ length: 3 }, (_, i) => (
-          <div key={i} className="event-card rounded p-6 text-center shadow-md">
-            <div className="mb-4">
-              <img
-                src={`https://placehold.co/150`}
-                alt={`Placeholder image for Event ${i + 1}`}
-                className="mx-auto"
-              />
+      <div className="flex justify-center space-x-3 text-lg mb-1 mt-5">
+        {["ALL", "공연", "체육", "취미", "종교", "봉사"].map((category, index) => (
+          <React.Fragment key={category}>
+            {index > 0 && <div>|</div>}
+            <div
+              className={selectedCategory === category ? "font-bold" : ""}
+              onClick={() => handleCategorySelect(category)}
+              style={{ cursor: 'pointer' }}
+            >
+              {category}
             </div>
-            <h3 className="font-bold">Event {i + 1}</h3>
-            <p>Description of Event {i + 1}</p>
-          </div>
+          </React.Fragment>
         ))}
-      </section>
+      </div>
+
+      <Feed category={selectedCategory} />
     </>
   );
 }
