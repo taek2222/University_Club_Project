@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, {useState} from "react";
-import Category from "../../Recycle/category";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import moment from "moment";
@@ -25,7 +24,6 @@ function Main() {
 
     return(
         <>
-          <Category />
           <div className="flex flex-col items-center">
             <Calendar
               onChange={onChange}
