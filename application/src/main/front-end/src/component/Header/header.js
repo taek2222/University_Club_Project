@@ -12,8 +12,8 @@ import Event from "../../image/header_image/event.png";
 
 function Header({ setActiveMainContent }) {
   return (
-    <header className="flex flex-col items-center pt-3 pb-2 bg-white">
-      <div className="flex justify-center items-center space-x-10 mb-3">
+    <header className="flex flex-col items-center pt-4 pb-4 bg-white">
+      <div className="flex justify-center items-center space-x-6 mb-2">
         <HeaderRecycle
           imageSrc={Main}
           altText="메인"
@@ -25,6 +25,12 @@ function Header({ setActiveMainContent }) {
           altText="핵심 동아리"
           label="핵심 동아리"
           onClick={() => setActiveMainContent('Club')}
+        />
+        <HeaderRecycle
+          imageSrc={Event}
+          altText="주문"
+          label="주문"
+          onClick={() => setActiveMainContent('Event')}
         />
         <HeaderRecycle
           imageSrc={Location}
@@ -39,6 +45,9 @@ function Header({ setActiveMainContent }) {
           onClick={() => setActiveMainContent('Event')}
         />
       </div>
+
+    {/* 헤더 아래 회색 바 */}
+    <div className="w-full h-px bg-gray-300"></div> 
     </header>
   );
 }
