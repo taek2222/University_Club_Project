@@ -2,36 +2,36 @@
 import React, { useState } from "react";
 import Feed from "./feed";
 
-function Club() { // 동아리 소개 컴포넌트
+function Club() {
+  // 동아리 소개 컴포넌트
 
-    // 선택된 분류 추적
-    const [selectedCategory, setSelectedCategory] = useState("ALL");
+  const [selectedCategory, setSelectedCategory] = useState("전체"); // 초기 선택 분류
 
-    // 분류 선택 핸들러
-    const handleCategorySelect = (category) => {
-      setSelectedCategory(category);
-    };
+  const categories = ["전체", "공연", "체육", "취미", "종교", "봉사"]; // 분류 목록
 
   return (
-    <>
-      <div className="flex justify-center space-x-3 text-lg mb-1 mt-5">
-        {["ALL", "공연", "체육", "취미", "종교", "봉사"].map((category, index) => (
-          <React.Fragment key={category}>
-            {index > 0 && <div>|</div>}
+    <div className="flex flex-col items-center">
+      <div className="flex justify-center space-x-1.5 mb-1">
+        {categories.map((category) => (
+          <div
+            key={category}
+            className={`relative text-center cursor-pointer px-3 py-2 ${
+              selectedCategory === category ? "font-bold text-lg" : "text-lg text-gray-500"
+            }`}
+            onClick={() => setSelectedCategory(category)}
+          >
+            {category}
             <div
-              className={selectedCategory === category ? "font-bold" : ""}
-              onClick={() => handleCategorySelect(category)}
-              style={{ cursor: 'pointer' }}
-            >
-              {category}
-            </div>
-          </React.Fragment>
+              className={`absolute bottom-0 left-0 right-0 h-1 mx-auto w-full ${
+                selectedCategory === category ? "bg-black" : "bg-transparent"
+              }`}
+              style={{ marginBottom: "-1px" }}
+            />
+          </div>
         ))}
       </div>
-
-      <Feed category={selectedCategory} />
-    </>
+      <Feed category={selectedCategory} /> {/* 선택 시 계속 재랜더링 */}
+    </div>
   );
 }
-
 export default Club;
