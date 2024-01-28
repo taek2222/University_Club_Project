@@ -12,7 +12,7 @@ function HeaderRecycle({ onClick, imageSrc, altText, label }) {
             />
           </div>
         </div>
-        <span className="text-sm font-medium">{label}</span>
+        <span className="text-medium font-bold">{label}</span>
       </div> 
     )
 }
