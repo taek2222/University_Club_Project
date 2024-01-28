@@ -15,11 +15,11 @@ function Footer() {
         강릉원주대학교 원주 캠퍼스 | TEL : 033-642-7001
       </p>
 
-      <p className="mt-3 text-sm">
+      <p className="mt-1 text-sm">
         컴퓨터공학과 오연택 | e-mail : oot309@naver.com
       </p>
 
-      <p className="mt-3 text-sm">
+      <p className="mt-1 text-sm">
         컴퓨터공학과 유재현 | e-mail : jhyoo1203@gmail.com
       </p>
 

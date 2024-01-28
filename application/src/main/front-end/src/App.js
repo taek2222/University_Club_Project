@@ -3,20 +3,15 @@ import React, { useState } from "react";
 import Header from "./component/Header/header.js";
 import Footer from "./component/Footer/footer.js";
 
-import Main from "./component/Contents/Main/main.js"
-import Club from "./component/Contents/Club/club.js"
+import Content from "./component/Contents/content.js";
 
 function App() {
   const [activeMainContent, setActiveMainContent] = useState('Main');
 
   return (
-    <div className="max-w-400 container mx-auto bg-white">
+    <div className="w-full container mx-auto bg-white">
       <Header setActiveMainContent={setActiveMainContent} /> {/* Header 컴포넌트 */}
-      {activeMainContent === 'Main' && <Main />}
-      {activeMainContent === 'Club' && <Club />}
-      {/* {activeMainContent === 'Location' && <Location />}
-      {activeMainContent === 'Event' && <Event />} */}
-      
+      <Content activeMainContent={activeMainContent} />      
       <Footer/> {/* Footer 컴포넌트 */}
     </div>
   );
