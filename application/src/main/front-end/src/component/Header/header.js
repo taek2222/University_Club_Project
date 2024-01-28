@@ -6,31 +6,32 @@ import HeaderRecycle from "./header_recycle";
 // Header 이미지 import
 import Main from "../../image/header_image/main.png";
 import Club from "../../image/header_image/club.png";
+import Delivery from "../../image/header_image/delivery.png";
 import Location from "../../image/header_image/location.png";
 import Event from "../../image/header_image/event.png";
 
 
 function Header({ setActiveMainContent }) {
   return (
-    <header className="flex flex-col items-center mt-7 mb-4 bg-white">
-      <div className="flex justify-center items-center space-x-6 mb-2">
+    <header className="flex flex-col items-center mt-6 mb-4 bg-white">
+      <div className="flex justify-center items-center space-x-6 mb-3">
         <HeaderRecycle
-          imageSrc={Main}
-          altText="메인"
-          label="메인"
-          onClick={() => setActiveMainContent('Main')}
+          imageSrc={Main} // 이미지
+          altText="메인" // 이미지 이름
+          label="메인" // 이미지 설명
+          onClick={() => setActiveMainContent('Main')} // 클릭 이벤트 전달 매개변수
         />
         <HeaderRecycle
           imageSrc={Club}
-          altText="핵심 동아리"
-          label="핵심 동아리"
+          altText="동아리"
+          label="동아리"
           onClick={() => setActiveMainContent('Club')}
         />
         <HeaderRecycle
-          imageSrc={Event}
+          imageSrc={Delivery}
           altText="주문"
           label="주문"
-          onClick={() => setActiveMainContent('Event')}
+          onClick={() => setActiveMainContent('Delivery')}
         />
         <HeaderRecycle
           imageSrc={Location}
@@ -47,7 +48,7 @@ function Header({ setActiveMainContent }) {
       </div>
 
     {/* 헤더 아래 회색 바 */}
-    <div className="w-full h-px bg-gray-300"></div> 
+    <div className="w-full h-px bg-gray-400"></div>
     </header>
   );
 }
