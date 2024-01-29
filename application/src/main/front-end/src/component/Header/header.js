@@ -13,8 +13,8 @@ import Event from "../../image/header_image/event.png";
 
 function Header({ setActiveMainContent }) {
   return (
-    <header className="flex flex-col items-center mt-6 mb-4 bg-white">
-      <div className="flex justify-center items-center space-x-6 mb-3">
+    <header className="fixed top-0 w-full bg-white z-10">
+      <div className="flex justify-center items-center space-x-6 mt-3 mb-3">
         <HeaderRecycle
           imageSrc={Main} // 이미지
           altText="메인" // 이미지 이름

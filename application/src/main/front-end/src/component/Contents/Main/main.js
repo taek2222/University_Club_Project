@@ -18,33 +18,35 @@ function Main() {
   const slidesPerView = window.innerWidth < 700 ? 1.4 : 2;
 
   return(
-    <div className="mx-auto mt-10">
-      <Swiper
-      effect={'coverflow'}
-      grabCursor={true}
-      centeredSlides={true}
-      slidesPerView={slidesPerView}
-      coverflowEffect={{
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      }}
-      loop={true}
-      autoplay={{ delay: 3000, disableOnInteraction: false }}
-      modules={[EffectCoverflow, Pagination, Autoplay]}
-      className="mySwiper"
-    >
-        {images.map((image, index) => (
-          <SwiperSlide key={index}>
-            <div className="mx-auto">
-              <img src={image} alt={`Image ${index + 1}`} className="w-full h-full" />
-            </div>
-          </SwiperSlide>
-        ))}
-    </Swiper>
-    </div>
+    <>
+      <div className="mx-auto mt-32">
+        <Swiper
+          effect={'coverflow'}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={slidesPerView}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          loop={true}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          modules={[EffectCoverflow, Pagination, Autoplay]}
+          className="mainSwiper"
+        >
+            {images.map((image, index) => (
+              <SwiperSlide key={index}>
+                <div className="mx-auto">
+                  <img src={image} alt={`Image ${index + 1}`} className="w-full h-full" />
+                </div>
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      </div>
+    </>
   )
 }
 
