@@ -1,16 +1,23 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 
 function Feed({ category }) {
-  
-axios.get('http://192.168.200.163:8080/club/contents/all')
-  .then((Response) => {
-    console.log(Response);})
-  .catch((Error) => {console.log(Error)})
 
-  console.log("Rendering Feed Component", category);
+  const [data, setData] = useState([]); // API 데이터 값
+
+  useEffect(() => {
+    axios
+      .get(`http://192.168.200.163:8080/club/contents/${category}`)
+      .then((Response) => {
+        setData(Response.data);
+      })
+      .catch((Error) => {
+        console.log(Error);
+      });
+  }, [category]);
+
   return (
     <>
       <section className="grid grid-cols-3 gap-5 p-5">
@@ -23,10 +30,13 @@ axios.get('http://192.168.200.163:8080/club/contents/all')
                 className="mx-auto"
               />
             </div>
-            <h3 className="font-bold">Event {i + 1}</h3>
+            <h3 className="font-bold">
+              {data}
+            </h3>
             <p>Description of Event {i + 1}</p>
           </div>
         ))}
+        ㄱ
       </section>
     </>
   );

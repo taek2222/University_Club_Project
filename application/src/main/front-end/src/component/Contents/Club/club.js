@@ -9,8 +9,17 @@ function Club() {
 
   const categories = ["전체", "공연", "체육", "취미", "종교", "봉사"]; // 분류 목록
 
+  const categoryMapping = { // Feed 치환 호출
+    "전체": "all",
+    "공연": "performance",
+    "체육": "sports",
+    "취미": "hobby",
+    "종교": "religion",
+    "봉사": "service"
+  };
+
   return (
-    <div className="flex flex-col items-center mt-10">
+    <div className="flex flex-col items-center mt-2">
       <div className="flex justify-center space-x-1.5 mb-1">
         {categories.map((category) => (
           <div
@@ -30,7 +39,8 @@ function Club() {
           </div>
         ))}
       </div>
-      <Feed category={selectedCategory} /> {/* 선택 시 계속 재랜더링 */}
+
+      <Feed category={categoryMapping[selectedCategory] || selectedCategory} />
     </div>
   );
 }
