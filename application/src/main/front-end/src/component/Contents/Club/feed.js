@@ -6,7 +6,8 @@ import axios from "axios";
 function Feed({ category }) {
   
 axios.get('http://192.168.200.163:8080/club/contents/all')
-  .then((Response) => {console.log(Response)})
+  .then((Response) => {
+    console.log(Response);})
   .catch((Error) => {console.log(Error)})
 
   console.log("Rendering Feed Component", category);
