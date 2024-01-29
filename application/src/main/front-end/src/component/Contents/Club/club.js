@@ -10,7 +10,7 @@ function Club() {
   const categories = ["전체", "공연", "체육", "취미", "종교", "봉사"]; // 분류 목록
 
   return (
-    <div className="flex flex-col items-center mt-32">
+    <div className="flex flex-col items-center mt-10">
       <div className="flex justify-center space-x-1.5 mb-1">
         {categories.map((category) => (
           <div

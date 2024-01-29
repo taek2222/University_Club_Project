@@ -19,7 +19,7 @@ function Main() {
 
   return(
     <>
-      <div className="mx-auto mt-32">
+      <div className="mx-auto mt-10">
         <Swiper
           effect={'coverflow'}
           grabCursor={true}

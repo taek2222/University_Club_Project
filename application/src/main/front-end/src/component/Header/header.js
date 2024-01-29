@@ -13,7 +13,7 @@ import Event from "../../image/header_image/event.png";
 
 function Header({ setActiveMainContent }) {
   return (
-    <header className="fixed top-0 w-full bg-white z-10">
+    <header className="sticky top-0 w-full bg-white z-10">
       <div className="flex justify-center items-center space-x-6 mt-3 mb-3">
         <HeaderRecycle
           imageSrc={Main} // 이미지
