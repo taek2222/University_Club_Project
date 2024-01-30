@@ -3,8 +3,12 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 
-function Feed({ category }) {
+import Card from "./card";
 
+import TestImage from '../../../image/test.JPG'
+import TestImage2 from '../../../image/test1.png'
+
+function Feed({ category }) {
   const [data, setData] = useState([]); // API 데이터 값
 
   useEffect(() => {
@@ -18,26 +22,40 @@ function Feed({ category }) {
       });
   }, [category]);
 
+  const clubs = [
+    {
+      clubName: '총동연',
+      tags: ['조성욱짱', '최준 장발 기원'],
+      initialLikes: 27,
+      imageUrl: TestImage,
+      iconUrl: TestImage2
+    },
+    {
+      clubName: '프레이즈',
+      tags: ['strategy', 'boardgames'],
+      initialLikes: 42,
+      imageUrl: TestImage,
+      iconUrl: TestImage2
+    }
+  ];
+
   return (
     <>
-      <section className="grid grid-cols-3 gap-5 p-5">
-        {Array.from({ length: 3 }, (_, i) => (
-          <div key={i} className="event-card rounded p-6 text-center shadow-md">
-            <div className="mb-4">
-              <img
-                src={`https://placehold.co/150`}
-                alt={`Placeholder image for Event ${i + 1}`}
-                className="mx-auto"
-              />
-            </div>
-            <h3 className="font-bold">
-              {data}
-            </h3>
-            <p>Description of Event {i + 1}</p>
-          </div>
-        ))}
-        ㄱ
-      </section>
+      <div className="container mx-auto p-4">
+        {/* 반응형 그리드 레이아웃을 설정합니다. */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          {clubs.map((club, index) => (
+            <Card
+              key={index}
+              clubName={club.clubName}
+              tags={club.tags}
+              initialLikes={club.initialLikes}
+              imageUrl={club.imageUrl}
+              iconUrl={club.iconUrl}
+            />
+          ))}
+        </div>
+      </div>
     </>
   );
 }
