@@ -5,8 +5,8 @@ import axios from "axios";
 
 import Card from "./card";
 
-import TestImage from '../../../image/test.JPG'
-import TestImage2 from '../../../image/test1.png'
+import TestImage from '../../../image/test.JPG' // 테스트 이미지
+import TestImage2 from '../../../image/test1.png' // 테스트 이미지
 
 function Feed({ category }) {
   const [data, setData] = useState([]); // API 데이터 값
