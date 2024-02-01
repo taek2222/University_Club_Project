@@ -17,8 +17,8 @@ function Header({ setActiveMainContent }) {
       <div className="flex justify-center items-center space-x-6 pt-3 mb-3">
         <HeaderRecycle
           imageSrc={Main} // 이미지
-          altText="메인" // 이미지 이름
-          label="메인" // 이미지 설명
+          altText="메인" 
+          label="메인"
           onClick={() => setActiveMainContent('Main')} // 클릭 이벤트 전달 매개변수
         />
         <HeaderRecycle
