@@ -22,7 +22,7 @@ function Feed({ category }) {
       });
   }, [category]);
 
-  const clubs = [
+  const clubs = [ // api 형식으로 받아오기 해야함
     {
       clubName: '총동연',
       tags: ['조성욱짱', '최준 장발 기원'],
@@ -43,15 +43,15 @@ function Feed({ category }) {
     <>
       <div className="container mx-auto p-4">
         {/* 반응형 그리드 레이아웃을 설정합니다. */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"> {/* 최소 2개 ~ 최대 5개 */}
           {clubs.map((club, index) => (
             <Card
               key={index}
-              clubName={club.clubName}
-              tags={club.tags}
-              initialLikes={club.initialLikes}
-              imageUrl={club.imageUrl}
-              iconUrl={club.iconUrl}
+              clubName={club.clubName} // 동아리 이름
+              tags={club.tags} // 동아리 태그
+              initialLikes={club.initialLikes} // 동아리 좋아요 수
+              imageUrl={club.imageUrl} // 상단 이미지
+              iconUrl={club.iconUrl} // 동아리 아이콘 이미지
             />
           ))}
         </div>
