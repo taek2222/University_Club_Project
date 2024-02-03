@@ -15,8 +15,8 @@ const Card = ({ clubName, tags, initialLikes, imageUrl, iconUrl }) => {
   };
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white border border-gray-400">
-      <div className="max-h-48 bg-gray-200 border-b border-gray-400" onDoubleClick={toggleLike}>
+    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white border border-gray-400" onDoubleClick={toggleLike}>
+      <div className="max-h-48 bg-gray-200 border-b border-gray-400">
         <img
           className="w-full h-full object-cover"
           src={imageUrl}
