@@ -1,2 +1,0 @@
-npm install -D tailwindcss postcss autoprefixer
-npm install -D tailwindcss postcss autoprefixer style-loader css-loader postcss-loader
