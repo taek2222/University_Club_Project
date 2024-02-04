@@ -6,13 +6,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import image1 from "../../../image/content_image/image1.jpg"
-import image2 from "../../../image/content_image/image2.jpg"
-import image3 from "../../../image/content_image/image3.jpg"
-import image4 from "../../../image/content_image/image4.jpg"
-import image5 from "../../../image/content_image/image5.jpg"
 
-const images = [image1, image2, image3, image4, image5];
+const importAll = (context) => context.keys().filter(key => /image\d+\.jpg$/.test(key)).map(context);
+const images = importAll(require.context("../../../image/content_image/", false, /\.(jpg)$/));
 
 function ImageSwiper() {
     const slidesPerView = window.innerWidth < 700 ? 1.4 : 2;
