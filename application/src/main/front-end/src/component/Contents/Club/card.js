@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 
+import Modal from './modal';
+
 const Card = ({ clubName, tags, initialLikes, imageUrl, iconUrl }) => {
   const [likes, setLikes] = useState(initialLikes);
   const [isLiked, setIsLiked] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // 하트를 클릭할 때 호출되는 함수입니다.
   const toggleLike = () => {
@@ -14,8 +17,15 @@ const Card = ({ clubName, tags, initialLikes, imageUrl, iconUrl }) => {
     setIsLiked(!isLiked); // 좋아요 상태를 토글
   };
 
+    // 모달을 여는 함수
+    const openModal = () => setIsModalOpen(true);
+
+    // 모달을 닫는 함수
+    const closeModal = () => setIsModalOpen(false);
+  
+
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white border border-gray-400" onDoubleClick={toggleLike}>
+    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white border border-gray-400" onDoubleClick={toggleLike} onClick={openModal}>
       <div className="max-h-48 bg-gray-200 border-b border-gray-400">
         <img
           className="w-full h-full object-cover"
@@ -52,6 +62,11 @@ const Card = ({ clubName, tags, initialLikes, imageUrl, iconUrl }) => {
           <span className="text-gray-700 text-base font-semibold ml-1">{likes}</span>
         </button>
       </div>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <h2 className="text-lg font-bold">{clubName}</h2>
+        <p>모달 실험중 {clubName}...</p>
+        {/* 모달 내에 더 많은 피드 정보 표시 */}
+      </Modal>
     </div>
   );
 };
