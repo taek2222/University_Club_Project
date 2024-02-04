@@ -63,9 +63,18 @@ const Card = ({ clubName, tags, initialLikes, imageUrl, iconUrl }) => {
         </button>
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <h2 className="text-lg font-bold">{clubName}</h2>
-        <p>모달 실험중 {clubName}...</p>
-        {/* 모달 내에 더 많은 피드 정보 표시 */}
+        {/* 모달 내용 */}
+        <img src={imageUrl} alt={clubName} className="w-full max-w-xs mx-auto mt-4" />
+        <h2 className="text-lg font-bold text-center mt-4">{clubName}</h2>
+        <p className="text-sm text-center mt-2">
+          모달 내용 {clubName}에 대한 자세한 정보...
+        </p>
+        {/* 태그 정보 표시 */}
+        <div className="mt-4 text-center">
+          {tags.map((tag, index) => (
+            <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{tag}</span>
+          ))}
+        </div>
       </Modal>
     </div>
   );
