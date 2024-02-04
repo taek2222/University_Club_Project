@@ -5,6 +5,8 @@ import Schedule from "./schedule";
 import gwnuLogo from "../../../image/content_image/gwnu.jpg"
 
 function Main() {
+  const FESTIVAL_YEAR = new Date().getFullYear().toString() + " 축제";
+  const LOGO_ALT_TEXT = "gwnu Logo";
 
   return(
     <>
@@ -12,9 +14,9 @@ function Main() {
         <img
             className="w-11 h-11"
             src={gwnuLogo}
-            alt="gwnu Logo"
+            alt={LOGO_ALT_TEXT}
         />
-        <div className="mx-3 mt-1 text-3xl font-bold">2024 축제</div>
+        <div className="mx-3 mt-1 text-3xl font-bold">{FESTIVAL_YEAR}</div>
       </div>
       <ImageSwiper />
       <Schedule />

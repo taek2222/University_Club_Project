@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
@@ -35,7 +34,7 @@ function ImageSwiper() {
             {images.map((image, index) => (
               <SwiperSlide key={index}>
                 <div className="mx-auto">
-                  <img src={image} alt={`Image ${index + 1}`} className="w-full h-full" />
+                  <img src={image} alt={`img ${(index + 1).toString()}`} className="w-full h-full" />
                 </div>
               </SwiperSlide>
             ))}
