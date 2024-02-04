@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="w-full container mx-auto bg-white">
-      <Header setActiveMainContent={setActiveMainContent} /> {/* Header 컴포넌트 */}
+      <Header activeMainContent={activeMainContent} setActiveMainContent={setActiveMainContent} /> {/* Header 컴포넌트 */}
       <Content activeMainContent={activeMainContent} />      
       <Footer/> {/* Footer 컴포넌트 */}
     </div>
