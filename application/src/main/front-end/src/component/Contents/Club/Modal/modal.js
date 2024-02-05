@@ -28,13 +28,13 @@ const Modal = ({ isOpen, onClose, children, iconUrl, clubName }) => {
             <img
               src={iconUrl}
               alt="Club Icon"
-              className="w-8 h-8 rounded-full ml-4 border border-gray-500"
+              className="w-8 h-8 rounded-full ml-5 border border-gray-500"
             />
 
             {/* 모달 제목 (제목) */}
             <h2 className="text-xl font-semibold ml-3">{clubName}</h2>
           </div>
-          <button onClick={onClose} className="text-lg font-bold mr-4">닫기</button>
+          <button onClick={onClose} className="text-lg font-bold mr-5">닫기</button>
         </div>
 
         {children}
