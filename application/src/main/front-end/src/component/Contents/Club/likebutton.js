@@ -1,8 +1,14 @@
-import React from 'react';
+import React from "react";
 
 const LikeButton = ({ isLiked, likes, toggleLike }) => {
+
+  const handleClick = (e) => {
+    e.stopPropagation(); // 이벤트 버블링 방지
+    toggleLike();
+  };
+
   return (
-    <button onClick={toggleLike} className="flex items-center focus:outline-none">
+    <button onClick={handleClick} className="flex items-center focus:outline-none">
       {isLiked ? (
         <span className="text-red-500 text-2xl">♥</span>
       ) : (

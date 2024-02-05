@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import Modal from "./modal";
-import ModalContents from "./modalcontent";
-import LikeButton from "./likebutton";
+import Modal from "./modal"; // 모달 창 컴포넌트
+import ModalContents from "./modalcontent"; // 모달 내용 컴포넌트
+import LikeButton from "./likebutton"; // 좋아요 버튼 컴포넌트
 
 const Card = ({ clubName, tags, initialLikes, imageUrl, iconUrl }) => {
   const [likes, setLikes] = useState(initialLikes);
@@ -26,7 +26,6 @@ const Card = ({ clubName, tags, initialLikes, imageUrl, iconUrl }) => {
   return (
     <div
       className="max-w-sm rounded overflow-hidden shadow-lg bg-white border border-gray-400"
-      onDoubleClick={toggleLike}
       onClick={openModal}
     >
       <div className="max-h-48 bg-gray-200 border-b border-gray-400">
