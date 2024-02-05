@@ -62,7 +62,7 @@ const Card = ({ clubName, tags, initialLikes, imageUrl, iconUrl }) => {
       </div>
 
       {/* 모달 */}
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
+      <Modal isOpen={isModalOpen} onClose={closeModal} iconUrl={iconUrl} clubName={clubName}>
         <ModalContents clubName={clubName} imageUrl={imageUrl} tags={tags} />
       </Modal>
     </div>
