@@ -15,7 +15,7 @@ const Modal = ({ isOpen, onClose, children, iconUrl, clubName }) => {
       onClick={handleBackgroundClick}
     >
       <div
-        className="bg-white p-5 rounded-lg"
+        className="w-full p-5 rounded-lg bg-white max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-gray-200 pb-2">
@@ -27,13 +27,10 @@ const Modal = ({ isOpen, onClose, children, iconUrl, clubName }) => {
             />
             <h2 className="text-xl font-semibold">{clubName}</h2>
           </div>
-          <button onClick={onClose} className="text-lg font-bold">
-            X
-          </button>
+          <button onClick={onClose} className="text-lg font-bold">X</button>
         </div>
         {children}
-        <div className="border-t border-gray-200 mt-4"></div>{" "}
-        {/* 하단 선 추가 */}
+        <div className="border-t border-gray-200 mt-4"></div> {/* 하단 선 추가 */}
       </div>
     </div>
   );

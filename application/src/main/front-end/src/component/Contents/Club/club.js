@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from "react";
-import Feed from "./feed";
+import Feed from "./feed.js";
 
 function Club() {
   // 동아리 소개 컴포넌트

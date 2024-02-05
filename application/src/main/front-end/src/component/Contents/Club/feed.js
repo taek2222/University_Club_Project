@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 
-import Card from "./card";
+import Card from "./Feed/card.js";
 
 import TestImage from '../../../image/test.JPG' // 테스트 이미지
 import TestImage2 from '../../../image/test1.png' // 테스트 이미지

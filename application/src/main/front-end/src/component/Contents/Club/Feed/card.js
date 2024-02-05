@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import Modal from "./modal"; // 모달 창 컴포넌트
-import ModalContents from "./modalcontent"; // 모달 내용 컴포넌트
+import Modal from "../Modal/modal"; // 모달 창 컴포넌트
+import ModalContents from "../Modal/modalcontent"; // 모달 내용 컴포넌트
 import LikeButton from "./likebutton"; // 좋아요 버튼 컴포넌트
 
 const Card = ({ clubName, tags, initialLikes, imageUrl, iconUrl }) => {
