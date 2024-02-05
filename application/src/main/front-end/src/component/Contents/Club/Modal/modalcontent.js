@@ -10,12 +10,31 @@ const ModalContents = ({ clubName, imageUrl, tags }) => {
   const images = [image1, image2, image3];
 
   return (
-    <>
+    <div className="overflow-auto max-h-[400px]">
+      {/* 반응형 수정 해야함 */}
+      
+      {/* 이미지 슬라이드 */}
       <div className="mt-3">
         <SwiperImage data={images} />
       </div>
+
       <h2 className="text-lg font-bold text-center mt-4">{clubName}</h2>
       <p className="text-sm text-center mt-2">
+        {clubName}에 대한 자세한 정보...
+      </p>
+      <p className="text-sm text-center mt-2">
+        {clubName}에 대한 자세한 정보...
+      </p>      <p className="text-sm text-center mt-2">
+        {clubName}에 대한 자세한 정보...
+      </p>      <p className="text-sm text-center mt-2">
+        {clubName}에 대한 자세한 정보...
+      </p>      <p className="text-sm text-center mt-2">
+        {clubName}에 대한 자세한 정보...
+      </p>      <p className="text-sm text-center mt-2">
+        {clubName}에 대한 자세한 정보...
+      </p>      <p className="text-sm text-center mt-2">
+        {clubName}에 대한 자세한 정보...
+      </p>      <p className="text-sm text-center mt-2">
         {clubName}에 대한 자세한 정보...
       </p>
       <div className="mt-4 text-center">
@@ -28,7 +47,7 @@ const ModalContents = ({ clubName, imageUrl, tags }) => {
           </span>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
