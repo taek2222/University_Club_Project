@@ -10,7 +10,7 @@ const Modal = ({ isOpen, onClose, children, iconUrl, clubName }) => {
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center"
+      className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-20"
       onClick={handleBackgroundClick}
     >
 
@@ -21,7 +21,7 @@ const Modal = ({ isOpen, onClose, children, iconUrl, clubName }) => {
       >
 
         {/* 제목 */}
-        <div className="flex items-center justify-between"> 
+        <div className="flex pb-3 items-center justify-between"> 
           <div className="flex items-center">
 
             {/* 모달 제목 (아이콘) */}

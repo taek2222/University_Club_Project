@@ -25,7 +25,7 @@ function Feed({ category }) {
   const clubs = [ // api 형식으로 받아오기 해야함
     {
       clubName: '총동연',
-      tags: ['조성욱짱', '최준 장발 기원'],
+      tags: ['총동아리 연합회', '부원 모집'],
       initialLikes: 27,
       imageUrl: TestImage,
       iconUrl: TestImage2
