@@ -21,7 +21,7 @@ const Modal = ({ isOpen, onClose, children, iconUrl, clubName }) => {
       >
 
         {/* 제목 */}
-        <div className="flex items-center justify-between"> 
+        <div className="flex pb-3 items-center justify-between"> 
           <div className="flex items-center">
 
             {/* 모달 제목 (아이콘) */}
