@@ -10,7 +10,7 @@ const ModalContents = ({ clubName, imageUrl, tags }) => {
   const images = [image1, image2, image3];
 
   return (
-    <div className="overflow-auto max-h-[400px]">
+    <div className="overflow-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[600px]">
       {/* 반응형 수정 해야함 */}
       
       {/* 이미지 슬라이드 */}
