@@ -20,14 +20,9 @@ const ModalContents = ({ clubName, imageUrl, tags }) => {
         <SwiperImage data={images} />
       </div>
 
-      {/* 내용 (상단 제목) */}
-      <h2 className="text-lg font-bold text-left mt-3 border-b border-gray-400 pb-2">
-        <span className="ml-4">🎉 부스 안내</span>
-      </h2>
-
       {/* 부스 (제목) */}
       <p className="text-lg text-center font-bold mt-3">
-        🌟 대학교 동아리 연합회 🌟
+        🌟 총동아리 연합회 🌟
       </p>
 
       {/* 부스 (내용) */}
