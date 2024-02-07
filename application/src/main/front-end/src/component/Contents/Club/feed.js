@@ -30,13 +30,6 @@ function Feed({ category }) {
       imageUrl: TestImage,
       iconUrl: TestImage2
     },
-    {
-      clubName: '프레이즈',
-      tags: ['strategy', 'boardgames'],
-      initialLikes: 42,
-      imageUrl: TestImage,
-      iconUrl: TestImage2
-    }
   ];
 
   return (
