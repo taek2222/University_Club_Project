@@ -14,10 +14,11 @@ const Card = ({ clubName, tags, initialLikes, imageUrl, iconUrl }) => {
   const toggleLike = () => {
     if (isLiked) {
       setLikes(likes - 1);
+      setTimeout(() => setHeartBurst(false), 0);
     } else {
       setLikes(likes + 1);
       setHeartBurst(true); // 애니메이션 START
-      setTimeout(() => setHeartBurst(false), 2000); // 애니메이션 종료 후 상태 리셋
+      setTimeout(() => setHeartBurst(false), 1400); // 애니메이션 종료 후 상태 리셋
     }
     setIsLiked(!isLiked);
   };

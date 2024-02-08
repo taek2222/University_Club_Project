@@ -30,6 +30,13 @@ function Feed({ category }) {
       imageUrl: TestImage,
       iconUrl: TestImage2
     },
+    {
+      clubName: '총동연',
+      tags: ['총동아리 연합회', '부원 모집'],
+      initialLikes: 27,
+      imageUrl: TestImage,
+      iconUrl: TestImage2
+    },
   ];
 
   return (
