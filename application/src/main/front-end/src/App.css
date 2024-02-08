@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.custom-heartBurst-position {
+  position: absolute;
+  top: 15%; /* 예시 값, 필요에 따라 조정 */
+  left: 35%; /* 예시 값, 필요에 따라 조정 */
+  transform: translate(-50%, -50%);
+}
