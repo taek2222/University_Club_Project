@@ -37,9 +37,10 @@
   }
 }
 
-.custom-heartBurst-position {
+// 하트 (좋아요) 애니메이션 위치
+.custom-heartBurst-position { 
   position: absolute;
-  top: 15%; /* 예시 값, 필요에 따라 조정 */
-  left: 35%; /* 예시 값, 필요에 따라 조정 */
+  top: 15%;
+  left: 35%;
   transform: translate(-50%, -50%);
 }
