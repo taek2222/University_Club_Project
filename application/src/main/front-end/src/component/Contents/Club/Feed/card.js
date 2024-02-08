@@ -10,6 +10,7 @@ const Card = ({
   initialLikes,
   imageUrl,
   iconUrl,
+  modalImage,
   modalTitle,
   modalContents,
 }) => {
@@ -86,7 +87,8 @@ const Card = ({
         iconUrl={iconUrl}
         clubName={clubName}
       >
-        <ModalContents 
+        <ModalContents
+          modalImage={modalImage}
           modalTitle={modalTitle}
           modalContents={modalContents}
           tags={tags}

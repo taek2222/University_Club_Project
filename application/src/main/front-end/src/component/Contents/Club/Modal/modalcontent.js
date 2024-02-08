@@ -2,15 +2,7 @@ import React from "react";
 
 import SwiperImage from "./swiperimage"; // 상단 이미지 스와이프
 
-// 테스트 이미지 추후 컴포넌트 분리
-import image1 from "../../../../image/Testi1.JPG";
-import image2 from "../../../../image/Testi2.JPG";
-import image3 from "../../../../image/Testi3.JPG";
-
-const ModalContents = ({ modalTitle, modalContents, tags }) => {
-  const images = [image1, image2, image3]; // 컴포넌트 분리 필요
-
-
+const ModalContents = ({ modalImage, modalTitle, modalContents, tags }) => {
   const formattedDescription = modalContents.replace(/\n/g, "<br>");
 
   return (
@@ -18,7 +10,7 @@ const ModalContents = ({ modalTitle, modalContents, tags }) => {
 
       {/* 이미지 슬라이드 */}
       <div className="">
-        <SwiperImage data={images} />
+        <SwiperImage data={modalImage} />
       </div>
 
       {/* 부스 (제목) */}
