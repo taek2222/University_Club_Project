@@ -1,31 +1,34 @@
 import React, { useState } from "react";
 
-import Modal from "../Modal/modal"; // 모달 창 컴포넌트
-import ModalContents from "../Modal/modalcontent"; // 모달 내용 컴포넌트
-import LikeButton from "./likebutton"; // 좋아요 버튼 컴포넌트
+import Modal from "../Modal/modal"; // 모달 창
+import ModalContents from "../Modal/modalcontent"; // 모달 내용
+import LikeButton from "./likebutton"; // 좋아요
 
 const Card = ({ clubName, tags, initialLikes, imageUrl, iconUrl }) => {
   const [likes, setLikes] = useState(initialLikes);
   const [isLiked, setIsLiked] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [heartBurst, setHeartBurst] = useState(false);
 
-  // 하트를 클릭할 때 호출되는 함수입니다.
+  // 하트 (좋아요)
   const toggleLike = () => {
     if (isLiked) {
-      setLikes(likes - 1); // 좋아요 감소
+      setLikes(likes - 1);
     } else {
-      setLikes(likes + 1); // 좋아요 증가
+      setLikes(likes + 1);
+      setHeartBurst(true); // 애니메이션 START
+      setTimeout(() => setHeartBurst(false), 2000); // 애니메이션 종료 후 상태 리셋
     }
-    setIsLiked(!isLiked); // 좋아요 상태를 토글
+    setIsLiked(!isLiked);
   };
 
-  // 모달 열고 닫는 함수
+  // 모달 창
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   return (
     <div
-      className="max-w-sm rounded overflow-hidden shadow-lg bg-white border border-gray-400"
+      className="relative max-w-sm rounded overflow-hidden shadow-lg bg-white border border-gray-400"
       onClick={openModal}
     >
       <div className="max-h-48 bg-gray-200 border-b border-gray-400">
@@ -57,12 +60,23 @@ const Card = ({ clubName, tags, initialLikes, imageUrl, iconUrl }) => {
       </div>
 
       {/* 좋아요 버튼 */}
+      {heartBurst && (
+        <div className="custom-heartBurst-position text-red-500 text-6xl animate-heartBurst">
+          ♥
+        </div>
+      )}
+
       <div className="px-5 pb-2 -mt-1 ">
         <LikeButton isLiked={isLiked} likes={likes} toggleLike={toggleLike} />
       </div>
 
       {/* 모달 */}
-      <Modal isOpen={isModalOpen} onClose={closeModal} iconUrl={iconUrl} clubName={clubName}>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        iconUrl={iconUrl}
+        clubName={clubName}
+      >
         <ModalContents clubName={clubName} imageUrl={imageUrl} tags={tags} />
       </Modal>
     </div>
