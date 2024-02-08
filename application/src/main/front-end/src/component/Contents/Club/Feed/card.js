@@ -4,7 +4,15 @@ import Modal from "../Modal/modal"; // 모달 창
 import ModalContents from "../Modal/modalcontent"; // 모달 내용
 import LikeButton from "./likebutton"; // 좋아요
 
-const Card = ({ clubName, tags, initialLikes, imageUrl, iconUrl }) => {
+const Card = ({
+  clubName,
+  tags,
+  initialLikes,
+  imageUrl,
+  iconUrl,
+  modalTitle,
+  modalContents,
+}) => {
   const [likes, setLikes] = useState(initialLikes);
   const [isLiked, setIsLiked] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -78,7 +86,11 @@ const Card = ({ clubName, tags, initialLikes, imageUrl, iconUrl }) => {
         iconUrl={iconUrl}
         clubName={clubName}
       >
-        <ModalContents clubName={clubName} imageUrl={imageUrl} tags={tags} />
+        <ModalContents 
+          modalTitle={modalTitle}
+          modalContents={modalContents}
+          tags={tags}
+        />
       </Modal>
     </div>
   );
