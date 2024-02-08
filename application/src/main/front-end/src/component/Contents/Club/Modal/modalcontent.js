@@ -27,7 +27,7 @@ const ModalContents = ({ clubName, imageUrl, tags }) => {
 
       {/* 부스 (내용) */}
       <p
-        className="text-sm text-left mt-2 p-3"
+        className="text-sm text-left2 p-4"
         dangerouslySetInnerHTML={{ __html: formattedDescription }}
       />
 
