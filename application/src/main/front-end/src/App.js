@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import {} from "./App.css"; 
+
 import Header from "./component/Header/header.js";
 import Footer from "./component/Footer/footer.js";
 
