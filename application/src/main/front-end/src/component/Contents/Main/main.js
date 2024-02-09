@@ -2,6 +2,7 @@
 import React from "react";
 import ImageSwiper from "./image_swiper";
 import gwnuLogo from "../../../image/content_image/gwnu.jpg"
+import Memo from "./memo";
 
 function Main() {
   const FESTIVAL_YEAR = new Date().getFullYear().toString() + " 축제";
@@ -18,6 +19,7 @@ function Main() {
         <div className="mx-3 mt-1 text-3xl font-bold">{FESTIVAL_YEAR}</div>
       </div>
       <ImageSwiper />
+      <Memo />
     </>
   )
 }
