@@ -13,7 +13,6 @@ import image2 from "../../../image/Testi2.JPG";
 import image3 from "../../../image/Testi3.JPG";
 
 function Feed({ category }) {
-  const modalImage = [image1, image2, image3]; // 컴포넌트 분리 필요
   const [data, setData] = useState([]); // API 데이터 값
 
   useEffect(() => {
@@ -47,7 +46,7 @@ function Feed({ category }) {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"> {/* 최소 2개 ~ 최대 5개 */}
           {clubs.map((club, index) => (
             <Card
-              key={index}
+              key={index} // 동아리 순서
               clubName={club.clubName} // 동아리 이름
               tags={club.tags} // 태그
               initialLikes={club.initialLikes} // 좋아요 수
