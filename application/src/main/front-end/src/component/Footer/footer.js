@@ -7,8 +7,12 @@ function Footer() {
   return (
     <footer className="flex flex-col bottom-0 items-center mt-10 bg-slate-800 text-white">
       <div className="flex space-x-4 mt-3">
-        <img src={Instagram} alt="Instagram" className="h-8 w-8" />
-        <img src={Eum} alt="Eum" className="h-8 w-8 rounded-full" />
+        <a href="https://www.instagram.com/gwnu_eum_wonju/" target="_blank" rel="noopener noreferrer">
+          <img src={Instagram} alt="Instagram" className="h-8 w-8" />
+        </a>
+        <a href="https://gwnuclubs.modoo.at/" target="_blank" rel="noopener noreferrer">
+          <img src={Eum} alt="Eum" className="h-8 w-8 rounded-full" />
+        </a>
       </div>
 
       <p className="mt-3 text-xs">

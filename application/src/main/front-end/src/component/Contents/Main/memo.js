@@ -40,15 +40,17 @@ function Memo() {
         
         slidesPerView={slidesPerView}
         className='mt-10 w-full h-full'
-        scrollbar={{
-            hide: true,
-        }}
+        scrollbar={true}
         modules={[Scrollbar]}
       >
         {[...Array(30).keys()].map((index) => (
           <SwiperSlide key={index}>
-            <div className="flex justify-center border rounded-lg mx-3 my-5 px-5 shadow-lg max-w-[500px] min-h-72 mb-12">
-              <p className='mt-5'>Card {index + 1}</p>
+            <div className="flex justify-center border rounded-lg mx-3 px-5 shadow-lg max-w-[500px] min-h-72 mb-12">
+              <div className='mt-5 text-center'>
+                <p className='text-lg font-bold'>컴퓨터공학과</p>
+                <p className='text-sm'>20191758 이름 {index + 1}</p>
+                <p className='text-sm mt-5'>응원문구 테스트 글 {index + 1}</p>
+              </div>
             </div>
           </SwiperSlide>
         ))}
