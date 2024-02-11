@@ -4,7 +4,7 @@ const ModalContents = () => {
   return (
     <div className="overflow-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[700px]">
         <div className="text-left mx-3">
-            <p className="text-xs text-left font-bold mt-3 text-red-600">
+            <p className="text-xs text-left font-bold text-red-600">
                 해당 정보는 관리자의 승인을 통해 홈페이지에 반영됩니다.
             </p>
             <p className="text-lg text-left font-bold mt-3">
