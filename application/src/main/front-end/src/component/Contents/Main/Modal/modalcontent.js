@@ -10,22 +10,22 @@ const ModalContents = () => {
             <p className="text-lg text-left font-bold mt-3">
                 학과 :
             </p>
-            <textarea className="w-full border-2 border-inherit" />
+            <textarea className="w-full border-2 border-inherit p-2 h-11" />
 
             <p className="text-lg font-bold mt-3">
                 학번 :
             </p>
-            <textarea className="w-full border-2 border-inherit" />
+            <textarea className="w-full border-2 border-inherit p-2 h-11" />
 
             <p className="text-lg font-bold mt-3">
                 이름 :
             </p>
-            <textarea className="w-full border-2 border-inherit" />
+            <textarea className="w-full border-2 border-inherit p-2 h-11" />
 
             <p className="text-lg font-bold mt-3">
                 내용 :
             </p>
-            <textarea className="min-h-28 w-full border-2 border-inherit" />
+            <textarea className="min-h-28 w-full border-2 border-inherit p-2" />
         </div>
     </div>
   );
