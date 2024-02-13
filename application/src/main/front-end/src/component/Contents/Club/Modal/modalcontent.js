@@ -3,7 +3,11 @@ import React from "react";
 import SwiperImage from "./swiperimage"; // 상단 이미지 스와이프
 
 const ModalContents = ({ modalImage, modalTitle, modalContents, tags }) => {
-  const formattedDescription = modalContents.replace(/\n/g, "<br>");
+  const paragraphs = modalContents.split('\n').map((line, index) => (
+    <p key={index} className="text-sm text-left p-4">
+      {line}
+    </p>
+  ));
 
   return (
     <div className="overflow-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[700px]">
@@ -19,10 +23,7 @@ const ModalContents = ({ modalImage, modalTitle, modalContents, tags }) => {
       </p>
 
       {/* 부스 (내용) */}
-      <p
-        className="text-sm text-left2 p-4"
-        dangerouslySetInnerHTML={{ __html: formattedDescription }}
-      />
+      <div>{paragraphs}</div>
 
       {/* 하단 태그 */}
       <div className="ml-3 text-left">
