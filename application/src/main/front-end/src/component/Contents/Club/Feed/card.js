@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Modal from "../Modal/modal"; // 모달 창
 import ModalContents from "../Modal/modalcontent"; // 모달 내용
@@ -19,6 +19,10 @@ const Card = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [heartBurst, setHeartBurst] = useState(false);
 
+  useEffect(() => {
+    setLikes(initialLikes);
+  }, [initialLikes]);
+  
   // 하트 (좋아요)
   const toggleLike = () => {
     if (isLiked) {
