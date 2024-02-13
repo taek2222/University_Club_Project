@@ -27,6 +27,7 @@ function Feed({ category }) {
   }, [category]);
 
   console.log(data);
+  console.log(data.initialLikes)
 
   const clubs = [ // api 형식으로 받아오기 해야함
     {
@@ -49,14 +50,14 @@ function Feed({ category }) {
           {clubs.map((club, index) => (
             <Card
               key={index} // 동아리 순서
-              clubName={club.clubName} // 동아리 이름
+              clubName={data.clubName} // 동아리 이름
               tags={club.tags} // 태그
-              initialLikes={club.initialLikes} // 좋아요 수
+              initialLikes={data.initialLikes} // 좋아요 수
               imageUrl={club.imageUrl} // 상단 이미지
               iconUrl={club.iconUrl} // 아이콘 이미지
               modalImage={club.modalImage} // 모달 내용 (사진)
-              modalTitle={club.modalTitle} // 모달 내용 (제목)
-              modalContents={club.modalContents} // 모달 내용 (본문)
+              modalTitle={data.modalTitle} // 모달 내용 (제목)
+              modalContents={data.modalContents} // 모달 내용 (본문)
             />
           ))}
         </div>
