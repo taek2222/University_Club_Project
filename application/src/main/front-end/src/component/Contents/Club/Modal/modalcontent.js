@@ -10,7 +10,7 @@ const ModalContents = ({ modalImage, modalTitle, modalContents, tags }) => {
   ));
 
   return (
-    <div className="overflow-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[700px]">
+    <div className="overflow-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px]">
 
       {/* 이미지 슬라이드 */}
       <div className="">
