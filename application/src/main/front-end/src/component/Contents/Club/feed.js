@@ -51,7 +51,7 @@ function Feed({ category }) {
             <Card
               key={index} // 동아리 순서
               clubName={data.clubName} // 동아리 이름
-              tags={club.tags} // 태그
+              tags={data.tags} // 태그
               initialLikes={data.initialLikes} // 좋아요 수
               imageUrl={club.imageUrl} // 상단 이미지
               iconUrl={club.iconUrl} // 아이콘 이미지

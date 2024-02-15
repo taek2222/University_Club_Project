@@ -14,6 +14,7 @@ const Card = ({
   modalTitle,
   modalContents,
 }) => {
+  console.log(tags);
   const [likes, setLikes] = useState(initialLikes);
   const [isLiked, setIsLiked] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -63,14 +64,14 @@ const Card = ({
         </div>
       </div>
       <div className="text-left px-4">
-        {tags.map((tag) => (
+        {/* {tags.map((tag) => (
           <span
             key={tag}
             className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
           >
             #{tag}
           </span>
-        ))}
+        ))} */}
       </div>
 
       {/* 좋아요 버튼 */}
