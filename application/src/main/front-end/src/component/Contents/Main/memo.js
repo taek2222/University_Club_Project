@@ -1,55 +1,43 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 
+import pin from '../../../image/content_image/pin.png'
+
 function Memo() {
-    const [slidesPerView, setSlidesPerView] = useState(getSlidesPerView);
-
-    function getSlidesPerView() {
-        const windowWidth = window.innerWidth;
-
-        if (windowWidth <= 720) {
-            return 2;
-        } else if (windowWidth > 720 && windowWidth <= 1024) {
-            return 3;
-        } else if (windowWidth > 1024) {
-            return 4;
-        }
-    }
-
-    useEffect(() => {
-        function handleResize() {
-            setSlidesPerView(getSlidesPerView());
-        }
-
-        handleResize();
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
   return (
     <>
       <Swiper
-        
-        slidesPerView={slidesPerView}
-        className='mt-10 w-full h-full'
+        slidesPerView={2}
+        className='mt-10 w-full h-full max-w-[800px]'
         scrollbar={true}
         modules={[Scrollbar]}
       >
         {[...Array(30).keys()].map((index) => (
           <SwiperSlide key={index}>
-            <div className="flex justify-center border rounded-lg mx-3 px-5 shadow-lg max-w-[500px] min-h-72 mb-12">
-              <div className='mt-5 text-center'>
-                <p className='text-lg font-bold'>컴퓨터공학과</p>
-                <p className='text-sm'>20191758 이름 {index + 1}</p>
-                <p className='text-sm mt-5'>응원문구 테스트 글 {index + 1}</p>
+            <div>
+              <div className="flex justify-center">
+                <div className={`flex justify-center border mx-3 px-5 w-[250px] min-h-72 mb-12 shadow-lg rounded-lg
+                  ${index % 2 === 0 ? '-rotate-6' : 'rotate-12'} ${index % 2 === 0 ? 'bg-red-200' : 'bg-yellow-100'}`}>
+                    <div className={`text-center mt-5 ${index % 2 === 0 ? 'rotate-3' : '-rotate-6'}`}>
+                      <img src={pin} alt='pin' className='w-8 h-8 mx-auto' />
+                      <p className='text-lg font-bold mt-12'>컴퓨터공학과</p>
+                      <p className='text-base mt-5 font-bold'>응원문구 테스트 글 {index + 1}</p>
+                    </div>
+                </div>
+              </div>
+              <div className="flex justify-center max-w-[500px]">
+                <div className={`flex justify-center border min-w-[220px] w-[300px] h-52 mb-12 shadow-lg rounded-lg
+                  ${index % 2 === 0 ? 'bg-orange-200' : '-rotate-6 bg-green-100'}`}>
+                  <div className={`text-center mt-3 ${index % 2 === 0 ? '' : 'rotate-3'}`}>
+                    <img src={pin} alt='pin' className='w-8 h-8 mx-auto' />
+                    <p className='text-lg font-bold mt-4'>컴퓨터공학과</p>
+                    <p className='text-base mt-5 font-bold'>응원문구 테스트 글 {index + 1}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </SwiperSlide>
