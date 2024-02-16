@@ -27,7 +27,6 @@ function Feed({ category }) {
   }, [category]);
 
   console.log(data);
-  console.log(data.initialLikes)
 
   const clubs = [ // api 형식으로 받아오기 해야함
     {

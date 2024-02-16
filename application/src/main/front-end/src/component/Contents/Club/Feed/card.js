@@ -14,7 +14,6 @@ const Card = ({
   modalTitle,
   modalContents,
 }) => {
-  console.log(tags);
   const [likes, setLikes] = useState(initialLikes);
   const [isLiked, setIsLiked] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
