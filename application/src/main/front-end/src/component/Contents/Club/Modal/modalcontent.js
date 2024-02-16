@@ -3,10 +3,12 @@ import React from "react";
 import SwiperImage from "./swiperimage"; // 상단 이미지 스와이프
 
 const ModalContents = ({ modalImage, modalTitle, modalContents, tags }) => {
-  const paragraphs = modalContents.split('\n').map((line, index) => (
-    <p key={index} className="text-sm text-left p-4">
-      {line}
-    </p>
+  const paragraphs = modalContents.split('\n').map((paragraph, index) => (
+    // 여기서는 간단히 각 줄을 <div>로 감싸 줄바꿈을 구현합니다.
+    // 실제 사용 시에는 <p>, <span> 또는 다른 방법을 사용할 수 있습니다.
+    <div key={index}>
+      {paragraph}
+    </div>
   ));
 
   return (
