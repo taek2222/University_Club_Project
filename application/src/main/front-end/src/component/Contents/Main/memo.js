@@ -7,6 +7,13 @@ import 'swiper/css/scrollbar';
 
 import pin from '../../../image/content_image/pin.png'
 
+function getRandomColor() {
+  const colors = ['bg-red-200', 'bg-yellow-100', 'bg-orange-200', 'bg-green-100', 'bg-teal-100', 'bg-cyan-100', 'bg-indigo-200', 'bg-violet-200',
+                  'bg-purple-200', 'bg-fuchsia-200', 'bg-pink-200', 'bg-rose-100', ];
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  return colors[randomIndex];
+}
+
 function Memo() {
   return (
     <>
@@ -21,7 +28,7 @@ function Memo() {
             <div className='mt-6'>
               <div className="flex justify-center">
                 <div className={`flex justify-center border mx-3 px-5 w-[250px] min-h-72 mb-12 shadow-lg rounded-lg
-                  ${index % 2 === 0 ? '-rotate-6' : 'rotate-12'} ${index % 2 === 0 ? 'bg-red-200' : 'bg-yellow-100'}`}>
+                  ${index % 2 === 0 ? '-rotate-6' : 'rotate-12'} ${getRandomColor()}`}>
                     <div className={`text-center mt-5`}>
                       <img src={pin} alt='pin' className='w-8 h-8 mx-auto' />
                       <p className='text-lg font-bold mt-12'>컴퓨터공학과</p>
@@ -31,7 +38,7 @@ function Memo() {
               </div>
               <div className="flex justify-center max-w-[500px]">
                 <div className={`flex justify-center border min-w-[220px] w-[300px] h-52 mb-12 shadow-lg rounded-lg
-                  ${index % 2 === 0 ? 'bg-orange-200' : '-rotate-6 bg-green-100'}`}>
+                  ${index % 2 === 0 ? '' : '-rotate-6'} ${getRandomColor()}`}>
                   <div className={`text-center mt-3`}>
                     <img src={pin} alt='pin' className='w-8 h-8 mx-auto' />
                     <p className='text-lg font-bold mt-4'>컴퓨터공학과</p>
