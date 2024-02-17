@@ -18,7 +18,7 @@ function Memo() {
       >
         {[...Array(30).keys()].map((index) => (
           <SwiperSlide key={index}>
-            <div>
+            <div className='mt-6'>
               <div className="flex justify-center">
                 <div className={`flex justify-center border mx-3 px-5 w-[250px] min-h-72 mb-12 shadow-lg rounded-lg
                   ${index % 2 === 0 ? '-rotate-6' : 'rotate-12'} ${index % 2 === 0 ? 'bg-red-200' : 'bg-yellow-100'}`}>
