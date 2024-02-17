@@ -1,2 +1,17 @@
-package com.club.backend.dto.memo;public class MemoDTO {
+package com.club.backend.dto.memo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class MemoDTO {
+
+    private Long memoId;
+    private String major;
+    private String classOf;
+    private String studentName;
+    private String content;
 }

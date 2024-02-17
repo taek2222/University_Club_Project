@@ -1,2 +1,10 @@
-package com.club.backend.service.memo;public interface MemoService {
+package com.club.backend.service.memo;
+
+import com.club.backend.dto.memo.MemoDTO;
+import com.club.backend.entity.memo.Memo;
+
+import java.util.Optional;
+
+public interface MemoService {
+    Optional<Memo> saveMemo(MemoDTO memoDTO);
 }

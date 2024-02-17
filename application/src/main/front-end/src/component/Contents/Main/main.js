@@ -5,7 +5,6 @@ import gwnuLogo from "../../../image/content_image/gwnu.jpg"
 import cheerLogo from "../../../image/content_image/notes.png"
 import Memo from "./memo";
 import Modal from "./Modal/modal";
-import ModalContents from "./Modal/modalcontent";
 
 function Main() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,9 +48,7 @@ function Main() {
       <Modal
         isOpen={isModalOpen}
         onClose={closeModal}
-      >
-        <ModalContents />
-      </Modal>
+      />
     </>
   )
 }
