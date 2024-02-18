@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar } from 'swiper/modules';
+import axios from 'axios';
 
 import 'swiper/css';
 import 'swiper/css/scrollbar';
@@ -15,6 +16,18 @@ function getRandomColor() {
 }
 
 function Memo() {
+  const [memos, setMemos] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/memos/all')
+      .then(response => {
+        setMemos(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching memos:', error);
+      });
+  }, []);
+
   return (
     <>
       <Swiper
@@ -23,7 +36,7 @@ function Memo() {
         scrollbar={true}
         modules={[Scrollbar]}
       >
-        {[...Array(30).keys()].map((index) => (
+        {memos.slice(0, memos.length / 2).map((memo, index) => (
           <SwiperSlide key={index}>
             <div className='mt-6'>
               <div className="flex justify-center">
@@ -31,8 +44,8 @@ function Memo() {
                   ${index % 2 === 0 ? '-rotate-6' : 'rotate-12'} ${getRandomColor()}`}>
                     <div className={`text-center mt-5`}>
                       <img src={pin} alt='pin' className='w-8 h-8 mx-auto' />
-                      <p className='text-lg font-bold mt-12'>컴퓨터공학과</p>
-                      <p className='text-base mt-5 font-bold'>응원문구 테스트 글 {index + 1}</p>
+                      <p className='text-lg font-bold mt-12'>{memos[index*2]?.major}</p>
+                      <p className='text-base mt-5 font-bold'>{memos[index*2]?.content}</p>
                     </div>
                 </div>
               </div>
@@ -41,8 +54,8 @@ function Memo() {
                   ${index % 2 === 0 ? '' : '-rotate-6'} ${getRandomColor()}`}>
                   <div className={`text-center mt-3`}>
                     <img src={pin} alt='pin' className='w-8 h-8 mx-auto' />
-                    <p className='text-lg font-bold mt-4'>컴퓨터공학과</p>
-                    <p className='text-base mt-5 font-bold'>응원문구 테스트 글 {index + 1}</p>
+                    <p className='text-lg font-bold mt-4'>{memos[index*2 + 1]?.major}</p>
+                    <p className='text-base mt-5 font-bold'>{memos[index*2 + 1]?.content}</p>
                   </div>
                 </div>
               </div>

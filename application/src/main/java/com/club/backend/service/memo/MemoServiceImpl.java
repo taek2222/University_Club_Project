@@ -6,6 +6,7 @@ import com.club.backend.repository.memo.MemoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,5 +23,10 @@ public class MemoServiceImpl implements MemoService {
         memo.setContent(memoDTO.getContent());
 
         return Optional.ofNullable(memoRepository.save(memo));
+    }
+
+    @Override
+    public List<Memo> getAllMemos() {
+        return memoRepository.findAll();
     }
 }
