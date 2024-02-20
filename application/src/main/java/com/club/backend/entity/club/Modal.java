@@ -1,11 +1,15 @@
 package com.club.backend.entity.club;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table
+@NoArgsConstructor
+@AllArgsConstructor
 public class Modal {
 
     @Id
