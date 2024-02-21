@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name="club_modal")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Modal {
