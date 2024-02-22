@@ -2,7 +2,6 @@ package com.club.backend.entity.club;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
 
 @Entity
