@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from 'axios';
 
 const Modal = ({ isOpen, onClose, children }) => {
-  if (!isOpen) return null;
 
   const initialFormData = {
     major: "",
@@ -12,6 +11,8 @@ const Modal = ({ isOpen, onClose, children }) => {
   };
 
   const [formData, setFormData] = useState(initialFormData);
+
+  if (!isOpen) return null;
 
   const handleInputChange = (e) => {
     setFormData({
