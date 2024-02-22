@@ -7,13 +7,12 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table
 @NoArgsConstructor
 @AllArgsConstructor
 public class Property {
-
     @Id
-    private String clubName;
+    @Column(name="club_id")
+    private int clubId;
 
     @ElementCollection
     @Column(name="tags")
@@ -29,6 +28,7 @@ public class Property {
     private String iconUrl;
 
     @OneToOne
-    @JoinColumn(name = "clubName", referencedColumnName = "club_name")
-    private Name name;
+    @MapsId
+    @JoinColumn(name="club_id")
+    private Club club;
 }

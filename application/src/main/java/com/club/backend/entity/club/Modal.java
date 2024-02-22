@@ -7,13 +7,12 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table(name="club_modal")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Modal {
-
     @Id
-    private String clubName;
+    @Column(name="club_id")
+    private int clubId;
 
     @Column(name="modal_title")
     private String modalTitle;
@@ -26,6 +25,7 @@ public class Modal {
     private List<String> modalImage;
 
     @OneToOne
-    @JoinColumn(name = "clubName", referencedColumnName = "club_name")
-    private Name name;
+    @MapsId
+    @JoinColumn(name="club_id")
+    private Club club;
 }
