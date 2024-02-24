@@ -1,10 +1,9 @@
 package com.club.backend.repository.club;
 
-import com.club.backend.entity.club.Club;
+import com.club.backend.entity.club.Property;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ClubRepository extends JpaRepository<Club, Integer> {
-
+public interface PropertyRepository extends JpaRepository<Property, Integer> {
 }
