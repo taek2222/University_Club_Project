@@ -45,13 +45,15 @@ const Card = ({
       className="relative max-w-sm rounded overflow-hidden shadow-lg bg-white border border-gray-400"
       onClick={openModal}
     >
+      
       <div className="max-h-48 bg-gray-200 border-b border-gray-400">
         <img
-          className="w-full h-full object-cover"
+          className="w-full max-h-32 object-cover"
           src={imageUrl}
           alt={`Club ${clubName}`}
         />
       </div>
+
       <div className="px-4 py-3 flex items-center">
         <img
           className="w-8 h-8 rounded-full border border-gray-500"
