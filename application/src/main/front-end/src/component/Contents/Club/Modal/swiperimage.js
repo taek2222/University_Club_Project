@@ -1,12 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-const SwiperImage = ({ data }) => {
+const SwiperImage = ({ modalImage = [] }) => {
   const ref = useRef(null);
 
-  const [imageList] = useState([data[data.length - 1], ...data, data[0]]);
-  const [currentImgIndex, setCurrentImgIndex] = useState(1);
+  console.log(modalImage);
+  const [imageList] = useState([
+    modalImage[modalImage.length - 1],
+    ...modalImage,
+    modalImage[0],
+  ]);
 
+  const [currentImgIndex, setCurrentImgIndex] = useState(1);
   const [touch, setTouch] = useState({
     start: 0,
     end: 0,
@@ -63,7 +68,6 @@ const SwiperImage = ({ data }) => {
             start: e.touches[0].pageX,
           });
         }}
-        
         onTouchMove={(e) => {
           if (ref.current) {
             const current = ref.current.clientWidth * currentImgIndex;
@@ -74,7 +78,6 @@ const SwiperImage = ({ data }) => {
             });
           }
         }}
-
         onTouchEnd={(e) => {
           const end = e.changedTouches[0].pageX;
           if (touch.start > end + 5) {
@@ -92,7 +95,7 @@ const SwiperImage = ({ data }) => {
           {imageList.map((el, i) => (
             <img
               key={i}
-              src={el}
+              src={require(`../../../../image/club_image/modal/${el}`)}
               alt={`Slide ${i}`}
               className="w-auto h-auto object-contain"
             />
@@ -112,7 +115,7 @@ const SwiperImage = ({ data }) => {
 
       {/* 사진 하단 갯수 (점) */}
       <div className="mt-2 text-center flex justify-center">
-        {data.map((el, i) => (
+        {modalImage.map((el, i) => (
           <div
             key={i}
             className={`h-1.5 w-1.5 mx-0.5 rounded-full ${
