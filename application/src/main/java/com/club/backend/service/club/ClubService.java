@@ -20,21 +20,28 @@ public class ClubService {
     @Autowired
     private PropertyRepository propertyRepository;
 
-    public List<ClubDTO> getClubTypeSearch(int typeId) {
+    public List<ClubDTO> getClubAllSearch() { // 동아리 전체 요청
+        List<Club> clubs = clubRepository.findAll();
+        return clubs.stream().map(this::convertToDTO).collect(Collectors.toList());
+    }
+
+    public List<ClubDTO> getClubTypeSearch(int typeId) { // 동아리 소속 요청
         List<Club> clubs = clubRepository.findByType_TypeId(typeId);
-        return clubs.stream().map(club -> {
-            Property property = propertyRepository.findById(club.getClubId())
-                    .orElseThrow(() -> new EntityNotFoundException("Property not found for club id: " + club.getClubId()));
+        return clubs.stream().map(this::convertToDTO).collect(Collectors.toList());
+    }
 
-            ClubDTO dto = new ClubDTO();
-            dto.setClubId(club.getClubId());
-            dto.setClubName(club.getClubName());
-            dto.setTags(property.getTags());
-            dto.setInitialLikes(property.getInitialLikes());
-            dto.setImageUrl(property.getImageUrl());
-            dto.setIconUrl(property.getIconUrl());
+    private ClubDTO convertToDTO(Club club) { // 동아리 데이터 검색
+        Property property = propertyRepository.findById(club.getClubId())
+                .orElseThrow(() -> new EntityNotFoundException("Property not found for club id: " + club.getClubId()));
 
-            return dto;
-        }).collect(Collectors.toList());
+        ClubDTO dto = new ClubDTO();
+        dto.setClubId(club.getClubId());
+        dto.setClubName(club.getClubName());
+        dto.setTags(property.getTags());
+        dto.setInitialLikes(property.getInitialLikes());
+        dto.setImageUrl(property.getImageUrl());
+        dto.setIconUrl(property.getIconUrl());
+
+        return dto;
     }
 }
