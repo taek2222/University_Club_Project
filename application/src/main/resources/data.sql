@@ -24,9 +24,7 @@ INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (3, '농2담'), (3, '�
 INSERT INTO MODAL (club_id, modal_contents, modal_title) values (1, '아아아아아', '실험 테스트');
 
 -- 동아리 모달 이미지
-<<<<<<< HEAD
 INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, modal_url) values (1, 'http://'), (1, 'hhttt');
-
 
 -- 메모 실험용 데이터
 INSERT INTO memo (memo_id, major, class_of, student_name, content) values (1, '컴퓨터공학과', '20191758', '유재현', '해시태그 화이팅!');
