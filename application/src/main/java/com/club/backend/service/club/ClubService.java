@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class ClubService {
-
     @Autowired
     private ClubRepository clubRepository;
 

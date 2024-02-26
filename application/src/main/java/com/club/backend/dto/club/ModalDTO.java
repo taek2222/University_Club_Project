@@ -7,7 +7,6 @@ import java.util.List;
 @Getter
 @Setter
 public class ModalDTO {
-    private int clubId;
     private String modalTitle;
     private String modalContents;
     private List<String> modalImage;

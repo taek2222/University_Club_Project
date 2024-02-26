@@ -11,5 +11,16 @@ import java.util.ArrayList;
 
 @Service
 public class ModalService {
+    @Autowired
+    private ModalRepository modalRepository;
 
+    public ModalDTO getClubModalSearch(int clubId) {
+        Modal modal = modalRepository.findById(clubId).orElseThrow(() -> new EntityNotFoundException("Not Found ClubId " + clubId));
+        ModalDTO dto = new ModalDTO();
+
+        dto.setModalTitle(modal.getModalTitle());
+        dto.setModalContents(modal.getModalContents());
+        dto.setModalImage(modal.getModalImage());
+        return dto;
+    }
 }
