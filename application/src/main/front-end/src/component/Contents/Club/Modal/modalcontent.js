@@ -21,7 +21,7 @@ const ModalContents = ({ clubId, tags }) => {
     <div className="overflow-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px]">
       {/* 이미지 슬라이드 */}
       <div>
-        {data.modalImage && <SwiperImage modalImage={data.modalImage} />}
+        {data.modalImage && data.modalImage.length > 0 && <SwiperImage modalImage={data.modalImage} />}
       </div>
 
       {/* 부스 (제목) */}
