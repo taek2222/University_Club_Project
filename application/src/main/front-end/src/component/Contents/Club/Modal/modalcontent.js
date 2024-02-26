@@ -2,33 +2,44 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import SwiperImage from "./swiperimage";
+import { TextComponent } from "./formatText";
 
 const ModalContents = ({ clubId, tags }) => {
-  const [data, setData] = useState({ modalImage: []});
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     axios
       .get(`http://localhost:8080/${clubId}/club/modal`)
       .then((Response) => {
         setData(Response.data);
+        setIsLoading(false);
       })
       .catch((Error) => {
         console.log(Error);
+        setIsLoading(false);
       });
   }, [clubId]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="overflow-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px]">
       {/* 이미지 슬라이드 */}
       <div>
-        {data.modalImage && data.modalImage.length > 0 && <SwiperImage modalImage={data.modalImage} />}
+        <SwiperImage modalImage={data.modalImage} />
       </div>
 
       {/* 부스 (제목) */}
-      <p className="text-lg text-center font-bold mt-3">{data.modalTitle}</p>
+      <p className="text-xl text-center font-bold mt-5">{data.modalTitle}</p>
 
       {/* 부스 (내용) */}
-      <div>{data.modalContents}</div>
+      <div className="px-4 pt-2">
+          <TextComponent Content={data.modalContents} />
+      </div>
 
       {/* 하단 태그 */}
       <div className="ml-3 text-left">
