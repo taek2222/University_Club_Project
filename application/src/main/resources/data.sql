@@ -24,7 +24,7 @@ INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (3, '농2담'), (3, '�
 INSERT INTO MODAL (club_id, modal_contents, modal_title) values (1, '아아아아아', '실험 테스트');
 
 -- 동아리 모달 이미지
-INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, modal_url) values (1, 'http://'), (1, 'hhttt');
+INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, modal_url) values (1, '1_1.JPG'), (1, '1_2.JPG'), (1, '1_3.JPG');
 
 -- 메모 실험용 데이터
 INSERT INTO memo (memo_id, major, class_of, student_name, content) values (1, '컴퓨터공학과', '20191758', '유재현', '해시태그 화이팅!');
@@ -37,6 +37,3 @@ INSERT INTO memo (memo_id, major, class_of, student_name, content) values (7, '�
 INSERT INTO memo (memo_id, major, class_of, student_name, content) values (8, '전기공학과', '70000000', '홍은채', '응원문구 테스트7');
 INSERT INTO memo (memo_id, major, class_of, student_name, content) values (9, '다문화학과', '80000000', '장원영', '응원문구 테스트8');
 INSERT INTO memo (memo_id, major, class_of, student_name, content) values (10, '멀티미디어학과', '90000000', '안유진', '응원문구 테스트9');
-=======
-INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, modal_url) values (1, '1_1.JPG'), (1, '1_2.JPG'), (1, '1_3.JPG');
->>>>>>> 39727a4 ([Oh] Modal 실험 데이터 삽입)
