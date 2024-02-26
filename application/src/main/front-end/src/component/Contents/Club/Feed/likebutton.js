@@ -14,7 +14,7 @@ const LikeButton = ({ isLiked, likes, toggleLike }) => {
       ) : (
         <span className="text-gray-400 text-2xl">♡</span>
       )}
-      <span className="text-gray-700 text-base font-semibold ml-1">{likes}</span>
+      <span className="text-gray-700 text-sm font-semibold ml-1">{likes}</span>
     </button>
   );
 };

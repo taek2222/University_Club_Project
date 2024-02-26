@@ -56,7 +56,7 @@ const Card = ({
 
       <div className="px-4 py-3 flex items-center">
         <img
-          className="w-8 h-8 rounded-full border border-gray-500"
+          className="w-7 h-7 rounded-full border border-gray-500"
           src={iconUrl}
           alt="Club Icon"
         />
@@ -64,6 +64,7 @@ const Card = ({
           {clubName}
         </div>
       </div>
+      
       <div className="text-left px-4">
         {tags && tags.map((tag, index) => (
           <span
@@ -82,7 +83,7 @@ const Card = ({
         </div>
       )}
 
-      <div className="px-5 pb-2 -mt-1 ">
+      <div className="px-5 pb-2 -mt-1">
         <LikeButton isLiked={isLiked} likes={likes} toggleLike={toggleLike} />
       </div>
 
