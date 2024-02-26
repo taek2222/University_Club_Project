@@ -25,3 +25,16 @@ INSERT INTO MODAL (club_id, modal_contents, modal_title) values (1, '아아아�
 
 -- 동아리 모달 이미지
 INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, modal_url) values (1, 'http://'), (1, 'hhttt');
+
+
+-- 메모 실험용 데이터
+INSERT INTO memo (memo_id, major, class_of, student_name, content) values (1, '컴퓨터공학과', '20191758', '유재현', '해시태그 화이팅!');
+INSERT INTO memo (memo_id, major, class_of, student_name, content) values (2, '유아교육과', '10000000', '카리나', '응원문구 테스트1');
+INSERT INTO memo (memo_id, major, class_of, student_name, content) values (3, '간호학과', '20000000', '윈터', '응원문구 테스트2');
+INSERT INTO memo (memo_id, major, class_of, student_name, content) values (4, '산업경영공학과', '30000000', '지젤', '응원문구 테스트3');
+INSERT INTO memo (memo_id, major, class_of, student_name, content) values (5, '자동차공학과', '40000000', '닝닝', '응원문구 테스트4');
+INSERT INTO memo (memo_id, major, class_of, student_name, content) values (6, '기계공학과', '50000000', '김채원', '응원문구 테스트5');
+INSERT INTO memo (memo_id, major, class_of, student_name, content) values (7, '사회복지학과', '60000000', '카즈하', '응원문구 테스트6');
+INSERT INTO memo (memo_id, major, class_of, student_name, content) values (8, '전기공학과', '70000000', '홍은채', '응원문구 테스트7');
+INSERT INTO memo (memo_id, major, class_of, student_name, content) values (9, '다문화학과', '80000000', '장원영', '응원문구 테스트8');
+INSERT INTO memo (memo_id, major, class_of, student_name, content) values (10, '멀티미디어학과', '90000000', '안유진', '응원문구 테스트9');
