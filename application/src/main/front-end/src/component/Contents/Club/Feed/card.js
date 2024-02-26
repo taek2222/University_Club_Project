@@ -5,19 +5,19 @@ import ModalContents from "../Modal/modalcontent"; // 모달 내용
 import LikeButton from "./likebutton"; // 좋아요
 
 const Card = ({
+  clubId,
   clubName,
   tags,
   initialLikes,
   imageUrl,
   iconUrl,
-  modalImage,
-  modalTitle,
-  modalContents,
 }) => {
   const [likes, setLikes] = useState(initialLikes);
   const [isLiked, setIsLiked] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [heartBurst, setHeartBurst] = useState(false);
+
+  console.log(clubId);
 
   useEffect(() => {
     setLikes(initialLikes);
@@ -94,9 +94,7 @@ const Card = ({
         clubName={clubName}
       >
         <ModalContents
-          modalImage={modalImage}
-          modalTitle={modalTitle}
-          modalContents={modalContents}
+          clubId={clubId}
           tags={tags}
         />
       </Modal>
