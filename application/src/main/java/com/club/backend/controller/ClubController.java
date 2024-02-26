@@ -26,17 +26,17 @@ public class ClubController {
 
     private final Logger log = LoggerFactory.getLogger(getClass());
 
-    @GetMapping("/All/clubs") // 동아리 전체 요청
+    @GetMapping("/clubs/all") // 동아리 전체 요청
     public List<ClubDTO> getClubsByAll() {
         return clubService.getClubAllSearch();
     }
 
-    @GetMapping("/{typeId}/clubs") // 동아리 소속 요청
+    @GetMapping("/clubs/{typeId}") // 동아리 소속 요청
     public List<ClubDTO> getClubsByType(@PathVariable("typeId") int typeId) {
         return clubService.getClubTypeSearch(typeId);
     }
 
-    @GetMapping("/{clubId}/club/modal") // 동아리 모달 요청
+    @GetMapping("/club/modal/{clubId}") // 동아리 모달 요청
     public ModalDTO getClubsByModal(@PathVariable("clubId") int clubId) {
         return modalService.getClubModalSearch(clubId);
     }

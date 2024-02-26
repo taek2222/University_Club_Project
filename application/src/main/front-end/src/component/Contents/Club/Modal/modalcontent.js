@@ -11,7 +11,7 @@ const ModalContents = ({ clubId, tags }) => {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get(`http://localhost:8080/${clubId}/club/modal`)
+      .get(`http://localhost:8080/club/modal/${clubId}`)
       .then((Response) => {
         setData(Response.data);
         setIsLoading(false);

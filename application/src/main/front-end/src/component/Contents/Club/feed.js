@@ -10,7 +10,7 @@ function Feed({ category }) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/${category}/clubs`)
+      .get(`http://localhost:8080/clubs/${category}`)
       .then((Response) => {
         setData(Response.data);
       })

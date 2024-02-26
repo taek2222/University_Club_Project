@@ -6,7 +6,7 @@ function Club() {
   const [selectedCategory, setSelectedCategory] = useState("전체"); // 초기 선택 분류
   const categories = ["전체", "공연", "체육", "취미", "종교", "봉사"]; // 분류 목록
   const categoryMapping = { // Feed 치환 호출
-    "전체": "All",
+    "전체": "all",
     "공연": "1",
     "체육": "2",
     "취미": "3",
