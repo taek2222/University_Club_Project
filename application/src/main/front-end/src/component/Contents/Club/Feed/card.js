@@ -17,8 +17,6 @@ const Card = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [heartBurst, setHeartBurst] = useState(false);
 
-  console.log(clubId);
-
   useEffect(() => {
     setLikes(initialLikes);
   }, [initialLikes]);

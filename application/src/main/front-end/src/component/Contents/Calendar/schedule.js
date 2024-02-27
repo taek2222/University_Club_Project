@@ -1,6 +1,6 @@
 import React from "react";
 
-import Event from '../Event/event';
+import Event from './event.js';
 
 import TestImage from '../../../image/test1.png';
 import gwnuLogo from "../../../image/content_image/gwnu.jpg"

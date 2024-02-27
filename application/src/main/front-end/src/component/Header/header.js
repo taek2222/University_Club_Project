@@ -7,8 +7,8 @@ import HeaderRecycle from "./header_recycle";
 import Main from "../../image/header_image/main.png";
 import Club from "../../image/header_image/club.png";
 import Delivery from "../../image/header_image/delivery.png";
-import Location from "../../image/header_image/location.png";
-import Event from "../../image/header_image/event.png";
+import Join from "../../image/header_image/join.png";
+import Calendar from "../../image/header_image/calendar.png";
 
 
 function Header({ activeMainContent, setActiveMainContent }) {
@@ -16,10 +16,10 @@ function Header({ activeMainContent, setActiveMainContent }) {
     <header className="sticky top-0 w-full bg-white z-10">
       <div className="flex justify-center items-center space-x-6 pt-3 mb-3">
         <HeaderRecycle
-          imageSrc={Main} // 이미지
+          imageSrc={Main}
           altText="메인" 
           label="메인"
-          onClick={() => setActiveMainContent('Main')} // 클릭 이벤트 전달 매개변수
+          onClick={() => setActiveMainContent('Main')}
           scale = {activeMainContent === 'Main' ? 'scale-110' : 'scale-100'}
         />
         <HeaderRecycle
@@ -37,18 +37,18 @@ function Header({ activeMainContent, setActiveMainContent }) {
           scale = {activeMainContent === 'Delivery' ? 'scale-110' : 'scale-100'}
         />
         <HeaderRecycle
-          imageSrc={Location}
-          altText="부스 위치"
-          label="부스 위치"
-          onClick={() => setActiveMainContent('Location')}
-          scale = {activeMainContent === 'Location' ? 'scale-110' : 'scale-100'}
+          imageSrc={Join}
+          altText="가입 신청"
+          label="가입 신청"
+          onClick={() => setActiveMainContent('Join')}
+          scale = {activeMainContent === 'Join' ? 'scale-110' : 'scale-100'}
         />
         <HeaderRecycle
-          imageSrc={Event}
-          altText="이벤트"
-          label="이벤트"
-          onClick={() => setActiveMainContent('Event')}
-          scale = {activeMainContent === 'Event' ? 'scale-110' : 'scale-100'}
+          imageSrc={Calendar}
+          altText="일정"
+          label="일정"
+          onClick={() => setActiveMainContent('Calendar')}
+          scale = {activeMainContent === 'Calendar' ? 'scale-110' : 'scale-100'}
         />
       </div>
 

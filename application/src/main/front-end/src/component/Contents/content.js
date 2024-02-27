@@ -2,7 +2,7 @@ import React from "react";
 
 import Main from "../Contents/Main/main.js"
 import Club from "../Contents/Club/club.js"
-import Schedule from "./Event/schedule.js";
+import Schedule from "./Calendar/schedule.js";
 
 function Content( {activeMainContent} ) {
   return (
@@ -10,7 +10,7 @@ function Content( {activeMainContent} ) {
       {activeMainContent === 'Main' && <Main />}
       {activeMainContent === 'Club' && <Club />}
       {/* {activeMainContent === 'Location' && <Location />} */}
-      {activeMainContent === 'Event' && <Schedule />}
+      {activeMainContent === 'Calendar' && <Schedule />}
     </div>
   );
 }
