@@ -13,7 +13,7 @@ const ModalContents = ({ clubId, tags }) => {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get(`http://localhost:8080/club/modal/${clubId}`)
+      .get(`http://172.30.1.57:8080/club/modal/${clubId}`)
       .then((Response) => {
         setData(Response.data);
         setIsLoading(false);
