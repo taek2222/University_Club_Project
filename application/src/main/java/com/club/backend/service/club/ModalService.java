@@ -21,6 +21,7 @@ public class ModalService {
         dto.setModalTitle(modal.getModalTitle());
         dto.setModalContents(modal.getModalContents());
         dto.setModalImage(modal.getModalImage());
+        dto.setModalLocationImage(modal.getModalLocationImage());
         return dto;
     }
 }

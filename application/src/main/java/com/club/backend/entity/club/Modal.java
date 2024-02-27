@@ -27,6 +27,9 @@ public class Modal {
     @Column(name="modal_url")
     private List<String> modalImage;
 
+    @Column(name="modal_location_url")
+    private String modalLocationImage;
+
     @OneToOne
     @MapsId
     @JoinColumn(name="club_id")

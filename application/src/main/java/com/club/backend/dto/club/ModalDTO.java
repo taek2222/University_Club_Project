@@ -10,4 +10,5 @@ public class ModalDTO {
     private String modalTitle;
     private String modalContents;
     private List<String> modalImage;
+    private String modalLocationImage;
 }
