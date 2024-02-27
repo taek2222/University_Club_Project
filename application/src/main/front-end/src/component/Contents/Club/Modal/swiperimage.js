@@ -3,8 +3,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const SwiperImage = ({ modalImage = [] }) => {
   const ref = useRef(null);
-
-  console.log(modalImage);
+  
   const [imageList] = useState([
     modalImage[modalImage.length - 1],
     ...modalImage,

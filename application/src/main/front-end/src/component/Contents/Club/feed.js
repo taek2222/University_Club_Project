@@ -19,8 +19,6 @@ function Feed({ category }) {
       });
   }, [category]);
 
-  console.log(data);
-
   return (
     <>
       <div className="container mx-auto p-4">
