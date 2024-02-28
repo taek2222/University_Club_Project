@@ -13,11 +13,7 @@ const ModalContents = ({ clubId, tags }) => {
   useEffect(() => {
     setIsLoading(true);
     axios
-<<<<<<< HEAD
-      .get(`http://172.30.1.57:8080/club/modal/${clubId}`)
-=======
       .get(`http://192.168.250.148:8080/club/modal/${clubId}`)
->>>>>>> 6a14075 ([Oh] 서버 연동)
       .then((Response) => {
         setData(Response.data);
         setIsLoading(false);
