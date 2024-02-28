@@ -10,7 +10,11 @@ function Feed({ category }) {
 
   useEffect(() => {
     axios
+<<<<<<< HEAD
       .get(`http://172.30.1.57:8080/clubs/${category}`)
+=======
+      .get(`http://192.168.250.148:8080/clubs/${category}`)
+>>>>>>> 6a14075 ([Oh] 서버 연동)
       .then((Response) => {
         setData(Response.data);
       })

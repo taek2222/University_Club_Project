@@ -19,7 +19,7 @@ function Memo() {
   const [memos, setMemos] = useState([]);
 
   useEffect(() => {
-    axios.get('http://172.30.1.57:8080/memos/all')
+    axios.get('http://192.168.250.148:8080/memos/all')
       .then(response => {
         setMemos(response.data);
       })

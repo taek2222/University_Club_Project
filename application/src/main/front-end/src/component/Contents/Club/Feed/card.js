@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import axios from 'axios';
 
 import Modal from "../Modal/modal"; // 모달 창
 import ModalContents from "../Modal/modalcontent"; // 모달 내용
@@ -33,6 +34,25 @@ const Card = ({
     }
     setIsLiked(!isLiked);
   };
+
+  // const toggleLike = async () => {
+  //   setIsLiked(!isLiked);
+  //   const newLikes = isLiked ? likes - 1 : likes + 1;
+  //   setLikes(newLikes);
+  //   setHeartBurst(!isLiked);
+  
+  //   try {
+  //     await axios.patch(`/api/likes/${clubId}`, {
+  //       isLiked: !isLiked
+  //     });
+  //   } catch (error) {
+  //     console.error('Error toggling like status:', error);
+  //     setIsLiked(isLiked);
+  //     setLikes(likes);
+  //   } finally {
+  //     setTimeout(() => setHeartBurst(false), 1400);
+  //   }
+  // };
 
   // 모달 창
   const openModal = () => setIsModalOpen(true);
