@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import axios from 'axios';
+import axios from 'axios';
 
 import Modal from "../Modal/modal"; // 모달 창
 import ModalContents from "../Modal/modalcontent"; // 모달 내용
@@ -21,38 +21,26 @@ const Card = ({
   useEffect(() => {
     setLikes(initialLikes);
   }, [initialLikes]);
-  
-  // 하트 (좋아요)
-  const toggleLike = () => {
-    if (isLiked) {
-      setLikes(likes - 1);
-      setTimeout(() => setHeartBurst(false), 0);
-    } else {
-      setLikes(likes + 1);
-      setHeartBurst(true); // 애니메이션 START
-      setTimeout(() => setHeartBurst(false), 1400); // 애니메이션 종료 후 상태 리셋
-    }
-    setIsLiked(!isLiked);
-  };
 
-  // const toggleLike = async () => {
-  //   setIsLiked(!isLiked);
-  //   const newLikes = isLiked ? likes - 1 : likes + 1;
-  //   setLikes(newLikes);
-  //   setHeartBurst(!isLiked);
+  const toggleLike = async () => {
+    setIsLiked(!isLiked);
+    const newLikes = isLiked ? likes - 1 : likes + 1;
+    setLikes(newLikes);
+    setHeartBurst(!isLiked);
   
-  //   try {
-  //     await axios.patch(`/api/likes/${clubId}`, {
-  //       isLiked: !isLiked
-  //     });
-  //   } catch (error) {
-  //     console.error('Error toggling like status:', error);
-  //     setIsLiked(isLiked);
-  //     setLikes(likes);
-  //   } finally {
-  //     setTimeout(() => setHeartBurst(false), 1400);
-  //   }
-  // };
+    try {
+      await axios.patch(`http://localhost:8080/initialLikes/likes`, {
+        "clubId": clubId,
+        "isLiked": !isLiked
+      });
+    } catch (error) {
+      console.error('Error toggling like status:', error);
+      setIsLiked(isLiked);
+      setLikes(likes);
+    } finally {
+      setTimeout(() => setHeartBurst(false), 1400);
+    }
+  };
 
   // 모달 창
   const openModal = () => setIsModalOpen(true);
