@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import apiClient from "api";
 
 import Modal from "../Modal/modal"; // 모달 창
 import ModalContents from "../Modal/modalcontent"; // 모달 내용
@@ -29,7 +29,7 @@ const Card = ({
     setHeartBurst(!isLiked);
   
     try {
-      await axios.patch(`http://localhost:8080/initialLikes/likes`, {
+      await apiClient.patch(`/initialLikes/likes`, {
         "clubId": clubId,
         "isLiked": !isLiked
       });

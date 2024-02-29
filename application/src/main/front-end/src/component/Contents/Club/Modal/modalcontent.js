@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-
 import SwiperImage from "./swiperimage";
-import { TextComponent } from "./formatText";
+import apiClient from 'api';
 
+import { TextComponent } from "./formatText";
 import LocationIcon from "../../../../image/club_image/modal/location.png";
 
 const ModalContents = ({ clubId, tags }) => {
@@ -12,8 +11,8 @@ const ModalContents = ({ clubId, tags }) => {
 
   useEffect(() => {
     setIsLoading(true);
-    axios
-      .get(`http://192.168.250.148:8080/club/modal/${clubId}`)
+    apiClient
+      .get(`/club/modal/${clubId}`)
       .then((Response) => {
         setData(Response.data);
         setIsLoading(false);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar } from 'swiper/modules';
-import axios from 'axios';
+import apiClient from 'api.js';
 
 import 'swiper/css';
 import 'swiper/css/scrollbar';
@@ -19,7 +19,7 @@ function Memo() {
   const [memos, setMemos] = useState([]);
 
   useEffect(() => {
-    axios.get('http://192.168.250.148:8080/memos/all')
+    apiClient.get('/memos/all')
       .then(response => {
         setMemos(response.data);
       })

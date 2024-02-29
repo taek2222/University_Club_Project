@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useEffect, useState } from "react";
-
-import axios from "axios";
+import apiClient from 'api';
 
 import Card from "./Feed/card.js";
 
@@ -9,8 +8,7 @@ function Feed({ category }) {
   const [data, setData] = useState([]); // API 데이터 값
 
   useEffect(() => {
-    axios
-      .get(`http://192.168.250.148:8080/clubs/${category}`)
+      apiClient.get(`/clubs/${category}`)
       .then((Response) => {
         setData(Response.data);
       })
