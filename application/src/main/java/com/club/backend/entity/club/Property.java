@@ -20,9 +20,6 @@ public class Property {
     @Column(name="tags")
     private List<String> tags;
 
-    @Column(name="initial_likes")
-    private int initialLikes;
-
     @Column(name="image_url")
     private String imageUrl;
 

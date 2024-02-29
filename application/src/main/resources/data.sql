@@ -33,25 +33,25 @@ INSERT INTO CLUB (club_name, type_id) VALUES ('JDM', 4);
 INSERT INTO CLUB (club_name, type_id) VALUES ('RCY', 5);
 
 -- 동아리 속성
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (1, 82, 'main.JPG', 'icon.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (2, 83, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (3, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (4, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (5, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (6, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (7, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (8, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (9, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (10, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (11, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (12, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (13, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (14, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (15, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (16, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (17, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (18, 87, 'feed_test.png', 'feed_test.png');
-INSERT INTO PROPERTY (club_id, initial_likes, image_url, icon_url) VALUES (19, 87, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (1, 'main.JPG', 'icon.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (2, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (3, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (4, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (5, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (6, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (7, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (8, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (9, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (10, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (11, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (12, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (13, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (14, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (15, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (16, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (17, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (18, 'feed_test.png', 'feed_test.png');
+INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (19, 'feed_test.png', 'feed_test.png');
 
 -- 동아리 태그
 INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (1, '농담'), (1, '한국');
@@ -115,6 +115,27 @@ INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, modal_url) values (16, '0_1.png');
 INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, modal_url) values (17, '0_1.png');
 INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, modal_url) values (18, '0_1.png');
 INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, modal_url) values (19, '0_1.png');
+
+-- 동아리 좋아요 수
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (1, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (2, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (3, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (4, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (5, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (6, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (7, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (8, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (9, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (10, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (11, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (12, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (13, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (14, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (15, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (16, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (17, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (18, 82);
+INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (19, 82);
 
 -- 메모 실험용 데이터
 INSERT INTO memo (memo_id, major, class_of, student_name, content) values (1, '컴퓨터공학과', '20191758', '유재현', '해시태그 화이팅!');

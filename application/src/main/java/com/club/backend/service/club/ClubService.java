@@ -2,8 +2,10 @@ package com.club.backend.service.club;
 
 import com.club.backend.dto.club.ClubDTO;
 import com.club.backend.entity.club.Club;
+import com.club.backend.entity.club.InitialLikes;
 import com.club.backend.entity.club.Property;
 import com.club.backend.repository.club.ClubRepository;
+import com.club.backend.repository.club.InitialLikesRepository;
 import com.club.backend.repository.club.PropertyRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,9 @@ public class ClubService {
     @Autowired
     private PropertyRepository propertyRepository;
 
+    @Autowired
+    private InitialLikesRepository initialLikesRepository;
+
     public List<ClubDTO> getClubAllSearch() { // 동아리 전체 요청
         List<Club> clubs = clubRepository.findAll();
         return clubs.stream().map(this::convertToDTO).collect(Collectors.toList());
@@ -34,11 +39,14 @@ public class ClubService {
         Property property = propertyRepository.findById(club.getClubId())
                 .orElseThrow(() -> new EntityNotFoundException("Property not found for club id: " + club.getClubId()));
 
+        InitialLikes initialLikes = initialLikesRepository.findById(club.getClubId())
+                .orElseThrow(() -> new EntityNotFoundException("InitialLikes not found for club id: " + club.getClubId()));
+
         ClubDTO dto = new ClubDTO();
         dto.setClubId(club.getClubId());
         dto.setClubName(club.getClubName());
         dto.setTags(property.getTags());
-        dto.setInitialLikes(property.getInitialLikes());
+        dto.setInitialLikes(initialLikes.getInitialLikes());
         dto.setImageUrl(property.getImageUrl());
         dto.setIconUrl(property.getIconUrl());
 
