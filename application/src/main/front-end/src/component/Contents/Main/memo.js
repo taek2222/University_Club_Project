@@ -40,20 +40,20 @@ function Memo() {
           <SwiperSlide key={index}>
             <div className='mt-6'>
               <div className="flex justify-center">
-                <div className={`flex justify-center border mx-3 px-5 w-[250px] min-h-60 mb-12 shadow-lg rounded-lg
+                <div className={`flex justify-center border mx-3 px-5 w-[250px] mb-12 shadow-lg rounded-lg
                   ${index % 2 === 0 ? '-rotate-6' : 'rotate-12'} ${getRandomColor()}`}>
-                    <div className={`text-center mt-5`}>
+                    <div className={`text-center mt-5 mb-5`}>
                       <img src={pin} alt='pin' className='w-8 h-8 mx-auto' />
-                      <p className='text-3xl mt-10' style={{fontFamily:"Nanum Pen Script"}}>{memos[index*2]?.major}</p>
-                      <p className='text-2xl mt-5' style={{fontFamily:"Nanum Pen Script"}}>{memos[index*2]?.content}</p>
+                      <p className='text-3xl mt-3' style={{fontFamily:"Nanum Pen Script"}}>{memos[index*2]?.major}</p>
+                      <p className='text-2xl mt-3 mb-5' style={{fontFamily:"Nanum Pen Script"}}>{memos[index*2]?.content}</p>
                     </div>
                 </div>
               </div>
               <div className="flex justify-center max-w-[500px]">
-                <div className={`flex justify-center border min-w-[180px] w-[300px] h-52 mb-12 shadow-lg rounded-lg
+                <div className={`flex justify-center border min-w-[180px] w-[300px] px-2 mb-12 shadow-lg rounded-lg
                   ${index % 2 === 0 ? '' : '-rotate-6'} ${getRandomColor()}`}>
-                  <div className={`text-center mt-5`}>
-                    <img src={pin} alt='pin' className='w-8 h-8 mx-auto' />
+                  <div className={`text-center mt-5 mb-5`}>
+                    <img src={pin} alt='pin' className='w-8 h-8 -mt-3 mx-auto' />
                     <p className='text-3xl mt-4' style={{fontFamily:"Nanum Pen Script"}}>{memos[index*2 + 1]?.major}</p>
                     <p className='text-2xl mt-5' style={{fontFamily:"Nanum Pen Script"}}>{memos[index*2 + 1]?.content}</p>
                   </div>

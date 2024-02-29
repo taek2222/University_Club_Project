@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import axios from 'axios';
 
-const Modal = ({ isOpen, onClose, children }) => {
+const Modal = ({ isOpen, onClose }) => {
 
   const initialFormData = {
-    major: "",
+    major: "간호학과",
     classOf: "",
     name: "",
     content: ""
   };
 
+  const majors = ["간호학과", "기계공학과", "다문화학과", "멀티미디어공학과", "사회복지학과", "산업경영공학과", "유아교육과", "자동차공학과", "전기공학과", "정보통신공학과", "컴퓨터공학과"];
+
   const [formData, setFormData] = useState(initialFormData);
+  const [isAnonymous, setIsAnonymous] = useState(false);
 
   if (!isOpen) return null;
 
@@ -19,6 +22,25 @@ const Modal = ({ isOpen, onClose, children }) => {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleAnonymousCheckboxChange = (e) => {
+    setIsAnonymous(e.target.checked);
+    if (e.target.checked) {
+      setFormData({
+        ...formData,
+        studentName: "익명",
+      });
+    } else {
+      setFormData({
+        ...formData,
+        studentName: "",
+      });
+    }
+  };
+
+  const handleVisible = () => {
+    return isAnonymous ? { display: "none" } : {};
   };
 
   const handleBackgroundClick = (e) => { // 배경 클릭 시 닫기
@@ -71,24 +93,32 @@ const Modal = ({ isOpen, onClose, children }) => {
                     <p className="text-xs text-left font-bold text-red-600">
                         해당 정보는 관리자의 승인을 통해 홈페이지에 반영됩니다.
                     </p>
+                    <br />
                     <label className="text-lg text-left font-bold mt-3">
                         학과 :
-                        <input type="text" name="major" value={formData.major} onChange={handleInputChange} className="w-full border-2 border-inherit p-2 h-12" />
+                        <select name="major" value={formData.major} onChange={handleInputChange} className="ml-3 font-normal border-2">
+                          {majors.map((major) => (
+                            <option value={`${major}`}>{major}</option>
+                          ))}
+                        </select>
+                        <br />
                     </label>
 
                     <label className="text-lg text-left font-bold mt-3">
                         학번 :
-                        <input type="text" name="classOf" value={formData.classOf} onChange={handleInputChange} className="w-full border-2 border-inherit p-2 h-12" />
+                        <input type="text" name="classOf" value={formData.classOf} onChange={handleInputChange} className="w-full border-2 border-inherit p-2 h-12 font-normal" />
                     </label>
 
                     <label className="text-lg text-left font-bold mt-3">
                         이름 :
-                        <input type="text" name="studentName" value={formData.studentName} onChange={handleInputChange} className="w-full border-2 border-inherit p-2 h-12" />
+                        <label className="ml-[530px]">익명</label>
+                        <input type="checkbox" name="studentName" value={formData.studentName} onChange={handleAnonymousCheckboxChange} className="ml-3" />
+                        <input type="text" name="studentName" value={formData.studentName} onChange={handleInputChange} style={handleVisible()} className="w-full border-2 border-inherit p-2 h-12 font-normal" />
                     </label>
 
                     <label className="text-lg font-bold mt-3">
                         내용 :
-                        <textarea type="text" name="content" value={formData.content} onChange={handleInputChange} className="min-h-28 w-full border-2 border-inherit p-2" />
+                        <textarea type="text" name="content" placeholder="글자 수 100자 이하로 작성" value={formData.content} onChange={handleInputChange} className="min-h-28 w-full border-2 border-inherit p-2 font-normal" />
                     </label>
                 </form>
             </div>
