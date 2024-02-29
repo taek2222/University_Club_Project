@@ -7,12 +7,4 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class PropertyController {
-
-    @Autowired
-    private PropertyService propertyService;
-
-    @PatchMapping("/property/likes")
-    public PropertyDTO patchLikes(@RequestBody PropertyDTO dto) {
-        return dto;
-    }
 }
