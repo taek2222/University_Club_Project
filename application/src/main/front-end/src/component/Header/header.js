@@ -38,8 +38,8 @@ function Header({ activeMainContent, setActiveMainContent }) {
         />
         <HeaderRecycle
           imageSrc={Join}
-          altText="가입 신청"
-          label="가입 신청"
+          altText="가입신청"
+          label="가입신청"
           onClick={() => setActiveMainContent('Join')}
           scale = {activeMainContent === 'Join' ? 'scale-110' : 'scale-100'}
         />
