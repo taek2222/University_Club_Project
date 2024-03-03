@@ -14,4 +14,5 @@ public class MemoDTO {
     private String classOf;
     private String studentName;
     private String content;
+    private String color;
 }

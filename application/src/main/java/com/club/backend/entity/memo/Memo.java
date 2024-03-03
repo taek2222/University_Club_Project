@@ -27,4 +27,7 @@ public class Memo {
 
     @Column(name="content", columnDefinition = "TEXT")
     private String content;
+
+    @Column(name="color")
+    private String color;
 }

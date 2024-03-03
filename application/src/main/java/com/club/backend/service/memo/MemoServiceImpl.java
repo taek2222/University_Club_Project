@@ -21,6 +21,7 @@ public class MemoServiceImpl implements MemoService {
         memo.setClassOf(memoDTO.getClassOf());
         memo.setStudentName(memoDTO.getStudentName());
         memo.setContent(memoDTO.getContent());
+        memo.setColor(memoDTO.getColor());
 
         return Optional.ofNullable(memoRepository.save(memo));
     }
