@@ -37,11 +37,11 @@ function Join() {
             </div>
 
             {/* [중간] 동아리 상세 정보 */}
-            <div className="flex flex-row mt-1 text-gray-400 drop-shadow-none text-sm sm:text-base md:text-lg">
+            <div className="flex flex-row mt-1 text-gray-500 drop-shadow-none text-sm sm:text-base md:text-lg">
               <p>종교</p>
-              <div className="mx-3 w-1 h-full rounded-full drop-shadow-2xl bg-gray-300" />
+              <div className="mx-3 w-1 h-full rounded-full drop-shadow-2xl bg-gray-400" />
               <p>5명</p>
-              <div className="mx-3 w-1 h-full rounded-full drop-shadow-2xl bg-gray-300" />
+              <div className="mx-3 w-1 h-full rounded-full drop-shadow-2xl bg-gray-400" />
               <p>D-32</p>
             </div>
           </div>
