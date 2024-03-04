@@ -21,10 +21,10 @@ function Join() {
   return (
     <div className="flex justify-center">
       <div className="p-4 max-w-2xl w-full">
-        <div className="flex flex-row border-2 border-gray-300 rounded-2xl drop-shadow-sm">
+        <div className="flex flex-row border-2 border-gray-600 rounded-2xl drop-shadow-sm">
 
           {/* [왼쪽] 동아리 이미지 */}
-          <div className="flex w-3/12 border-r-2 justify-center border-gray-300 rounded-l-2xl overflow-hidden">
+          <div className="flex w-3/12 border-r-2 justify-center border-gray-600 rounded-l-2xl overflow-hidden">
             <img className="h-20" src={test1} alt="" />
           </div>
 
@@ -47,7 +47,7 @@ function Join() {
           </div>
 
           {/* [오른쪽] 동아리 신청 경로 */}
-          <div className="flex flex-col w-3/12 justify-center items-center border-l-2 border-gray-300 drop-shadow-md">
+          <div className="flex flex-col w-3/12 justify-center items-center border-l-2 border-gray-600 drop-shadow-md">
             <ApplicationPaths icons={icons} activeStates={activeStates} />
           </div>
         </div>
