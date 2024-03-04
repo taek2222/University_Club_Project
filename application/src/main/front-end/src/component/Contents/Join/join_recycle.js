@@ -1,5 +1,21 @@
 import React from "react";
+import ApplicationPaths from "./applicationpaths";
+
 import test1 from "../../../image/test1.png";
+
+import Naver from "../../../image/join_image/naver.png";
+import Google from "../../../image/join_image/google.png";
+import Kakao from "../../../image/join_image/kakao.png";
+import Call from "../../../image/join_image/call.png";
+
+const icons = [
+  Naver,
+  Google,
+  Kakao,
+  Call
+];
+
+const activeStates = [true, true, true, true];
 
 function Join() {
   return (
@@ -31,8 +47,8 @@ function Join() {
           </div>
 
           {/* [오른쪽] 동아리 신청 경로 */}
-          <div className="flex w-3/12 justify-center items-center border-l-2 border-gray-300">
-            <p className="font-bold">신청경로</p>
+          <div className="flex flex-col w-3/12 justify-center items-center border-l-2 border-gray-300">
+            <ApplicationPaths icons={icons} activeStates={activeStates} />
           </div>
         </div>
       </div>
