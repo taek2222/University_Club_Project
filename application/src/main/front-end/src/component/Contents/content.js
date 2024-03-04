@@ -3,7 +3,7 @@ import React from "react";
 import Main from "../Contents/Main/main.js"
 import Club from "../Contents/Club/club.js"
 import Schedule from "./Calendar/schedule.js";
-import Join from "./Join/Join.js";
+import Join from "./Join/join_recycle.js";
 
 function Content( {activeMainContent} ) {
   return (
