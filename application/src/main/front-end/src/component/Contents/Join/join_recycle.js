@@ -32,12 +32,12 @@ function Join() {
           <div className="flex flex-col w-6/12 justify-center items-center">
 
             {/* [중간] 상단 큰 제목 */}
-            <div className="flex justify-center items-center font-bold text-lg sm:text-lg md:text-xl lg:text-2xl">
+            <div className="flex justify-center items-center font-bold drop-shadow-md text-lg sm:text-lg md:text-xl">
               <p>총동연 임원진 모집</p>
             </div>
 
             {/* [중간] 동아리 상세 정보 */}
-            <div className="flex flex-row mt-1 text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl">
+            <div className="flex flex-row mt-1 text-gray-400 drop-shadow-none text-sm sm:text-base md:text-lg">
               <p>종교</p>
               <div className="mx-3 w-1 h-full rounded-full drop-shadow-2xl bg-gray-300" />
               <p>5명</p>
@@ -47,7 +47,7 @@ function Join() {
           </div>
 
           {/* [오른쪽] 동아리 신청 경로 */}
-          <div className="flex flex-col w-3/12 justify-center items-center border-l-2 border-gray-300">
+          <div className="flex flex-col w-3/12 justify-center items-center border-l-2 border-gray-300 drop-shadow-md">
             <ApplicationPaths icons={icons} activeStates={activeStates} />
           </div>
         </div>
