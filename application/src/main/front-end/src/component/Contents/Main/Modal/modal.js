@@ -65,7 +65,7 @@ const Modal = ({ isOpen, onClose }) => {
         color: formData.color,
       };
 
-      const response = await apiClient.post('http://localhost:8080/memos/memo', memoDTO);
+      const response = await apiClient.post('/memos/memo', memoDTO);
 
       console.log('Memo saved successfully', response.data);
       setFormData(initialFormData);
