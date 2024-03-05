@@ -14,7 +14,7 @@ function HeaderRecycle({ onClick, imageSrc, altText, label, scale }) {
             </div>
           </div>
         </div>
-        <span className="text-lg font-bold" style={{fontFamily:"Gaegu"}}>{label}</span>
+        <span className="text-lg font-bold">{label}</span>
       </div> 
     )
 }
