@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import ApplicationPaths from "./applicationpaths";
 import Modal from "./Modal/modal";
 import ModalContents from "./Modal/modalcontent";
 
-function Join_Recycle({
+const Join_Recycle = ({
   clubImage,
   title,
   details,
   applicationPaths,
   applicationStates,
-}) {
+}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // 모달 창
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
-    <div className="flex flex-row w-full border-2 border-gray-400 rounded-2xl drop-shadow-sm">
+    <div
+      className="flex flex-row w-full border-2 border-gray-400 rounded-2xl drop-shadow-sm"
+      onClick={openModal}
+    >
       {/* [왼쪽] 동아리 이미지 */}
       <div className="flex w-3/12 border-r-2 justify-center border-gray-400 rounded-l-2xl overflow-hidden">
         <img className="h-20" src={clubImage} alt="Club_Image" />
@@ -44,8 +53,16 @@ function Join_Recycle({
           activeStates={applicationStates}
         />
       </div>
+
+      {/* 모달 */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      >
+        <ModalContents/>
+      </Modal>
     </div>
   );
-}
+};
 
 export default Join_Recycle;
