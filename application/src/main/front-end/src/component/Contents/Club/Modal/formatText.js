@@ -25,13 +25,12 @@ export const formatText = (text) => {
       );
     });
 
-    // 각 단락을 <p> 태그로 감싸서 반환합니다.
     return <p key={pIndex}>{paragraphContent}</p>;
   });
 };
 
 export const TextComponent = ({ Content }) => {
-  const maxLength = 200; // 최대 표시 길이, 필요에 따라 조정
+  const maxLength = 200;
   const [isExpanded, setIsExpanded] = useState(false);
   const [displayContent, setDisplayContent] = useState("");
 
