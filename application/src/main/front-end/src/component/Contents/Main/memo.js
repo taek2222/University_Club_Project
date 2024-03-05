@@ -46,7 +46,7 @@ function Memo() {
                       <img src={pin} alt='pin' className='w-8 h-8 mx-auto' />
                       <p className='text-2xl md:text-3xl mt-3'>{memos[index*2]?.major}</p>
                       <p className='text-lg md:text-2xl mt-3'>{memos[index*2]?.content}</p>
-                      <p className='text-lg md:text-2xl -mr-3 md:-mr-5 mt-3 mb-1 md:mb-3 text-right'>- {memos[index*2]?.studentName} -</p>
+                      <p className='text-lg md:text-2xl -mr-3 md:-mr-5 mt-3 mb-1 md:mb-3 text-right'>- {memos[index * 2]?.anonymous ? '익명' : memos[index * 2 + 1]?.studentName} -</p>
                     </div>
                 </div>
               </div>
@@ -57,7 +57,7 @@ function Memo() {
                     <img src={pin} alt='pin' className='w-8 h-8 -mt-3 mx-auto' />
                     <p className='text-2xl md:text-3xl mt-4'>{memos[index*2 + 1]?.major}</p>
                     <p className='text-lg md:text-2xl mt-3'>{memos[index*2 + 1]?.content}</p>
-                    <p className='text-lg md:text-2xl -mr-3 md:-mr-5 mt-3 mb-1 md:mb-3 text-right'>- {memos[index*2 + 1]?.studentName} -</p>
+                    <p className='text-lg md:text-2xl -mr-3 md:-mr-5 mt-3 mb-1 md:mb-3 text-right'>- {memos[index * 2 + 1]?.anonymous ? '익명' : memos[index * 2 + 1]?.studentName} -</p>
                   </div>
                 </div>
               </div>

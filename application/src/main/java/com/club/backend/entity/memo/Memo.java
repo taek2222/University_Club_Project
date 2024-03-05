@@ -22,6 +22,9 @@ public class Memo {
     @Column(name="class_of")
     private String classOf;
 
+    @Column(name="anonymous")
+    private Boolean anonymous;
+
     @Column(name="student_name")
     private String studentName;
 

@@ -19,6 +19,7 @@ public class MemoServiceImpl implements MemoService {
         Memo memo = new Memo();
         memo.setMajor(memoDTO.getMajor());
         memo.setClassOf(memoDTO.getClassOf());
+        memo.setAnonymous(memoDTO.getAnonymous());
         memo.setStudentName(memoDTO.getStudentName());
         memo.setContent(memoDTO.getContent());
         memo.setColor(memoDTO.getColor());

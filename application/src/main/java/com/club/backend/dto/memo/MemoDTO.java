@@ -12,6 +12,7 @@ public class MemoDTO {
     private Long memoId;
     private String major;
     private String classOf;
+    private Boolean anonymous;
     private String studentName;
     private String content;
     private String color;
