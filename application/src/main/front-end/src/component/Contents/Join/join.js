@@ -7,7 +7,9 @@ import Naver from "../../../image/join_image/naver.png";
 import Google from "../../../image/join_image/google.png";
 import Kakao from "../../../image/join_image/kakao.png";
 import Call from "../../../image/join_image/call.png";
+
 import ClubImage from "../../../image/test1.png";
+import TestImage from "image/join_image/feed_test.png"
 
 const recycleData = [
   {
@@ -18,11 +20,11 @@ const recycleData = [
     applicationStates: [true, true, true, true],
   },
   {
-    clubImage: ClubImage,
-    title: "사진작가 모집합니다! 📸",
-    details: ["프레이즈", "취미", "D-20"],
+    clubImage: TestImage,
+    title: "테스트",
+    details: ["테스트", "테스트", "D-20"],
     applicationPaths: [Naver, Google, Kakao, Call],
-    applicationStates: [true, false, true, false],
+    applicationStates: [false, false, true, false],
   }
 ];
 
