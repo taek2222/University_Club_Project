@@ -4,7 +4,7 @@ INSERT INTO TYPE (field) VALUES ('체육');
 INSERT INTO TYPE (field) VALUES ('취미');
 INSERT INTO TYPE (field) VALUES ('종교');
 INSERT INTO TYPE (field) VALUES ('봉사');
-INSERT INTO TYPE (field) VALUES ('총동연');
+INSERT INTO TYPE (field) VALUES ('학회');
 
 -- 동아리
 INSERT INTO CLUB (club_name, type_id) VALUES ('총동연', 6);
@@ -148,3 +148,12 @@ INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, co
 INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color) values (108, '전기공학과', '70000000', false, '홍은채', '응원문구 테스트7', 'bg-violet-200');
 INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color) values (109, '다문화학과', '80000000', false, '장원영', '응원문구 테스트8', 'bg-purple-200');
 INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color) values (1010, '멀티미디어학과', '90000000', false, '안유진', '응원문구 테스트9', 'bg-fuchsia-200');
+
+-- 가입 신청 동아리
+INSERT INTO JOIN_TABLE(club_id, icon_image, title) values (1, '1_1.png', '총동연 임원진 모집');
+
+-- 가입 경로
+INSERT INTO JOIN_PATHS(join_club_id, paths) values (1, false), (1, false), (1, false), (1, false);
+
+-- 가입 기간
+INSERT INTO TERM(club_id, end_date, start_date) values (1, '2024-03-08', '2024-04-12');
