@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class InitialLikes {
     @Id
     @Column(name="club_id")
-    private int ClubId;
+    private int clubId;
 
     @Column(name="initial_likes")
     private int initialLikes;
