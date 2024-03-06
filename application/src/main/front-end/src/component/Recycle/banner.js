@@ -13,7 +13,7 @@ function Banner({ title, subtitle }) {
     }, []);
   
     return (
-      <div className="relative w-full max-w-xl mx-auto rounded-lg shadow-md mb-6 overflow-hidden">
+      <div className="relative w-full mx-auto rounded-lg shadow-md mb-6 overflow-hidden">
         <img
           src={BannerImage}
           alt="Background"
