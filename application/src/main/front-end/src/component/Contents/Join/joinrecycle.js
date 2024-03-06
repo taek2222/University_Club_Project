@@ -18,14 +18,14 @@ const Join_Recycle = ({
   return (
     <>
       <div onClick={openModal}>
-        <div className="flex flex-row w-full border-2 border-gray-400 rounded-2xl drop-shadow-sm mb-4">
+        <div className="flex flex-row w-full h-20 border-2 border-gray-400 rounded-2xl drop-shadow-sm mb-4">
           {/* [왼쪽] 동아리 이미지 */}
-          <div className="flex w-3/12 border-r-2 justify-center border-gray-400 rounded-l-2xl overflow-hidden">
-            <img className="h-20" src={clubImage} alt="Club_Image" />
+          <div className="flex w-2/12 border-r-2 justify-center border-gray-400 rounded-l-2xl overflow-hidden">
+            <img className="object-contain" src={clubImage} alt="Club_Image" />
           </div>
 
           {/* [중간] 동아리 홍보 상세 정보 */}
-          <div className="flex flex-col w-6/12 justify-center items-center">
+          <div className="flex flex-col w-7/12 justify-center items-center">
             {/* [중간] 상단 큰 제목 */}
             <div className="flex justify-center items-center font-bold drop-shadow-md text-lg sm:text-lg md:text-xl">
               <p>{title}</p>

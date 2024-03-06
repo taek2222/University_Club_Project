@@ -19,7 +19,7 @@ const recycleData = [
   },
   {
     clubImage: ClubImage,
-    title: "사진작가 모집합니다!📸",
+    title: "사진작가 모집합니다! 📸",
     details: ["프레이즈", "취미", "D-20"],
     applicationPaths: [Naver, Google, Kakao, Call],
     applicationStates: [true, false, true, false],
