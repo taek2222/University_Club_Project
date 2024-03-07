@@ -22,11 +22,11 @@ public class Join {
     private String iconImage;
 
     @Column(name="title")
-    private String Title;
+    private String title;
 
     @ElementCollection
     @Column(name="paths")
-    private List<Boolean> Paths;
+    private List<Boolean> paths;
 
     @OneToOne
     @MapsId
