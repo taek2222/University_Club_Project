@@ -156,4 +156,4 @@ INSERT INTO JOIN_TABLE(club_id, icon_image, title) values (1, '1_1.png', '총동
 INSERT INTO JOIN_PATHS(join_club_id, paths) values (1, false), (1, false), (1, false), (1, false);
 
 -- 가입 기간
-INSERT INTO TERM(club_id, end_date, start_date) values (1, '2024-03-08', '2024-04-12');
+INSERT INTO TERM(club_id, start_date, end_date) values (1, '2024-03-08', '2024-04-12');
