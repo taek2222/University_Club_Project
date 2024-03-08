@@ -8,5 +8,5 @@ import java.util.Optional;
 
 public interface MemoService {
     Optional<Memo> saveMemo(MemoDTO memoDTO);
-    List<Memo> getAllMemos();
+    Optional<List<Memo>> getAllMemos();
 }

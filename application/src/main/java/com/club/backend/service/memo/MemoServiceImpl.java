@@ -28,7 +28,7 @@ public class MemoServiceImpl implements MemoService {
     }
 
     @Override
-    public List<Memo> getAllMemos() {
-        return memoRepository.findAll();
+    public Optional<List<Memo>> getAllMemos() {
+        return Optional.ofNullable(memoRepository.findAll());
     }
 }

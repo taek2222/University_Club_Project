@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -16,8 +17,8 @@ public class MemoController {
     private final MemoService memoService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<Memo>> getAllMemos() {
-        List<Memo> memos = memoService.getAllMemos();
+    public ResponseEntity<Optional<List<Memo>>> getAllMemos() {
+        Optional<List<Memo>> memos = memoService.getAllMemos();
         return ResponseEntity.ok().body(memos);
     }
 

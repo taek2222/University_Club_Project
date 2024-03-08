@@ -10,7 +10,9 @@ import java.time.LocalDateTime;
 public class ScheduleDTO {
     private int scheduleId;
     private int clubId;
+    private String clubName;
+    private String field;
+    private String iconImage;
     private String part;
-    private int tag;
     private LocalDateTime eventTime;
 }

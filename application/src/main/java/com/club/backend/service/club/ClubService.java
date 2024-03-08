@@ -8,6 +8,7 @@ import com.club.backend.repository.club.ClubRepository;
 import com.club.backend.repository.club.InitialLikesRepository;
 import com.club.backend.repository.club.PropertyRepository;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,15 +16,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class ClubService {
-    @Autowired
-    private ClubRepository clubRepository;
-
-    @Autowired
-    private PropertyRepository propertyRepository;
-
-    @Autowired
-    private InitialLikesRepository initialLikesRepository;
+    private final ClubRepository clubRepository;
+    private final PropertyRepository propertyRepository;
+    private final InitialLikesRepository initialLikesRepository;
 
     public List<ClubDTO> getClubAllSearch() { // 동아리 전체 요청
         List<Club> clubs = clubRepository.findAll();

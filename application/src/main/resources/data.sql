@@ -160,3 +160,7 @@ INSERT INTO JOIN_PATHS(join_club_id, paths) values (2, true), (2, true), (2, tru
 -- 가입 기간
 INSERT INTO TERM(club_id, start_date, end_date) values (1, '2024-03-08', '2024-04-12');
 INSERT INTO TERM(club_id, start_date, end_date) values (2, '2024-03-17', '2024-04-12');
+
+-- 공연 동아리
+INSERT INTO schedule(schedule_id, club_id, icon_image, part, event_time) values (1, 2, '1_1.png', 1, '2024-03-08 23:11:00');
+INSERT INTO schedule(schedule_id, club_id, icon_image, part, event_time) values (2, 3, '1_1.png', 2, '2024-03-08 23:11:30');
