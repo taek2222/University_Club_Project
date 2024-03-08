@@ -4,7 +4,7 @@ import Main from "./Main/main.js"
 import Club from "./Club/club.js"
 import Delivery from "./Delivery/delivery.js"
 import Join from "./Join/join.js"
-import Schedule from "./Calendar/schedule.js"
+import Schedule from "./Schedule/schedule.js"
 
 function Content( {activeMainContent} ) {
   return (
