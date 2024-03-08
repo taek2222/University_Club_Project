@@ -4,7 +4,7 @@ import apiClient from 'api';
 
 import { TextComponent } from "./formatText";
 
-const ModalContents = ({clubId, title, applicationPaths, paths}) => {
+const ModalContents = ({clubId, title, pathsIcons, paths}) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -54,7 +54,7 @@ const ModalContents = ({clubId, title, applicationPaths, paths}) => {
 
       {/* 가입 경로 */}
       <div className="flex justify-center items-center space-x-4 mt-4">
-        {applicationPaths.map((icon, index) => paths[index] ? (
+        {pathsIcons.map((icon, index) => paths[index] ? (
           <button key={index} onClick={() => navigateTo(Object.values(pathUrls)[index])} className="focus:outline-none">
             <img src={icon} alt={`Path ${index}`} className="w-10 h-10" />
           </button>

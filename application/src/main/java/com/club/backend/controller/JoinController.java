@@ -13,7 +13,7 @@ public class JoinController {
     @Autowired
     private JoinService joinService;
 
-    @GetMapping("/test")
+    @GetMapping("/joins/all")
     public List<JoinDTO> getJoinsByAll() {
         return joinService.getJoinAllSearch();
     }

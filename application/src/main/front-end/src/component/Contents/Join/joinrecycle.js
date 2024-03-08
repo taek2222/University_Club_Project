@@ -20,7 +20,7 @@ const Join_Recycle = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-  const applicationPaths = [Naver, Google, Kakao, Call];
+  const pathsIcons = [Naver, Google, Kakao, Call];
 
   return (
     <>
@@ -54,7 +54,7 @@ const Join_Recycle = ({
           {/* [오른쪽] 동아리 신청 경로 */}
           <div className="flex flex-col w-3/12 justify-center items-center border-l-2 border-gray-400 drop-shadow-md">
             <ApplicationPaths
-              icons={applicationPaths}
+              icons={pathsIcons}
               activeStates={paths}
             />
           </div>
@@ -67,7 +67,7 @@ const Join_Recycle = ({
         <ModalContents
           clubId={clubId}
           title={title}
-          applicationPaths={applicationPaths}
+          pathsIcons={pathsIcons}
           paths={paths}
         />
       </Modal>

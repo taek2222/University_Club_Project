@@ -7,7 +7,7 @@ function Join() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    apiClient.get(`/test`)
+    apiClient.get(`/joins/all`)
     .then((Response) => {
       setData(Response.data);
     })
