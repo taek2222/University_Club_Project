@@ -4,7 +4,7 @@ import apiClient from 'api';
 
 import { TextComponent } from "./formatText";
 
-const ModalContents = () => {
+const ModalContents = ({clubId, title, pathsIcons, paths}) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -26,6 +26,17 @@ const ModalContents = () => {
     return <div>Loading...</div>;
   }
 
+  const pathUrls = {
+    naver: "https://www.naver.com",
+    google: "https://www.google.com",
+    kakao: "https://www.kakao.com",
+    call: "tel:+1234567890",
+  };
+
+  const navigateTo = (url) => {
+    window.open(url, '_blank').focus();
+  };
+
   return (
     <div className="overflow-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px]">
       {/* 이미지 슬라이드 */}
@@ -34,24 +45,20 @@ const ModalContents = () => {
       </div>
 
       {/* 부스 (제목) */}
-      <p className="text-xl text-center font-bold mt-5">{data.modalTitle}</p>
+      <p className="text-xl text-center font-bold mt-5">{title}</p>
 
       {/* 부스 (내용) */}
       <div className="px-4 pt-2">
         <TextComponent Content={data.modalContents} />
       </div>
 
-      <div className="border-t-4 border-gray-300 my-4 drop-shadow" />
-
-      {/* 하단 버튼 */}
-      {/* [추가] 위치 추가 시 버튼 연결 작업 */}
-      <div className="flex justify-center space-x-3 mb-4">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-9 rounded-full">
-          부스 위치
-        </button>
-        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-9 rounded-full">
-          부원 모집
-        </button>
+      {/* 가입 경로 */}
+      <div className="flex justify-center items-center space-x-4 mt-4">
+        {pathsIcons.map((icon, index) => paths[index] ? (
+          <button key={index} onClick={() => navigateTo(Object.values(pathUrls)[index])} className="focus:outline-none">
+            <img src={icon} alt={`Path ${index}`} className="w-10 h-10" />
+          </button>
+        ) : null)}
       </div>
     </div>
   );

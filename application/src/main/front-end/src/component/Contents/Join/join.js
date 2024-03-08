@@ -1,34 +1,23 @@
-import React from "react";
+import React, { useState ,useEffect } from "react";
+import apiClient from 'api';
 import JoinRecycle from "./joinrecycle";
 import Banner from "component/Recycle/banner";
 
-// 이미지 임포트
-import Naver from "../../../image/join_image/naver.png";
-import Google from "../../../image/join_image/google.png";
-import Kakao from "../../../image/join_image/kakao.png";
-import Call from "../../../image/join_image/call.png";
-
-import ClubImage from "../../../image/test1.png";
-import TestImage from "image/join_image/feed_test.png"
-
-const recycleData = [
-  {
-    clubImage: ClubImage,
-    title: "총동연 임원진 모집",
-    details: ["총동연", "학회", "D-32"],
-    applicationPaths: [Naver, Google, Kakao, Call],
-    applicationStates: [true, true, true, true],
-  },
-  {
-    clubImage: TestImage,
-    title: "테스트",
-    details: ["테스트", "테스트", "D-20"],
-    applicationPaths: [Naver, Google, Kakao, Call],
-    applicationStates: [false, false, true, false],
-  }
-];
-
 function Join() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    apiClient.get(`/joins/all`)
+    .then((Response) => {
+      setData(Response.data);
+    })
+    .catch((Error) => {
+      console.log(Error);
+    });
+  }, []);
+
+  console.log(data);
+
   return (
     <div className="flex flex-col items-center justify-center w-full">
       {/* 배너 */}
@@ -38,14 +27,13 @@ function Join() {
       />
 
       <div className="relative flex flex-col justify-center w-full max-w-xl mx-auto px-3">
-        {recycleData.map((data, index) => (
+        {data.map((join, index) => (
           <JoinRecycle
-            key={index}
-            clubImage={data.clubImage}
-            title={data.title}
-            details={data.details}
-            applicationPaths={data.applicationPaths}
-            applicationStates={data.applicationStates}
+            clubId={join.clubId}
+            iconImage={require(`image/join_image/icon/${join.iconImage}`)}
+            title={join.title}
+            details={[join.clubName, join.field, join.eventDate]}
+            paths={join.paths}
           />
         ))}
       </div>
