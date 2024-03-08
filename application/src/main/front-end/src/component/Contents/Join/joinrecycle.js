@@ -4,16 +4,23 @@ import ApplicationPaths from "./applicationpaths";
 import Modal from "./Modal/modal";
 import ModalContents from "./Modal/modalcontent";
 
+import Naver from "image/join_image/naver.png";
+import Google from "image/join_image/google.png";
+import Kakao from "image/join_image/kakao.png";
+import Call from "image/join_image/call.png";
+
 const Join_Recycle = ({
-  clubImage,
+  clubId,
+  iconImage,
   title,
   details,
-  applicationPaths,
-  applicationStates,
+  paths
 }) => {
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+  const applicationPaths = [Naver, Google, Kakao, Call];
 
   return (
     <>
@@ -21,7 +28,7 @@ const Join_Recycle = ({
         <div className="flex flex-row w-full h-20 border-2 border-gray-400 rounded-2xl drop-shadow-sm mb-4">
           {/* [왼쪽] 동아리 이미지 */}
           <div className="flex w-2/12 border-r-2 justify-center border-gray-400 rounded-l-2xl overflow-hidden">
-            <img className="object-contain" src={clubImage} alt="Club_Image" />
+            <img className="object-contain" src={iconImage} alt="Club_Image" />
           </div>
 
           {/* [중간] 동아리 홍보 상세 정보 */}
@@ -48,7 +55,7 @@ const Join_Recycle = ({
           <div className="flex flex-col w-3/12 justify-center items-center border-l-2 border-gray-400 drop-shadow-md">
             <ApplicationPaths
               icons={applicationPaths}
-              activeStates={applicationStates}
+              activeStates={paths}
             />
           </div>
         </div>
@@ -57,7 +64,12 @@ const Join_Recycle = ({
         isOpen={isModalOpen}
         onClose={closeModal}
       >
-        <ModalContents/>
+        <ModalContents
+          clubId={clubId}
+          title={title}
+          applicationPaths={applicationPaths}
+          paths={paths}
+        />
       </Modal>
     </>
   );
