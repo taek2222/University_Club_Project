@@ -1,2 +1,4 @@
-package com.club.backend.controller;public class ScheduleController {
+package com.club.backend.controller;
+
+public class ScheduleController {
 }

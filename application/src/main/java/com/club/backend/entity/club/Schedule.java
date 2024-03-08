@@ -1,11 +1,11 @@
-package com.club.backend.entity.schedule;
+package com.club.backend.entity.club;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,26 +13,22 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class schedule {
+public class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long scheduleId;
+    private int scheduleId;
 
-    @Column(name="part")
+    @ManyToOne
+    @JoinColumn(name = "club_id")
+    private Club club;
+
+    @Column(name = "part")
     private String part;
 
-    @Column(name="event_title")
-    private String eventTitle;
+    @Column(name = "tag")
+    private int tag;
 
-    @Column(name="club_name")
-    private String clubName;
-
-    @Column(name="tag")
-    private String tag;
-
-    @Column(name="event_time")
+    @Column(name = "event_time")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime eventTime;
-
-    @Column(name="icon_url")
-    private String iconUrl;
 }
