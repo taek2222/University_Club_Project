@@ -1,32 +1,63 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
-function Event({ event }) {
+function Event({ schedule, iconUrl }) {
+    const [isTimeConflict, setIsTimeConflict] = useState(false);
+
+    const formatEventTime = () => {
+        const dateObject = new Date(schedule.eventTime);
+        const formattedTime = `${String(dateObject.getHours()).padStart(2, '0')}:${String(dateObject.getMinutes()).padStart(2, '0')}`;
+        return formattedTime;
+    };
+
+    const formatEventEndTime = () => {
+        const dateObject = new Date(schedule.eventTime);
+        dateObject.setMinutes(dateObject.getMinutes() + 30);
+        const formattedTime = `${String(dateObject.getHours()).padStart(2, '0')}:${String(dateObject.getMinutes()).padStart(2, '0')}`;
+        return formattedTime;
+    };
+
+    useEffect(() => {
+        const currentTime = new Date();
+    
+        const eventStartTime = new Date(schedule.eventTime);
+        const eventEndTime = new Date(schedule.eventTime);
+        eventEndTime.setMinutes(eventEndTime.getMinutes() + 30);
+    
+        const isTimeConflict = currentTime >= eventStartTime && currentTime <= eventEndTime;
+    
+        setIsTimeConflict(isTimeConflict);
+      }, [schedule]);
+
     return(
-        <div className="flex justify-center items-center">
-            <div className="flex justify-between border rounded-lg mx-5 my-5 px-5 shadow-lg max-w-[500px]">
-                <div className="mx-3 my-5">
-                    <div className="mx-3 mt-4 font-bold text-xl">
-                        {event.eventTitle}
-                    </div>
-                    <div className="mx-3 my-5">
-                        {event.iconUrls.map((iconUrl, index) => (
-                            <div className="flex">
-                                <img
-                                    key={index}
-                                    className="w-8 h-8 mt-3 rounded-full border border-gray-500"
-                                    src={iconUrl}
-                                    alt="Club Icon"
-                                />
-                                <div className="flex flex-col mx-3">
-                                    <div className="mt-1 font-bold">{event.clubNames[index]}</div>
-                                    <div className="mb-4">{event.eventTimes[index]}</div>
+        <div className={`mx-3 my-5 ${isTimeConflict ? 'animate-pulse' : ''}`}>
+            <div className="flex">
+                {isTimeConflict && (
+                    <div className="flex flex-col items-center">
+                        <div className={`rounded-full p-[1.8px] mt-2 mb-1 bg-gradient-to-r from-yellow-400 via-pink-400 to-pink-600 transform transition-transform`}>
+                            <div className="rounded-full bg-white w-9 h-9 overflow-hidden flex justify-center items-center">
+                                <div className="flex w-[2.6rem] h-[2.6rem] border-0 rounded-full justify-center items-center">
+                                    <img
+                                        src={iconUrl}
+                                        alt="Club Icon"
+                                    />
                                 </div>
                             </div>
-                        ))}
+                        </div>
                     </div>
-                </div>
-                <div>
-                    
+                )}
+                {!isTimeConflict && (
+                    <div className="rounded-full bg-white w-10 h-10 mt-2 overflow-hidden flex justify-center items-center">
+                        <div className="flex w-[2.6rem] h-[2.6rem] border-0 rounded-full justify-center items-center">
+                            <img
+                                src={iconUrl}
+                                alt="Club Icon"
+                            />
+                        </div>
+                    </div>
+                )}
+                <div className="flex flex-col mx-3">
+                    <div className="mt-1 font-bold">{schedule.clubName}</div>
+                    <div className="mb-4">{formatEventTime()} ~ {formatEventEndTime()}</div>
                 </div>
             </div>
         </div>

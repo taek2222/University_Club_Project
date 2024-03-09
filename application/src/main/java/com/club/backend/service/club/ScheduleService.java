@@ -34,7 +34,7 @@ public class ScheduleService {
             scheduleDTO.setClubId(schedule.getClub().getClubId());
             scheduleDTO.setClubName(schedule.getClub().getClubName());
             scheduleDTO.setField(schedule.getClub().getType().getField());
-            scheduleDTO.setIconImage(schedule.getIconImage());
+            scheduleDTO.setIconUrl(schedule.getIconUrl());
             scheduleDTO.setPart(schedule.getPart());
             scheduleDTO.setEventTime(schedule.getEventTime());
             return scheduleDTO;

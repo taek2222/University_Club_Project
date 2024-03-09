@@ -12,7 +12,7 @@ public class ScheduleDTO {
     private int clubId;
     private String clubName;
     private String field;
-    private String iconImage;
+    private String iconUrl;
     private String part;
     private LocalDateTime eventTime;
 }

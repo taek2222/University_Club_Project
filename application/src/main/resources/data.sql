@@ -162,5 +162,8 @@ INSERT INTO TERM(club_id, start_date, end_date) values (1, '2024-03-08', '2024-0
 INSERT INTO TERM(club_id, start_date, end_date) values (2, '2024-03-17', '2024-04-12');
 
 -- 공연 동아리
-INSERT INTO schedule(schedule_id, club_id, icon_image, part, event_time) values (1, 2, '1_1.png', 1, '2024-03-08 23:11:00');
-INSERT INTO schedule(schedule_id, club_id, icon_image, part, event_time) values (2, 3, '1_1.png', 2, '2024-03-08 23:11:30');
+INSERT INTO schedule(schedule_id, club_id, icon_url, part, event_time) values (1, 2, '0_1.png', 1, '2024-03-09 13:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, part, event_time) values (2, 3, '0_1.png', 1, '2024-03-09 13:30');
+INSERT INTO schedule(schedule_id, club_id, icon_url, part, event_time) values (3, 4, '0_1.png', 2, '2024-03-09 15:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, part, event_time) values (4, 5, '0_1.png', 2, '2024-03-09 15:30');
+INSERT INTO schedule(schedule_id, club_id, icon_url, part, event_time) values (5, 6, '0_1.png', 3, '2024-03-09 18:00');

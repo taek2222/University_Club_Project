@@ -25,10 +25,10 @@ public class Schedule {
     @Column(name = "part")
     private String part;
 
-    @Column(name="icon_image")
-    private String iconImage;
+    @Column(name="icon_url")
+    private String iconUrl;
 
     @Column(name = "event_time")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime eventTime;
 }
