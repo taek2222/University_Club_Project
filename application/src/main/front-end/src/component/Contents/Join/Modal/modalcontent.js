@@ -30,7 +30,7 @@ const ModalContents = ({clubId, title, pathsIcons, paths}) => {
     naver: "https://www.naver.com",
     google: "https://www.google.com",
     kakao: "https://www.kakao.com",
-    call: "tel:+1234567890",
+    instargram: "https://www.instagram.com",
   };
 
   const navigateTo = (url) => {

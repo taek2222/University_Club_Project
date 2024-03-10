@@ -7,7 +7,7 @@ import ModalContents from "./Modal/modalcontent";
 import Naver from "image/join_image/naver.png";
 import Google from "image/join_image/google.png";
 import Kakao from "image/join_image/kakao.png";
-import Call from "image/join_image/call.png";
+import Instagram from "image/join_image/instagram.png";
 
 const Join_Recycle = ({
   clubId,
@@ -20,7 +20,7 @@ const Join_Recycle = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-  const pathsIcons = [Naver, Google, Kakao, Call];
+  const pathsIcons = [Naver, Google, Kakao, Instagram];
 
   return (
     <>
