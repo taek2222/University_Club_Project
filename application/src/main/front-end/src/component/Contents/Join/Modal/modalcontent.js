@@ -11,7 +11,7 @@ const ModalContents = ({clubId, title, pathsIcons, paths}) => {
   useEffect(() => {
     setIsLoading(true);
     apiClient
-      .get(`/join/modal/1`)
+      .get(`/join/modal/${clubId}`)
       .then((Response) => {
         setData(Response.data);
         setIsLoading(false);
@@ -25,8 +25,6 @@ const ModalContents = ({clubId, title, pathsIcons, paths}) => {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-
-  console.log(data);
 
   const navigateTo = (url) => {
     window.open(url, '_blank').focus();
