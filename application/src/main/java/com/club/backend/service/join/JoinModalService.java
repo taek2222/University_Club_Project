@@ -20,7 +20,10 @@ public class JoinModalService {
                 .orElseThrow(() -> new EntityNotFoundException("JoinModal Not Found Club Id " + clubId));
         JoinModalDTO dto = new JoinModalDTO();
 
-        // dto 내용 작성 필요.
+        dto.setModalImage(joinModal.getModalImage());
+        dto.setModalContents(joinModal.getModalContents());
+        dto.setJoinUrl(joinModal.getJoinUrl());
 
+        return dto;
     }
 }

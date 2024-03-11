@@ -161,6 +161,15 @@ INSERT INTO JOIN_PATHS(join_club_id, paths) values (2, true), (2, true), (2, tru
 INSERT INTO TERM(club_id, start_date, end_date) values (1, '2024-03-08', '2024-04-12');
 INSERT INTO TERM(club_id, start_date, end_date) values (2, '2024-03-17', '2024-04-12');
 
+-- 가입 모달 내용
+INSERT INTO JOIN_MODAL(club_id, modal_contents) values (1, '가입 테스트 내용');
+
+-- 가입 모달 이미지
+INSERT INTO JOIN_MODAL_MODAL_IMAGE(join_modal_club_id, modal_image) values (1, '1_1.JPG'), (1, '1_2.JPG');
+
+-- 가입 모달 Url
+INSERT INTO JOIN_MODAL_JOIN_URL(join_modal_club_id, join_url) values (1, 'https://www.naver.com'), (1, 'https://www.google.com'), (1, 'https://www.kakao.com'), (1, 'https://www.instagram.com');
+
 -- 공연 동아리 day1
 INSERT INTO schedule(schedule_id, club_id, icon_url, part, event_time) values (1, 2, '0_1.png', 1, '2024-03-09 13:00');
 INSERT INTO schedule(schedule_id, club_id, icon_url, part, event_time) values (2, 3, '0_1.png', 1, '2024-03-09 13:30');

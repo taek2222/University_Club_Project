@@ -94,7 +94,7 @@ const SwiperImage = ({ modalImage = [] }) => {
           {imageList.map((el, i) => (
             <img
               key={i}
-              src={require(`../../../../image/club_image/modal/${el}`)}
+              src={require(`image/join_image/modal/${el}`)}
               alt={`Slide ${i}`}
               className="w-auto h-auto object-contain"
             />

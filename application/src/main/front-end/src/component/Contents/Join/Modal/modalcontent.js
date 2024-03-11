@@ -11,7 +11,7 @@ const ModalContents = ({clubId, title, pathsIcons, paths}) => {
   useEffect(() => {
     setIsLoading(true);
     apiClient
-      .get(`/club/modal/1`)
+      .get(`/join/modal/1`)
       .then((Response) => {
         setData(Response.data);
         setIsLoading(false);
@@ -26,12 +26,7 @@ const ModalContents = ({clubId, title, pathsIcons, paths}) => {
     return <div>Loading...</div>;
   }
 
-  const pathUrls = {
-    naver: "https://www.naver.com",
-    google: "https://www.google.com",
-    kakao: "https://www.kakao.com",
-    instargram: "https://www.instagram.com",
-  };
+  console.log(data);
 
   const navigateTo = (url) => {
     window.open(url, '_blank').focus();
@@ -55,7 +50,7 @@ const ModalContents = ({clubId, title, pathsIcons, paths}) => {
       {/* 가입 경로 */}
       <div className="flex justify-center items-center space-x-4 mt-4">
         {pathsIcons.map((icon, index) => paths[index] ? (
-          <button key={index} onClick={() => navigateTo(Object.values(pathUrls)[index])} className="focus:outline-none">
+          <button key={index} onClick={() => navigateTo(Object.values(data.joinUrl)[index])} className="focus:outline-none">
             <img src={icon} alt={`Path ${index}`} className="w-10 h-10" />
           </button>
         ) : null)}
