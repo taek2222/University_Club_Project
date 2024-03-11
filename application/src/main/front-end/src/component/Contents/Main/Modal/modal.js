@@ -101,7 +101,7 @@ const Modal = ({ isOpen, onClose }) => {
           <div className="flex items-center ml-3 text-lg font-bold">
             응원글 남기기
           </div>
-          <button onClick={onClose} className="text-lg font-bold mr-5">닫기</button>
+          <button onClick={onClose} className="text-md font-bold mr-5">닫기</button>
         </div>
 
         <div className="overflow-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[700px]">
@@ -146,12 +146,12 @@ const Modal = ({ isOpen, onClose }) => {
                     <p className="mt-2" />
                     <label className="text-lg text-left font-bold mt-3">
                       이름 :
+                      <input type="text" name="studentName" value={formData.studentName} onChange={handleInputChange} className="w-full border-2 border-inherit p-2 h-12 font-normal" />
+                      <label className="">익명</label>
+                      <input type="checkbox" name="anonymous" value={formData.anonymous} onChange={handleAnonymousCheckboxChange} className="ml-3" />
                       <p className="text-xs text-left font-bold text-blue-600">
                         익명 체크시 응원글이 홈페이지에 익명으로 표시됩니다. 상품 추첨을 위해 이름을 작성해주시길 바랍니다.
                       </p>
-                      <label className="">익명</label>
-                      <input type="checkbox" name="anonymous" value={formData.anonymous} onChange={handleAnonymousCheckboxChange} className="ml-3" />
-                      <input type="text" name="studentName" value={formData.studentName} onChange={handleInputChange} className="w-full border-2 border-inherit p-2 h-12 font-normal" />
                     </label>
                     <p className="mt-2" />
                     <label className="text-lg font-bold mt-3">

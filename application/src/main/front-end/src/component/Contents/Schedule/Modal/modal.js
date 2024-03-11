@@ -25,7 +25,7 @@ const Modal = ({ isOpen, onClose }) => {
           <div className="flex items-center ml-3 text-lg font-bold">
             공연 곡 리스트
           </div>
-          <button onClick={onClose} className="text-lg font-bold mr-5">닫기</button>
+          <button onClick={onClose} className="text-md font-bold mr-5">닫기</button>
         </div>
 
         <div className="overflow-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[700px]">
