@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Feed from "./feed.js";
+import Banner from "component/Recycle/banner";
 
 function Club() {
   const [selectedCategory, setSelectedCategory] = useState("전체"); // 초기 선택 분류
@@ -15,7 +16,12 @@ function Club() {
   };
 
   return (
-    <div className="flex flex-col items-center mt-2">
+    <div className="flex flex-col items-center">
+      {/* 배너 */}
+      <Banner
+        title="🎊 축제 참여 동아리 목록"
+        subtitle="궁금한 동아리 피드를 클릭해보자! 👋"
+      />
 
       {/* 동아리 분류 선택 */}
       <div className="flex justify-center space-x-1.5 mb-1">

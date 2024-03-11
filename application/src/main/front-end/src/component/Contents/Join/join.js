@@ -22,8 +22,8 @@ function Join() {
     <div className="flex flex-col items-center justify-center w-full">
       {/* 배너 */}
       <Banner
-        title="동아리 가입 신청"
-        subtitle="관심있는 동아리를 클릭해 지원해!"
+        title="📩 동아리 가입 신청"
+        subtitle="관심있는 동아리를 클릭해 지원하자! ✔️"
       />
 
       <div className="relative flex flex-col justify-center w-full max-w-xl mx-auto px-3">
