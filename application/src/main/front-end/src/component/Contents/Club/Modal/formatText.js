@@ -51,7 +51,7 @@ export const TextComponent = ({ Content }) => {
             className="rounded-full font-bold bg-blue-500 text-white px-2 py-1 transition ease-in-out duration-150 mx-auto"
             onClick={() => setIsExpanded(!isExpanded)}
           >
-            {isExpanded ? "⬆️ 숨기기" : "⬇️ 더 보기"}
+            {isExpanded ? "⬆️ 숨기기" : "⬇️ 더보기"}
           </button>
         </div>
       )}
