@@ -22,6 +22,12 @@ const Join_Recycle = ({
   const closeModal = () => setIsModalOpen(false);
   const pathsIcons = [Naver, Google, Kakao, Instagram];
 
+  const titleLines = title.split('\\n').map((line, index) => (
+    <p key={index} className="flex justify-center items-center font-bold drop-shadow-md text-base sm:text-base md:text-lg">
+      {line}
+    </p>
+  ));
+
   return (
     <>
       <div onClick={openModal}>
@@ -34,9 +40,7 @@ const Join_Recycle = ({
           {/* [중간] 동아리 홍보 상세 정보 */}
           <div className="flex flex-col w-7/12 justify-center items-center">
             {/* [중간] 상단 큰 제목 */}
-            <div className="flex justify-center items-center font-bold drop-shadow-md text-lg sm:text-lg md:text-xl">
-              <p>{title}</p>
-            </div>
+          <div>{titleLines}</div>
 
             {/* [중간] 동아리 상세 정보 */}
             <div className="flex flex-row mt-1 text-gray-500 drop-shadow-none text-sm sm:text-base md:text-lg">
