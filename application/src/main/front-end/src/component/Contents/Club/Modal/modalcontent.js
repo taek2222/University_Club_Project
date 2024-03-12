@@ -28,32 +28,32 @@ const ModalContents = ({ clubId, tags }) => {
   }
 
   return (
-    <div className="overflow-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px]">
+    <div className="overflow-auto max-h-[450px] md:max-h-[600px] lg:max-h-[700px]">
       {/* 이미지 슬라이드 */}
       <div>
         <SwiperImage modalImage={data.modalImage} />
       </div>
 
       {/* 부스 (제목) */}
-      <p className="text-xl text-center font-bold mt-5">{data.modalTitle}</p>
+      <p className="text-center font-bold mt-4 text-lg md:text-xl lg:text-2xl">{data.modalTitle}</p>
 
       {/* 부스 (내용) */}
-      <div className="px-4 pt-2">
+      <div className="px-3 pt-2 text-sm md:text-base lg:text-lg">
         <TextComponent Content={data.modalContents} />
       </div>
 
-      <div className="border-t-4 border-gray-300 my-4 drop-shadow" />
+      <div className="border-t-4 border-gray-300 my-4 drop-shadow-md" />
 
       {/* 위치 */}
       <div className="content-center px-4">
         <div className="flex flex-row">
-          <img src={LocationIcon} alt="LocationIcon" className="w-8 h-8" />
-          <p className="text-lg font-bold ml-2">부스 위치 안내</p>
+          <img src={LocationIcon} alt="LocationIcon" className="w-8 h-8 md:w-10 md:h-10" />
+          <p className="font-bold ml-2 text-lg md:text-xl">부스 위치 안내</p>
         </div>
         <img
           src = {require(`../../../../image/club_image/modal/${data.modalLocationImage}`)}
           alt="modalLocationImage"
-          className="px-6 w-full sm:max-w-sm md:max-w-md lg:max-w-lg"
+          className="px-6 w-full max-w-sm md:max-w-md lg:max-w-lg"
         />
       </div>
 
@@ -62,7 +62,7 @@ const ModalContents = ({ clubId, tags }) => {
         {tags.map((tag, index) => (
           <span
             key={index}
-            className="inline-block px-1 text-base font-semibold text-blue-700 my-2"
+            className="inline-block px-1 font-semibold text-blue-700 my-2 text-sm md:text-base lg:text-lg"
           >
             #{tag}
           </span>

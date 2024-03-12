@@ -32,33 +32,33 @@ const ModalContents = ({ clubId, title, pathsIcons, paths }) => {
   };
 
   const titleLines = title.split('\\n').map((line, index) => (
-    <p key={index} className="text-lg text-center font-bold">
+    <p key={index}>
       {line}
     </p>
   ));
 
   return (
-    <div className="overflow-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px]">
+    <div className="overflow-auto max-h-[450px] md:max-h-[600px] lg:max-h-[700px]">
       {/* 이미지 슬라이드 */}
       <div>
         <SwiperImage modalImage={data.modalImage} />
       </div>
 
       {/* 부스 (제목) */}
-      <div className="mt-4">{titleLines}</div>
+      <div className="mt-4 text-center font-bold text-lg md:text-xl lg:text-2xl">{titleLines}</div>
 
       {/* 부스 (내용) */}
-      <div className="px-3 pt-2 text-sm">
+      <div className="px-3 pt-2 text-sm md:text-base lg:text-lg">
         <TextComponent Content={data.modalContents} />
       </div>
 
-      <div className="border-t-4 border-gray-300 my-4 drop-shadow" />
+      <div className="border-t-4 border-gray-300 my-4 drop-shadow-md" />
 
       {/* 가입 경로 */}
       <div className="content-center px-4">
         <div className="flex flex-row">
-          <img src={LocationIcon} alt="LocationIcon" className="w-8 h-8" />
-          <p className="text-lg font-bold ml-2">가입 문의 바로가기</p>
+          <img src={LocationIcon} alt="LocationIcon" className="w-8 h-8 md:w-10 md:h-10" />
+          <p className="font-bold ml-2 text-lg md:text-xl">가입 문의 바로가기</p>
         </div>
         <div className="flex justify-center items-center space-x-6 py-4">
           {pathsIcons.map((icon, index) =>
@@ -71,7 +71,7 @@ const ModalContents = ({ clubId, title, pathsIcons, paths }) => {
                 <img
                   src={icon}
                   alt={`Path ${index}`}
-                  className="w-10 h-10 drop-shadow-md"
+                  className="drop-shadow-xl w-10 h-10 md:w-12 md:h-12"
                 />
               </button>
             ) : null

@@ -16,7 +16,7 @@ const Modal = ({ isOpen, onClose, children, iconUrl, clubName }) => {
 
       {/* 모달 창 크기 및 디자인 */}
       <div
-        className="w-full pt-4 rounded-lg bg-white max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
+        className="w-full pt-4 rounded-lg bg-white max-w-xs md:max-w-sm lg:max-w-md"
         onClick={(e) => e.stopPropagation()}
       >
 
