@@ -8,9 +8,9 @@ function Schedule() {
   const [selectedCategory, setSelectedCategory] = useState("day1");
   const categories = ["day1", "day2", "day3"];
   const categoryMapping = {
-    "day1": "2024-03-09",
-    "day2": "2024-03-10",
-    "day3": "2024-03-11",
+    "day1": "2024-03-12",
+    "day2": "2024-03-13",
+    "day3": "2024-03-14",
   };
 
   const getMaxPart = (schedules) => {

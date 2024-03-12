@@ -30,11 +30,13 @@ const Modal = ({ isOpen, onClose }) => {
 
         <div className="overflow-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[700px]">
             <div className="text-left mx-3">
-                모달테스트
+                <img src={require(`image/content_image/fermata.jpg`)} alt="playlist" />
             </div>
         </div>
+        <div className="flex justify-center space-x-3 mt-2 mb-4">
+        </div>
       </div>
-    </div>    
+    </div>
   );
 };
 
