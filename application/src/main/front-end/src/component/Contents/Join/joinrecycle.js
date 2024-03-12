@@ -31,7 +31,7 @@ const Join_Recycle = ({
   return (
     <>
       <div onClick={openModal}>
-        <div className="flex flex-row w-full border-2 border-gray-400 rounded-2xl drop-shadow-sm mb-4 h-20 md:h-24">
+        <div className="flex flex-row w-full border-2 border-gray-400 rounded-2xl mb-4 h-24 md:h-28">
           {/* [왼쪽] 동아리 이미지 */}
           <div className="flex w-2/12 border-r-2 justify-center border-gray-400 rounded-l-2xl overflow-hidden">
             <img className="object-contain" src={iconImage} alt="Club_Image" />
@@ -43,12 +43,12 @@ const Join_Recycle = ({
           <div>{titleLines}</div>
 
             {/* [중간] 동아리 상세 정보 */}
-            <div className="flex flex-row mt-1 text-gray-500 drop-shadow-none text-sm md:text-base">
+            <div className="flex flex-row mt-1 text-gray-500 drop-shadow-md text-sm md:text-base">
               {details.map((detail, index) => (
                 <React.Fragment key={index}>
                   <p>{detail}</p>
                   {index < details.length - 1 && (
-                    <div className="mx-3 w-1 h-full rounded-full drop-shadow-2xl bg-gray-400" />
+                    <div className="mx-3 w-1 h-full rounded-full bg-gray-400" />
                   )}
                 </React.Fragment>
               ))}
