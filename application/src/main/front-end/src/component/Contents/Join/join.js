@@ -26,7 +26,7 @@ function Join() {
         subtitle="관심있는 동아리를 클릭해 지원하자! ✔️"
       />
 
-      <div className="relative flex flex-col justify-center w-full max-w-xl mx-auto px-3">
+      <div className="relative flex flex-col justify-center w-full max-w-xl mx-auto px-3 mt-2">
         {data.map((join, index) => (
           <JoinRecycle
             clubId={join.clubId}
