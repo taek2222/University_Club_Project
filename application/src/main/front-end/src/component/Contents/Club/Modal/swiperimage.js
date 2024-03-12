@@ -103,11 +103,11 @@ const SwiperImage = ({ modalImage = [] }) => {
       </div>
 
       {/* 사진 다음, 이전 (화살표) */}
-      <div className="absolute w-full flex justify-between top-1/2 transform -translate-y-1/2">
-        <button className="text-white text-3xl ml-1" onClick={prevSlide}>
+      <div className="absolute w-full flex justify-between top-1/2 transform -translate-y-1/2 drop-shadow-md">
+        <button className="text-gray-300 text-3xl ml-1" onClick={prevSlide}>
           <IoIosArrowBack />
         </button>
-        <button className="text-white text-3xl mr-1" onClick={nextSlide}>
+        <button className="text-gray-300 text-3xl mr-1" onClick={nextSlide}>
           <IoIosArrowForward />
         </button>
       </div>
