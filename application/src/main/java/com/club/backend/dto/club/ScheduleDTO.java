@@ -13,6 +13,7 @@ public class ScheduleDTO {
     private String clubName;
     private String field;
     private String iconUrl;
+    private String imageUrl;
     private String part;
     private LocalDateTime eventTime;
 }

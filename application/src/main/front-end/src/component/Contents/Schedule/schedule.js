@@ -36,7 +36,7 @@ function Schedule() {
     return partEvents;
   });
 
-  const getImageUrl = (iconUrl) => {
+  const getIconUrl = (iconUrl) => {
     try {
       return require(`image/club_image/modal/${iconUrl}`);
     } catch (error) {
@@ -99,7 +99,7 @@ function Schedule() {
                     <Event
                       key={index}
                       schedule={schedule}
-                      iconUrl={getImageUrl(schedule.iconUrl)}
+                      iconUrl={getIconUrl(schedule.iconUrl)}
                     />
                   ))}
               </div>

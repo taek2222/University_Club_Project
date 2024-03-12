@@ -1,6 +1,6 @@
 import React from "react";
 
-const Modal = ({ isOpen, onClose }) => {
+const Modal = ({ isOpen, onClose, imageUrl }) => {
   if (!isOpen) return null;
 
   const handleBackgroundClick = (e) => { // 배경 클릭 시 닫기
@@ -16,7 +16,7 @@ const Modal = ({ isOpen, onClose }) => {
 
       {/* 모달 창 크기 및 디자인 */}
       <div
-        className="w-full pt-4 rounded-lg bg-white max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl"
+        className="w-full pt-4 rounded-lg bg-white max-w-xs sm:max-w-sm md:max-w-md"
         onClick={(e) => e.stopPropagation()}
       >
 
@@ -30,7 +30,7 @@ const Modal = ({ isOpen, onClose }) => {
 
         <div className="overflow-auto max-h-[400px] sm:max-h-[500px] md:max-h-[600px] lg:max-h-[700px]">
             <div className="text-left mx-3">
-                <img src={require(`image/content_image/fermata.jpg`)} alt="playlist" />
+                <img src={imageUrl} alt="playlist" className="flex flex-col mx-auto max-h-[400px] sm:max-h-[300px] md:max-h-[400px] lg:max-h-[500px]" />
             </div>
         </div>
         <div className="flex justify-center space-x-3 mt-2 mb-4">

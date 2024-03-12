@@ -21,6 +21,14 @@ function Event({ schedule, iconUrl }) {
         return formattedTime;
     };
 
+    const getImageUrl = (imageUrl) => {
+        try {
+            return require(`image/content_image/${imageUrl}`);
+        } catch (error) {
+            console.error("Error loading image:", error);
+        }
+    };
+
     useEffect(() => {
         const currentTime = new Date();
     
@@ -37,7 +45,7 @@ function Event({ schedule, iconUrl }) {
         <>
             <div className="mx-3 my-5">
                 <div className="flex">
-                    {isTimeConflict && (
+                    {(isTimeConflict && schedule.imageUrl!=='') && (
                         <div className="flex flex-col items-center hover:cursor-pointer" onClick={openModal}>
                             <div className={`rounded-full p-[1.8px] mt-2 mb-1 bg-gradient-to-r from-yellow-400 via-pink-400 to-pink-600 transform transition-transform`}>
                                 <div className="rounded-full bg-white w-9 h-9 overflow-hidden flex justify-center items-center">
@@ -51,7 +59,7 @@ function Event({ schedule, iconUrl }) {
                             </div>
                         </div>
                     )}
-                    {!isTimeConflict && (
+                    {(!isTimeConflict || schedule.imageUrl==='') && (
                         <div className="rounded-full bg-white w-10 h-10 mt-2 overflow-hidden flex justify-center items-center">
                             <div className="flex w-[2.6rem] h-[2.6rem] border-0 rounded-full justify-center items-center">
                                 <img
@@ -70,6 +78,7 @@ function Event({ schedule, iconUrl }) {
             <Modal
                 isOpen={isModalOpen}
                 onClose={closeModal}
+                imageUrl={getImageUrl(schedule.imageUrl)}
             />
         </>
     )

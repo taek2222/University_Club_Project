@@ -28,6 +28,9 @@ public class Schedule {
     @Column(name="icon_url")
     private String iconUrl;
 
+    @Column(name="image_url")
+    private String imageUrl;
+
     @Column(name = "event_time")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime eventTime;
