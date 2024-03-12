@@ -150,7 +150,7 @@ INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, co
 INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color) values (1010, '멀티미디어학과', '90000000', false, '안유진', '응원문구 테스트9', 'bg-fuchsia-200');
 
 -- 가입 신청 동아리
-INSERT INTO JOIN_TABLE(club_id, icon_image, title) values (1, '1_1.png', '2024년도 총동아리연합회 \n 신입생 모집 안내');
+INSERT INTO JOIN_TABLE(club_id, icon_image, title) values (1, '1_1.png', '2024년도 총동아리연합회 \n 🎉신입생 모집 안내🎉');
 INSERT INTO JOIN_TABLE(club_id, icon_image, title) values (2, '1_1.png', '테스트 임원진 모집');
 
 -- 가입 경로 ( 네이버, 구글, 카카오, 인스타 )
@@ -162,7 +162,7 @@ INSERT INTO TERM(club_id, start_date, end_date) values (1, '2024-03-08', '2024-0
 INSERT INTO TERM(club_id, start_date, end_date) values (2, '2024-03-17', '2024-04-12');
 
 -- 가입 모달 내용
-INSERT INTO JOIN_MODAL(club_id, modal_contents) values (1, '안녕하십니까, 제39대 총동아리연합회 ''EUM''입니다. \n \n 총동아리연합회 2024학년도 부원을 모집합니다.\n \n 모집 대상 \n-2024년 강릉원주대학교 원주캠퍼스 신입생\n\n모집 기간\n-1차 서류 접수 기간 : 3월 11일(월) ~ 3월 15일(금)\n-2차 대면 면접 : 추후 개별 연락\n\n1차 서류 지원서는 모집 공고에 첨부된 QR 및 URL을 통해 네이버 폼으로 작성 부탁드립니다!');
+INSERT INTO JOIN_MODAL(club_id, modal_contents) values (1, '안녕하십니까, 제39대 총동아리연합회 ''EUM''입니다. \n \n 총동아리연합회 2024학년도 부원을 모집합니다.\n \n *📋모집 대상* \n-2024년 강릉원주대학교 원주캠퍼스 신입생 \n \n *📆모집 기간* \n -1차 서류 접수 기간 : 3월 11일(월) ~ 3월 15일(금) \n -2차 대면 면접 : 추후 개별 연락 \n \n 1차 서류 지원서는 모집 공고에 첨부된 QR 및 URL을 통해 네이버 폼으로 작성 부탁드립니다!');
 
 -- 가입 모달 이미지
 INSERT INTO JOIN_MODAL_MODAL_IMAGE(join_modal_club_id, modal_image) values (1, '1_1.JPG'), (1, '1_2.JPG');
