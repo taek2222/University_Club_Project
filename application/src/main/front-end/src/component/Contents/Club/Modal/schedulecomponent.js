@@ -29,7 +29,7 @@ const ScheduleComponent = () => {
         {scheduleData.map((item, index) => (
           <div
             key={index}
-            className="mb-2 px-4 py-2 border-2 border-gray-700 rounded-2xl"
+            className="mb-3 px-4 py-2 border-2 border-gray-700 rounded-2xl"
           >
             <div className="flex items-center justify-between">
               <p className="font-semibold">{item.date}</p>
