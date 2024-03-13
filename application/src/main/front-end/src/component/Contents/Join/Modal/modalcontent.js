@@ -55,8 +55,8 @@ const ModalContents = ({ clubId, title, pathsIcons, paths }) => {
       <div className="border-t-4 border-gray-300 my-4 drop-shadow-md" />
 
       {/* 가입 경로 */}
-      <div className="content-center px-4">
-        <div className="flex flex-row">
+      <div className="px-4">
+        <div className="flex flex-row items-center">
           <img src={LocationIcon} alt="LocationIcon" className="w-8 h-8 md:w-10 md:h-10" />
           <p className="font-bold ml-2 text-lg md:text-xl">가입 문의 바로가기</p>
         </div>

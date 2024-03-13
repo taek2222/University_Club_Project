@@ -3,7 +3,7 @@ import SwiperImage from "./swiperimage";
 import apiClient from 'api';
 
 import { TextComponent } from "./formatText";
-import LocationIcon from "../../../../image/club_image/modal/location.png";
+import CalendarIcon from "image/club_image/modal/calendar.png";
 
 const ModalContents = ({ clubId, tags }) => {
   const [data, setData] = useState([]);
@@ -44,17 +44,17 @@ const ModalContents = ({ clubId, tags }) => {
 
       <div className="border-t-4 border-gray-300 my-4 drop-shadow-md" />
 
-      {/* 위치 */}
-      <div className="content-center px-4">
-        <div className="flex flex-row">
-          <img src={LocationIcon} alt="LocationIcon" className="w-8 h-8 md:w-10 md:h-10" />
-          <p className="font-bold ml-2 text-lg md:text-xl">부스 위치 안내</p>
+      {/* 일정 */}
+      <div className="px-4">
+        <div className="flex flex-row items-center">
+          <img src={CalendarIcon} alt="LocationIcon" className="w-8 h-8 md:w-10 md:h-10" />
+          <p className="font-bold ml-2 text-lg md:text-xl">동아리 일정 안내</p>
         </div>
-        <img
+        {/* <img
           src = {require(`../../../../image/club_image/modal/${data.modalLocationImage}`)}
           alt="modalLocationImage"
           className="px-6 w-full max-w-sm md:max-w-md lg:max-w-lg"
-        />
+        /> */}
       </div>
 
       {/* 하단 태그 */}
