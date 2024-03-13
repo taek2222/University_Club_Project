@@ -181,10 +181,10 @@ INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, event_time
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, event_time) values (7, 2, '0_1.png', '', 1, '2024-03-13 13:30');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, event_time) values (8, 5, '0_1.png', '', 2, '2024-03-13 15:00');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, event_time) values (9, 6, '0_1.png', '', 2, '2024-03-13 15:30');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, event_time) values (10, 7, '0_1.png', '', 3, '2024-03-13 18:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, event_time) values (10, 3, '0_1.png', 'fermata.jpg', 3, '2024-03-13 22:00');
 -- 공연 동아리 day3
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, event_time) values (11, 4, '0_1.png', 'phrase.jpg', 1, '2024-03-14 10:00');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, event_time) values (12, 2, '0_1.png', '', 1, '2024-03-14 10:30');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, event_time) values (13, 3, '0_1.png', 'fermata.jpg', 2, '2024-03-14 15:00');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, event_time) values (14, 6, '0_1.png', '', 2, '2024-03-14 15:30');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, event_time) values (15, 5, '0_1.png', '', 3, '2024-03-14 18:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, event_time) values (15, 3, '0_1.png', '', 3, '2024-03-14 18:00');
