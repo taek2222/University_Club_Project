@@ -54,7 +54,7 @@ INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (18, 'feed_test.png',
 INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (19, 'feed_test.png', 'feed_test.png');
 
 -- 동아리 태그
-INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (1, '농담'), (1, '한국');
+INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (1, '축제 협회'), (1, '안내 부스');
 INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (2, '테스트1'), (2, '테스트2');
 INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (3, '테스트2'), (3, '테스트2');
 INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (4, '테스트1'), (4, '테스트2');
