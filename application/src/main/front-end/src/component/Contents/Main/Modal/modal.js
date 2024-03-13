@@ -18,15 +18,32 @@ const Modal = ({ isOpen, onClose }) => {
 
   const [formData, setFormData] = useState(initialFormData);
   const [isAnonymous, setIsAnonymous] = useState(false);
+  const [charCount, setCharCount] = useState(0);
 
   if (!isOpen) return null;
 
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const inputValue = e.target.value;
+    const inputName = e.target.name;
+  
+    if (inputName === "content") {
+      if (inputValue.length <= 50) {
+        setFormData({
+          ...formData,
+          [inputName]: inputValue,
+        });
+        setCharCount(inputValue.length);
+      } else {
+        e.preventDefault();
+      }
+    } else {
+      setFormData({
+        ...formData,
+        [inputName]: inputValue,
+      });
+    }
   };
+  
 
   const handleAnonymousCheckboxChange = (e) => {
     setIsAnonymous(e.target.checked);
@@ -156,6 +173,7 @@ const Modal = ({ isOpen, onClose }) => {
                     <p className="mt-2" />
                     <label className="text-lg font-bold mt-3">
                       내용 :
+                      <p className={`text-sm ${charCount===50?'text-red-500':''}`}>{charCount}/50</p>
                       <textarea type="text" name="content" placeholder="글자 수 100자 이하로 작성" value={formData.content} onChange={handleInputChange} className="min-h-28 w-full border-2 border-inherit p-2 font-normal" />
                     </label>
                 </form>
