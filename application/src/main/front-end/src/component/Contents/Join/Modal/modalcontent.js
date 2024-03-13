@@ -38,17 +38,17 @@ const ModalContents = ({ clubId, title, pathsIcons, paths }) => {
   ));
 
   return (
-    <div className="overflow-auto max-h-[450px] md:max-h-[600px] lg:max-h-[700px]">
+    <div className="overflow-auto max-h-[450px] md:max-h-[600px]">
       {/* 이미지 슬라이드 */}
       <div>
         <SwiperImage modalImage={data.modalImage} />
       </div>
 
       {/* 부스 (제목) */}
-      <div className="mt-4 text-center font-bold text-lg md:text-xl lg:text-2xl">{titleLines}</div>
+      <div className="mt-4 text-center font-bold text-lg md:text-xl">{titleLines}</div>
 
       {/* 부스 (내용) */}
-      <div className="px-3 pt-2 text-sm md:text-base lg:text-lg">
+      <div className="px-3 pt-2 text-sm md:text-base">
         <TextComponent Content={data.modalContents} />
       </div>
 
