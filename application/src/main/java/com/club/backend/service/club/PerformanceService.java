@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class ScheduleService {
+public class PerformanceService {
     private final ClubRepository clubRepository;
     private final PerformanceRepository performanceRepository;
 

@@ -9,14 +9,14 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "schedule")
+@Table(name = "performance")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Schedule {
+public class Performance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int scheduleId;
+    private int performanceId;
 
     @ManyToOne
     @JoinColumn(name = "club_id")
