@@ -61,12 +61,8 @@ const ModalContents = ({ clubId, tags }) => {
       </div>
 
       {/* 하단 버튼 */}
-      {/* [추가] 위치 추가 시 버튼 연결 작업 */}
       <div className="flex justify-center space-x-3 mb-4">
           <LocationButton locationImage={require(`image/club_image/modal/${data.modalLocationImage}`)}/>
-        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-9 rounded-full">
-          부원 모집
-        </button>
       </div>
     </div>
   );
