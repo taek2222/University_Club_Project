@@ -34,7 +34,7 @@ const Modal = ({ isOpen, onClose, children, iconUrl, clubName }) => {
             {/* 모달 제목 (제목) */}
             <h2 className="text-xl font-semibold ml-3">{clubName}</h2>
           </div>
-          <button onClick={onClose} className="text-base font-bold mr-5">닫기</button>
+          <button onClick={onClose} className="text-base font-bold mr-5 hover:bg-gray-100">닫기</button>
         </div>
 
         {children}
