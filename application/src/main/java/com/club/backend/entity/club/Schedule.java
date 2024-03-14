@@ -31,6 +31,9 @@ public class Schedule {
     @Column(name="image_url")
     private String imageUrl;
 
+    @Column(name="category")
+    private String category;
+
     @Column(name = "event_time")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime eventTime;

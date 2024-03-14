@@ -15,5 +15,6 @@ public class ScheduleDTO {
     private String iconUrl;
     private String imageUrl;
     private String part;
+    private String category;
     private LocalDateTime eventTime;
 }
