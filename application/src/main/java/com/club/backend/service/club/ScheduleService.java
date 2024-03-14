@@ -2,7 +2,7 @@ package com.club.backend.service.club;
 
 import com.club.backend.dto.club.PerformanceDTO;
 import com.club.backend.entity.club.Club;
-import com.club.backend.entity.club.Performance;
+import com.club.backend.entity.club.Schedule;
 import com.club.backend.repository.club.ClubRepository;
 import com.club.backend.repository.club.PerformanceRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -19,7 +19,7 @@ public class PerformanceService {
     private final PerformanceRepository performanceRepository;
 
     public List<PerformanceDTO> getAllSchedules() {
-        List<Performance> schedules = performanceRepository.findAll();
+        List<Schedule> schedules = performanceRepository.findAll();
 
         return schedules.stream().map(schedule -> {
             Club club = clubRepository.findById(schedule.getClub().getClubId())
