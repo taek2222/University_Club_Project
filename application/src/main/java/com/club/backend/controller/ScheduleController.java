@@ -1,7 +1,7 @@
 package com.club.backend.controller;
 
-import com.club.backend.dto.club.PerformanceDTO;
-import com.club.backend.service.club.PerformanceService;
+import com.club.backend.dto.club.ScheduleDTO;
+import com.club.backend.service.club.ScheduleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,11 +11,11 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/schedules")
-public class PerformanceController {
-    private final PerformanceService performanceService;
+public class ScheduleController {
+    private final ScheduleService scheduleService;
 
     @GetMapping("/all")
-    public List<PerformanceDTO> getAllSchedules() {
-        return performanceService.getAllSchedules();
+    public List<ScheduleDTO> getAllSchedules() {
+        return scheduleService.getAllSchedules();
     }
 }

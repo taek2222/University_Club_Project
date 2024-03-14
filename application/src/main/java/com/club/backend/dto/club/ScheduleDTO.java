@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class PerformanceDTO {
+public class ScheduleDTO {
     private int performanceId;
     private int clubId;
     private String clubName;
