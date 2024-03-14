@@ -1,0 +1,25 @@
+<!-- 60초마다 설정 파일의 변경을 확인하여 변경시 갱신 -->
+<configuration scan="true" scanPeriod="60 seconds">
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+
+    <!-- Environment 내의 프로퍼티들을 개별적으로 설정 -->
+    <springProperty scope="context" name="LOG_LEVEL" source="logging.level.root"/>
+
+    <!-- console log -->
+    <property name="CONSOLE_LOG_PATTERN" value="[%d{yyyy-MM-dd HH:mm:ss}:%-3relative]  %clr(%-5level) %clr(${PID:-}){magenta} %clr(---){faint} %clr([%15.15thread]){faint} %clr(%-40.40logger{36}){cyan} %clr(:){faint} %msg%n"/>
+
+    <!-- file log pattern -->
+    <property name="FILE_LOG_PATTERN" value="[%d{yyyy-MM-dd HH:mm:ss}:%-3relative] %-5level ${PID:-} --- [%15.15thread] %-40.40logger{36} : %msg%n"/>
+
+
+    <include resource="console_appender.xml" />
+    <include resource="file_appender.xml" />
+    <include resource="error_appender.xml" />
+
+    <!-- root 레벨 설정 -->
+    <root level="${LOG_LEVEL}">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="ERROR"/>
+    </root>
+</configuration>
