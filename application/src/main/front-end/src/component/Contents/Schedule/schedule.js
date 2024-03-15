@@ -79,10 +79,15 @@ function Schedule() {
           </div>
         ))}
       </div>
+      <p className="flex justify-center mt-5 text-lg font-bold">{categoryMapping[selectedCategory]}</p>
       <div className="mt-3">
-        {groupedEvents.map((events, partIndex) => (
+        {selectedCategory!=='day3'
+        ? 
+          ''
+        : 
+        groupedEvents.map((events, partIndex) => (
           <div key={partIndex} className="flex justify-center items-center">
-            <div className="flex justify-between border rounded-lg mx-5 my-5 px-5 shadow-lg max-w-[500px]">
+            <div className="flex justify-between border rounded-lg mx-5 my-3 px-5 shadow-lg max-w-[500px]">
               <div className="mx-3 my-5">
                 <div className="mx-3 mt-4 font-bold text-xl">
                   Part {partIndex + 1}.
@@ -105,7 +110,8 @@ function Schedule() {
               </div>
             </div>
           </div>
-        ))}
+        ))
+      }
       </div>
     </>
   );
