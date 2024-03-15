@@ -41,3 +41,7 @@ out/
 
 ## Server ###
 /src/main/resources/static/*
+
+## Log ###
+/LOG_PATH_IS_UNDEFINED/*
+/*.log
