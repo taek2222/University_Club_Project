@@ -2,15 +2,27 @@ import React, { useEffect, useState } from "react";
 import Event from "./event.js";
 import Banner from "component/Recycle/banner.js";
 import apiClient from "api.js";
+import Booth from "./booth.js";
 
 function Schedule() {
   const [schedules, setSchedules] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("day1");
+  const [selectedClubCategory, setSelectedClubategory] = useState("전체");
+
   const categories = ["day1", "day2", "day3"];
   const categoryMapping = {
     "day1": "2024-03-12",
     "day2": "2024-03-13",
     "day3": "2024-03-14",
+  };
+  const clubCategories = ["전체", "공연", "체육", "취미", "종교", "봉사"];
+  const clubCategoryMapping = {
+    "전체": "all",
+    "공연": "1",
+    "체육": "2",
+    "취미": "3",
+    "종교": "4",
+    "봉사": "5"
   };
 
   const getMaxPart = (schedules) => {
@@ -80,10 +92,56 @@ function Schedule() {
         ))}
       </div>
       <p className="flex justify-center mt-5 text-lg font-bold">{categoryMapping[selectedCategory]}</p>
+      
       <div className="mt-3">
         {selectedCategory!=='day3'
         ? 
-          ''
+        <>
+          <div className="flex justify-center space-x-1.5 mb-1">
+            {clubCategories.map((category) => (
+              // 선택X
+              <div
+                key={category}
+                className={`relative text-center cursor-pointer px-3 py-2 ${
+                  selectedClubCategory === category ? "font-bold text-lg" : "text-lg text-gray-500"
+                }`}
+                onClick={() => setSelectedClubategory(category)}
+              >
+                {category}
+
+                {/* 선택 O */}
+                <div
+                  className={`absolute bottom-0 left-0 right-0 h-1 mx-auto w-full ${
+                    selectedClubCategory === category ? "bg-black" : "bg-transparent"
+                  }`}
+                  style={{ marginBottom: "-1px" }}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center items-center">
+            <div className="flex justify-between border rounded-lg mx-5 my-3 px-5 shadow-lg max-w-[500px]">
+              <div className="mx-3 my-5">
+                {groupedEvents.map((events, index) => (
+                  <div key={index}>
+                    {events
+                    .filter(
+                      (schedule) =>
+                        schedule.eventTime &&
+                        schedule.eventTime.startsWith(
+                          categoryMapping[selectedCategory]
+                        )
+                    )
+                    .map((schedule, index) => (
+                      <div></div>
+                    ))}
+                  </div>
+                ))}
+                <Booth category={clubCategoryMapping[selectedClubCategory] || selectedClubCategory} />
+              </div>
+            </div>
+          </div>
+        </>
         : 
         groupedEvents.map((events, partIndex) => (
           <div key={partIndex} className="flex justify-center items-center">
