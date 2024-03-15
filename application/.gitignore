@@ -43,5 +43,5 @@ out/
 /src/main/resources/static/*
 
 ## Log ###
-/LOG_PATH_IS_UNDEFINED/*
-/*.log
+/back_up/*
+/log/*.log
