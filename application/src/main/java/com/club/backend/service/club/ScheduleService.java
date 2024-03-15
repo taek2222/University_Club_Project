@@ -38,4 +38,16 @@ public class ScheduleService {
             return scheduleDTO;
         }).collect(Collectors.toList());
     }
+    public List<ScheduleDTO> getBySchedules(int clubId) {
+        List<Schedule> schedules = scheduleRepository.findByClub_ClubId(clubId);
+
+        return schedules.stream().map(schedule -> {
+            ScheduleDTO scheduleDTO = new ScheduleDTO();
+
+            scheduleDTO.setCategory(schedule.getCategory());
+            scheduleDTO.setEventTime(schedule.getEventTime());
+
+            return scheduleDTO;
+        }).collect(Collectors.toList());
+    }
 }

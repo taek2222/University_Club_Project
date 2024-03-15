@@ -4,6 +4,7 @@ import com.club.backend.dto.club.ScheduleDTO;
 import com.club.backend.service.club.ScheduleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
@@ -17,5 +18,10 @@ public class ScheduleController {
     @GetMapping("/all")
     public List<ScheduleDTO> getAllSchedules() {
         return scheduleService.getAllSchedules();
+    }
+
+    @GetMapping("/modal/{clubId}")
+    public List<ScheduleDTO> getBySchedules(@PathVariable("clubId") int clubId) {
+        return scheduleService.getBySchedules(clubId);
     }
 }
