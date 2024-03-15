@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import Event from "./event.js";
 import Banner from "component/Recycle/banner.js";
 import apiClient from "api.js";
+import Booth from "./Booth/booth.js";
 
 function Schedule() {
   const [schedules, setSchedules] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("day1");
+
   const categories = ["day1", "day2", "day3"];
   const categoryMapping = {
     "day1": "2024-03-12",
@@ -57,7 +59,7 @@ function Schedule() {
 
   return (
     <>
-      <Banner title="📆 홍보제 축제 일정" subtitle="일정을 확인하고 참여하자! 🕒" />
+      <Banner title="📆 홍보제 축제 일정" subtitle="일정을 확인하고 참여하자!🕒 day1 ~ 2: 부스 / day3: 공연" />
       <div className="flex justify-center space-x-1.5 mb-1">
         {categories.map((category) => (
           <div
@@ -79,10 +81,19 @@ function Schedule() {
           </div>
         ))}
       </div>
+      <p className="flex justify-center mt-5 text-lg font-bold">{categoryMapping[selectedCategory]}</p>
+      
       <div className="mt-3">
-        {groupedEvents.map((events, partIndex) => (
+        {selectedCategory!=='day3'
+        ? 
+        <Booth 
+          category={categoryMapping[selectedCategory] || selectedCategory}
+          groupedEvents={groupedEvents}
+        />
+        : 
+        groupedEvents.map((events, partIndex) => (
           <div key={partIndex} className="flex justify-center items-center">
-            <div className="flex justify-between border rounded-lg mx-5 my-5 px-5 shadow-lg max-w-[500px]">
+            <div className="flex justify-between border rounded-lg mx-5 my-3 px-5 shadow-lg max-w-[500px]">
               <div className="mx-3 my-5">
                 <div className="mx-3 mt-4 font-bold text-xl">
                   Part {partIndex + 1}.
@@ -105,7 +116,8 @@ function Schedule() {
               </div>
             </div>
           </div>
-        ))}
+        ))
+      }
       </div>
     </>
   );
