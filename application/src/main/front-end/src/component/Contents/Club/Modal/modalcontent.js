@@ -46,7 +46,7 @@ const ModalContents = ({ clubId, tags }) => {
       <div className="border-t-4 border-gray-300 my-4 drop-shadow-md" />
 
       {/* 일정 */}
-      <ScheduleComponent/>
+      <ScheduleComponent clubId={clubId}/>
 
       {/* 하단 태그 */}
       <div className="ml-3 my-3">
