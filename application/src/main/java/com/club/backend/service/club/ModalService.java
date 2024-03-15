@@ -14,15 +14,20 @@ import java.util.ArrayList;
 @RequiredArgsConstructor
 public class ModalService {
     private final ModalRepository modalRepository;
+    private final ScheduleService scheduleService;
 
     public ModalDTO getClubModalSearch(int clubId) {
         Modal modal = modalRepository.findById(clubId).orElseThrow(() -> new EntityNotFoundException("Not Found ClubId " + clubId));
         ModalDTO dto = new ModalDTO();
 
+        // Modal
         dto.setModalTitle(modal.getModalTitle());
         dto.setModalContents(modal.getModalContents());
         dto.setModalImage(modal.getModalImage());
         dto.setModalLocationImage(modal.getModalLocationImage());
+
+        // Schedule
+        dto.setScheduleUse(scheduleService.ScheduleUse(clubId));
         return dto;
     }
 }

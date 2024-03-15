@@ -50,4 +50,8 @@ public class ScheduleService {
             return scheduleDTO;
         }).collect(Collectors.toList());
     }
+
+    public Boolean ScheduleUse(int clubId) {
+        return scheduleRepository.existsByClub_ClubId(clubId);
+    }
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SwiperImage from "./swiperimage";
-import apiClient from 'api';
+import apiClient from "api";
 
 import { TextComponent } from "./formatText";
 import ScheduleComponent from "./schedulecomponent";
@@ -36,7 +36,9 @@ const ModalContents = ({ clubId, tags }) => {
       </div>
 
       {/* 부스 (제목) */}
-      <p className="text-center font-bold mt-4 text-lg md:text-xl">{data.modalTitle}</p>
+      <p className="text-center font-bold mt-4 text-lg md:text-xl">
+        {data.modalTitle}
+      </p>
 
       {/* 부스 (내용) */}
       <div className="px-3 pt-2 text-sm md:text-base">
@@ -46,7 +48,7 @@ const ModalContents = ({ clubId, tags }) => {
       <div className="border-t-4 border-gray-300 my-4 drop-shadow-md" />
 
       {/* 일정 */}
-      <ScheduleComponent clubId={clubId}/>
+      {data.scheduleUse && <ScheduleComponent clubId={clubId}/>}
 
       {/* 하단 태그 */}
       <div className="ml-3 my-3">
@@ -61,9 +63,13 @@ const ModalContents = ({ clubId, tags }) => {
       </div>
 
       {/* 하단 버튼 */}
-      <div className="flex justify-center space-x-3 mb-4">
-          <LocationButton locationImage={require(`image/club_image/modal/${data.modalLocationImage}`)}/>
-      </div>
+      {data.modalLocationImage && (
+        <div className="flex justify-center space-x-3 mb-4">
+          <LocationButton
+            locationImage={require(`image/club_image/modal/${data.modalLocationImage}`)}
+          />
+        </div>
+      )}
     </div>
   );
 };
