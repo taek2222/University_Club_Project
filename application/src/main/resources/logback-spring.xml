@@ -5,12 +5,23 @@
     <!-- Environment 내의 프로퍼티들을 개별적으로 설정 -->
     <springProperty scope="context" name="LOG_LEVEL" source="logging.level.root"/>
 
+    <!-- log, err folder name -->
+    <property name="FOLDER" value="log"/>
+
+    <!-- log, err backup folder -->
+    <property name="BACKUP_FOLDER" value="back_up"/>
+
+    <!-- log file name -->
+    <property name="LOG_FILE_NAME" value="server_log"/>
+
+    <!-- err log file name -->
+    <property name="ERR_LOG_FILE_NAME" value="err_log"/>
+
     <!-- console log -->
     <property name="CONSOLE_LOG_PATTERN" value="[%d{yyyy-MM-dd HH:mm:ss}:%-3relative]  %clr(%-5level) %clr(${PID:-}){magenta} %clr(---){faint} %clr([%15.15thread]){faint} %clr(%-40.40logger{36}){cyan} %clr(:){faint} %msg%n"/>
 
     <!-- file log pattern -->
     <property name="FILE_LOG_PATTERN" value="[%d{yyyy-MM-dd HH:mm:ss}:%-3relative] %-5level ${PID:-} --- [%15.15thread] %-40.40logger{36} : %msg%n"/>
-
 
     <include resource="console_appender.xml" />
     <include resource="file_appender.xml" />
