@@ -45,3 +45,5 @@ out/
 ## Log ###
 /back_up/*
 /log/*.log
+*.log
+*.gz
