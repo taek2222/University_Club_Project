@@ -5,10 +5,11 @@ import cheerLogo from "../../../image/content_image/notes.png"
 import Memo from "./memo";
 import Modal from "./Modal/modal";
 
+import Banner from "image/content_image/banner.png";
+
 function Main() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const FESTIVAL_YEAR = new Date().getFullYear().toString() + " 축제";
   const CHEER_TITLE = "응원 문구"
   const CHEER_ALT_TEXT = "cheer logo"
 
@@ -17,9 +18,11 @@ function Main() {
 
   return(
     <>
-      <div className="m-5 mt-7 flex">
-        <div className="flex mx-auto mt-1 text-3xl md:text-4xl font-bold" style={{fontFamily:"Gaegu"}}>{FESTIVAL_YEAR}</div>
-      </div>
+      <img
+        className="w-full min-h-24 object-cover"
+        src={Banner}
+        alt="Banner"
+      />
       <ImageSwiper />
 
       <div className="m-5 mt-16 flex">

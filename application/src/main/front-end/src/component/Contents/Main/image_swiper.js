@@ -13,7 +13,7 @@ function ImageSwiper() {
     const slidesPerView = window.innerWidth < 700 ? 1.4 : 2;
 
     return(
-        <div className="mx-auto mt-10">
+        <div className="mx-auto mt-8">
         <Swiper
           effect={'coverflow'}
           grabCursor={true}
