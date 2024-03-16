@@ -10,7 +10,13 @@ function Emergency() {
         title="🚨비상연락망 및 소화전 위치"
         subtitle="대처 방안을 숙지해 안전사고를 예방하자! ✔️"
       />
-      <img className="w-full h-full px-2 rounded-xl shadow-md" src={Emergency_Image} alt="Emergency" />
+      <div className="px-2">
+        <img
+          className="w-full h-full rounded-xl shadow-md"
+          src={Emergency_Image}
+          alt="Emergency"
+        />
+      </div>
     </>
   );
 }

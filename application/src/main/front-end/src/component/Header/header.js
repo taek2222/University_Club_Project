@@ -44,8 +44,8 @@ function Header({ activeMainContent, setActiveMainContent }) {
         />
         <HeaderRecycle
           imageSrc={Emergency}
-          altText="비상"
-          label="비상"
+          altText="유의"
+          label="유의"
           onClick={() => setActiveMainContent("Emergency")}
           scale={activeMainContent === "Emergency" ? "scale-110" : "scale-100"}
         />
