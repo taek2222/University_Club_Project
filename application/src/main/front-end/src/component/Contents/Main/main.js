@@ -31,10 +31,9 @@ function Main() {
             src={cheerLogo}
             alt={CHEER_ALT_TEXT}
         />
-        <div className="mx-3 mt-1 text-3xl md:text-4xl font-bold" style={{fontFamily:"Gaegu"}}>{CHEER_TITLE}</div>
+        <div className="mx-3 mt-1 text-xl md:text-2xl font-bold">{CHEER_TITLE}</div>
         <div 
-          className="ml-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-full hover:cursor-pointer text-md md:text-lg"
-          style={{fontFamily:"Gaegu"}}
+          className="ml-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-full hover:cursor-pointer text-sm md:text-md"
           onClick={openModal}
         >
           + 응원글 남기기
