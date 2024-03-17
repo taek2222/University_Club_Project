@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import apiClient from 'api';
-import Event from "../event";
+import Event from "./event";
 
 function Club({ schedule, category }) {
     const [data, setData] = useState([]);

@@ -25,6 +25,9 @@ public class Schedule {
     @Column(name = "part")
     private String part;
 
+    @Column(name = "location")
+    private String location;
+
     @Column(name="icon_url")
     private String iconUrl;
 

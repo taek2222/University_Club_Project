@@ -33,6 +33,7 @@ public class ScheduleService {
             scheduleDTO.setIconUrl(schedule.getIconUrl());
             scheduleDTO.setImageUrl(schedule.getImageUrl());
             scheduleDTO.setPart(schedule.getPart());
+            scheduleDTO.setLocation(schedule.getLocation());
             scheduleDTO.setCategory(schedule.getCategory());
             scheduleDTO.setEventTime(schedule.getEventTime());
             return scheduleDTO;

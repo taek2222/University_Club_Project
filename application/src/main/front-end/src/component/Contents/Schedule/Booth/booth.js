@@ -3,7 +3,7 @@ import Club from "./club";
 
 function Booth({ category, groupedEvents }) {
     const [selectedClubCategory, setSelectedClubategory] = useState("전체");
-    const clubCategories = ["전체", "공연", "체육", "취미", "종교", "봉사"];
+    const clubCategories = ["전체", "체육", "취미", "종교", "봉사"];
     const clubCategoryMapping = {
       "전체": "all",
       "공연": "1",
