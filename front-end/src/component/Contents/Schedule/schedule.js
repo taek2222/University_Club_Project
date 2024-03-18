@@ -6,13 +6,13 @@ import Booth from "./Booth/booth.js";
 
 function Schedule() {
   const [schedules, setSchedules] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("day1");
+  const [selectedCategory, setSelectedCategory] = useState("day1[부스]");
 
-  const categories = ["day1", "day2", "day3"];
+  const categories = ["day1[부스]", "day2[부스]", "day3[공연]"];
   const categoryMapping = {
-    "day1": "2024-03-12",
-    "day2": "2024-03-13",
-    "day3": "2024-03-14",
+    "day1[부스]": "2024-03-12",
+    "day2[부스]": "2024-03-13",
+    "day3[공연]": "2024-03-14",
   };
 
   const getMaxPart = (schedules) => {
@@ -84,7 +84,7 @@ function Schedule() {
       <p className="flex justify-center mt-5 text-lg font-bold">{categoryMapping[selectedCategory]}</p>
       
       <div className="mt-3">
-        {selectedCategory!=='day3'
+        {selectedCategory!=='day3[공연]'
         ? 
         <Booth 
           category={categoryMapping[selectedCategory] || selectedCategory}
