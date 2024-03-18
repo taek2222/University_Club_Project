@@ -59,7 +59,7 @@ function Schedule() {
 
   return (
     <>
-      <Banner title="📆 홍보제 축제 일정" subtitle="일정을 확인하고 참여하자!🕒 day1 ~ 2: 부스 / day3: 공연" />
+      <Banner title="📆 홍보제 축제 일정" subtitle="일정을 확인하고 참여하자! 🕒" />
       <div className="flex justify-center space-x-1.5 mb-1">
         {categories.map((category) => (
           <div
