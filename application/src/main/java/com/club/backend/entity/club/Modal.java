@@ -16,18 +16,18 @@ public class Modal {
     @Column(name="club_id")
     private int clubId;
 
-    @Column(name="modal_title")
+    @Column(name="title")
     private String modalTitle;
 
-    @Column(name="modal_contents")
+    @Column(name="contents")
     @Lob
     private String modalContents;
 
     @ElementCollection
-    @Column(name="modal_url")
+    @Column(name="url")
     private List<String> modalImage;
 
-    @Column(name="modal_location_url")
+    @Column(name="location_url")
     private String modalLocationImage;
 
     @OneToOne

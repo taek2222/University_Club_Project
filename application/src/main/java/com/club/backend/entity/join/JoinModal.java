@@ -17,15 +17,15 @@ public class JoinModal {
     @Column(name="club_id")
     private int clubId;
 
-    @Column(name="modal_image")
+    @Column(name="image")
     @ElementCollection
     private List<String> modalImage;
 
-    @Column(name="modal_contents")
+    @Column(name="contents")
     @Lob
     private String modalContents;
 
-    @Column(name = "join_url")
+    @Column(name = "url")
     @ElementCollection
     private List<String> joinUrl;
 
