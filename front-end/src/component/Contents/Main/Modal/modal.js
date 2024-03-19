@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import apiClient from 'api.js';
 
 const Modal = ({ isOpen, onClose }) => {
@@ -19,6 +19,12 @@ const Modal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState(initialFormData);
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [charCount, setCharCount] = useState(0);
+  const [isSaveEnabled, setIsSaveEnabled] = useState(false);
+
+  useEffect(() => {
+    // content의 값이 변경될 때마다 저장 버튼의 활성화 여부를 업데이트합니다.
+    setIsSaveEnabled(formData.content.trim() !== "");
+  }, [formData.content]);
 
   if (!isOpen) return null;
 
@@ -47,25 +53,16 @@ const Modal = ({ isOpen, onClose }) => {
 
   const handleAnonymousCheckboxChange = (e) => {
     setIsAnonymous(e.target.checked);
-    if (e.target.checked) {
-      setFormData({
-        ...formData,
-        anonymous: true,
-      });
-    } else {
-      setFormData({
-        ...formData,
-        anonymous: false,
-      });
-    }
+    setFormData({
+      ...formData,
+      anonymous: e.target.checked,
+    });
   };
 
   const handleBackgroundClick = (e) => { // 배경 클릭 시 닫기
     e.stopPropagation();
     setFormData(initialFormData);
-    if (isAnonymous) {
-      setIsAnonymous(false);
-    }
+    setIsAnonymous(false);
     onClose(); 
   };
 
@@ -84,9 +81,7 @@ const Modal = ({ isOpen, onClose }) => {
 
       console.log('Memo saved successfully', response.data);
       setFormData(initialFormData);
-      if (isAnonymous) {
-        setIsAnonymous(false);
-      }
+      setIsAnonymous(false);
       onClose();
     } catch (error) {
       console.error('Error saving memo:', error);
@@ -95,9 +90,7 @@ const Modal = ({ isOpen, onClose }) => {
 
   const handleCancelClick = () => {
     setFormData(initialFormData);
-    if (isAnonymous) {
-      setIsAnonymous(false);
-    }
+    setIsAnonymous(false);
     onClose();
   };
 
@@ -149,8 +142,8 @@ const Modal = ({ isOpen, onClose }) => {
                     <label className="text-lg text-left font-bold">
                       학과 :
                       <select name="major" value={formData.major} onChange={handleInputChange} className="ml-3 font-normal border-2">
-                        {majors.map((major) => (
-                          <option value={`${major}`}>{major}</option>
+                        {majors.map((major, index) => (
+                          <option key={index} value={`${major}`}>{major}</option>
                         ))}
                       </select>
                       <br />
@@ -165,7 +158,7 @@ const Modal = ({ isOpen, onClose }) => {
                       이름 :
                       <input type="text" name="studentName" value={formData.studentName} onChange={handleInputChange} className="w-full border-2 border-inherit p-2 h-12 font-normal" />
                       <label className="">익명</label>
-                      <input type="checkbox" name="anonymous" value={formData.anonymous} onChange={handleAnonymousCheckboxChange} className="ml-3" />
+                      <input type="checkbox" name="anonymous" checked={isAnonymous} onChange={handleAnonymousCheckboxChange} className="ml-3" />
                       <p className="text-xs text-left font-bold text-blue-600">
                         익명 체크시 응원글이 홈페이지에 익명으로 표시됩니다. 상품 추첨을 위해 이름을 작성해주시길 바랍니다.
                       </p>
@@ -182,8 +175,8 @@ const Modal = ({ isOpen, onClose }) => {
 
         <div className="flex justify-center space-x-3 mt-2 mb-4">
             <div
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-9 rounded-full hover:cursor-pointer"
-              onClick={handleSaveClick}
+              className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-9 rounded-full hover:cursor-pointer ${isSaveEnabled ? '' : 'opacity-50 cursor-not-allowed'}`}
+              onClick={isSaveEnabled ? handleSaveClick : null}
             >
                 저장
             </div>
