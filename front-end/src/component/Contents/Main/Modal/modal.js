@@ -22,7 +22,6 @@ const Modal = ({ isOpen, onClose }) => {
   const [isSaveEnabled, setIsSaveEnabled] = useState(false);
 
   useEffect(() => {
-    // content의 값이 변경될 때마다 저장 버튼의 활성화 여부를 업데이트합니다.
     setIsSaveEnabled(formData.content.trim() !== "");
   }, [formData.content]);
 
