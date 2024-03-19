@@ -20,10 +20,11 @@ const Modal = ({ isOpen, onClose }) => {
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [charCount, setCharCount] = useState(0);
   const [isSaveEnabled, setIsSaveEnabled] = useState(false);
+  const [isValidClassOf, setIsValidClassOf] = useState(true);
 
   useEffect(() => {
-    setIsSaveEnabled(formData.content.trim() !== "");
-  }, [formData.content]);
+    setIsSaveEnabled(formData.content.trim() !== "" && isValidClassOf);
+  }, [formData.content, isValidClassOf]);
 
   if (!isOpen) return null;
 
@@ -41,6 +42,13 @@ const Modal = ({ isOpen, onClose }) => {
       } else {
         e.preventDefault();
       }
+    } else if (inputName === "classOf") {
+      const isValid = inputValue.length === 8;
+      setIsValidClassOf(isValid);
+      setFormData({
+        ...formData,
+        [inputName]: inputValue,
+      });
     } else {
       setFormData({
         ...formData,
@@ -150,7 +158,8 @@ const Modal = ({ isOpen, onClose }) => {
                     <p className="mt-2" />
                     <label className="text-lg text-left font-bold mt-3">
                       학번 :
-                      <input type="text" name="classOf" value={formData.classOf} onChange={handleInputChange} className="w-full border-2 border-inherit p-2 h-12 font-normal" />
+                      <input type="text" name="classOf" value={formData.classOf} onChange={handleInputChange} className={`w-full border-2 border-inherit p-2 h-12 font-normal ${isValidClassOf ? '' : 'border-red-500'}`} />
+                      {!isValidClassOf && <p className="text-xs text-red-500 mt-1">학번은 8자리여야 합니다.</p>}
                     </label>
                     <p className="mt-2" />
                     <label className="text-lg text-left font-bold mt-3">
