@@ -154,7 +154,7 @@ INSERT INTO JOIN_TABLE(club_id, icon_image, title) values (1, '1_1.png', '2024�
 INSERT INTO JOIN_TABLE(club_id, icon_image, title) values (2, '1_1.png', '테스트 임원진 모집');
 
 -- 가입 경로 ( 네이버, 구글, 카카오, 인스타 )
-INSERT INTO JOIN_PATHS(join_club_id, paths) values (1, true), (1, false), (1, false), (1, true);
+INSERT INTO JOIN_PATHS(join_club_id, paths) values (1, true), (1, true), (1, true), (1, true);
 INSERT INTO JOIN_PATHS(join_club_id, paths) values (2, true), (2, true), (2, true), (2, false);
 
 -- 가입 기간
