@@ -1,18 +1,30 @@
-import React, {useState} from "react";
+import React, {useState, useEffect, useMemo} from "react";
+import apiClient from 'api';
 import Club from "./club";
 
 function Booth({ category, groupedEvents }) {
     const [selectedClubCategory, setSelectedClubategory] = useState("전체");
+    const [clubsData, setClubsData] = useState([]);
     const clubCategories = ["전체", "체육", "취미", "종교", "봉사"];
-    const clubCategoryMapping = {
-      "전체": "all",
-      "공연": "1",
-      "체육": "2",
-      "취미": "3",
-      "종교": "4",
-      "봉사": "5"
-    };
+    const clubCategoryMapping = useMemo(() => ({
+        "전체": "all",
+        "공연": "1",
+        "체육": "2",
+        "취미": "3",
+        "종교": "4",
+        "봉사": "5"
+    }), []);
     
+    useEffect(() => {
+        const category = clubCategoryMapping[selectedClubCategory] || selectedClubCategory;
+        apiClient.get(`/clubs/${category}`)
+            .then((response) => {
+                setClubsData(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching clubs data:", error);
+            });
+    }, [selectedClubCategory, clubCategoryMapping]);
 
     return(
         <>
@@ -52,7 +64,11 @@ function Booth({ category, groupedEvents }) {
                                 )
                             )
                             .map((schedule) => (
-                                <Club schedule={schedule} category={clubCategoryMapping[selectedClubCategory] || selectedClubCategory} />
+                                <Club
+                                    schedule={schedule}
+                                    category={clubCategoryMapping[selectedClubCategory] || selectedClubCategory}
+                                    clubsData={clubsData}
+                                />
                             ))}
                             </div>
                         ))}
