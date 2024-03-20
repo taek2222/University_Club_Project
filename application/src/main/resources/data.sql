@@ -171,20 +171,20 @@ INSERT INTO JOIN_MODAL_MODAL_IMAGE(join_modal_club_id, image) values (1, '1_1.JP
 INSERT INTO JOIN_MODAL_JOIN_URL(join_modal_club_id, url) values (1, 'https://form.naver.com/response/JEMUf_nDTieSnZ3QUEJr8w'), (1, 'false'), (1, 'false'), (1, 'https://www.instagram.com/gwnu_eum_wonju?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==');
 
 -- 공연 동아리 day1
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (1, 12, '0_1.png', '', 1, '체육관', 'booth', '2024-03-12 10:00');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (2, 8, '0_1.png', 'fermata.jpg', 1, '중앙부스', 'booth', '2024-03-12 10:30');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (3, 13, '0_1.png', 'phrase.jpg', 2, '체육관', 'booth', '2024-03-12 15:00');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (4, 17, '0_1.png', '', 2, '중앙부스', 'booth', '2024-03-12 15:30');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (5, 19, '0_1.png', '', 3, '체육관', 'booth', '2024-03-12 18:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (1, 12, '0_1.png', '', 1, '체육관', 'booth', '2024-04-01 10:00', '2024-04-01 15:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (2, 8, '0_1.png', 'fermata.jpg', 1, '중앙부스', 'booth', '2024-04-01 10:30', '2024-04-01 15:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (3, 13, '0_1.png', 'phrase.jpg', 2, '체육관', 'booth', '2024-04-01 11:00', '2024-04-01 15:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (4, 17, '0_1.png', '', 2, '중앙부스', 'booth', '2024-04-01 15:30', '2024-04-01 18:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (5, 19, '0_1.png', '', 3, '체육관', 'booth', '2024-04-01 12:00', '2024-04-01 15:00');
 -- 공연 동아리 day2
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (6, 12, '0_1.png', 'fermata.jpg', 1, '중앙부스', 'booth', '2024-03-13 13:00');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (7, 8, '0_1.png', '', 1, '체육관', 'booth', '2024-03-13 13:30');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (8, 18, '0_1.png', '', 2, '중앙부스', 'booth', '2024-03-13 15:00');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (9, 19, '0_1.png', '', 2, '중앙부스', 'booth', '2024-03-13 15:30');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (10, 7, '0_1.png', 'fermata.jpg', 3, '체육관', 'booth', '2024-03-13 22:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (6, 12, '0_1.png', 'fermata.jpg', 1, '중앙부스', 'booth', '2024-04-02 13:00', '2024-04-02 15:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (7, 8, '0_1.png', '', 1, '체육관', 'booth', '2024-04-02 13:30', '2024-04-02 16:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (8, 18, '0_1.png', '', 2, '중앙부스', 'booth', '2024-04-02 15:00', '2024-04-02 18:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (9, 19, '0_1.png', '', 2, '중앙부스', 'booth', '2024-04-02 15:30', '2024-04-02 17:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (10, 7, '0_1.png', 'fermata.jpg', 3, '체육관', 'booth', '2024-04-02 10:00', '2024-04-02 16:00');
 -- 공연 동아리 day3
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (11, 4, '0_1.png', 'phrase.jpg', 1, '', 'performance', '2024-03-14 10:00');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (12, 2, '0_1.png', '', 1, '', 'performance', '2024-03-14 10:30');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (13, 3, '0_1.png', 'fermata.jpg', 2, '', 'performance', '2024-03-14 15:00');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (14, 6, '0_1.png', '', 2, '', 'performance', '2024-03-14 15:30');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time) values (15, 3, '0_1.png', '', 3, '', 'performance', '2024-03-14 18:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (11, 4, '0_1.png', 'phrase.jpg', 1, '', 'performance', '2024-04-03 10:00', '2024-04-03 10:30');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (12, 2, '0_1.png', '', 1, '', 'performance', '2024-04-03 10:30', '2024-04-03 11:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (13, 3, '0_1.png', 'fermata.jpg', 2, '', 'performance', '2024-04-03 15:00', '2024-04-03 15:30');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (14, 6, '0_1.png', '', 2, '', 'performance', '2024-04-03 15:30', '2024-04-03 16:00');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time) values (15, 3, '0_1.png', '', 3, '', 'performance', '2024-04-03 18:00', '2024-04-03 19:00');

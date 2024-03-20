@@ -36,6 +36,7 @@ public class ScheduleService {
             scheduleDTO.setLocation(schedule.getLocation());
             scheduleDTO.setCategory(schedule.getCategory());
             scheduleDTO.setEventTime(schedule.getEventTime());
+            scheduleDTO.setEventEndTime(schedule.getEventEndTime());
             return scheduleDTO;
         }).collect(Collectors.toList());
     }

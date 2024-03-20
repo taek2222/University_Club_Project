@@ -40,4 +40,8 @@ public class Schedule {
     @Column(name = "event_time")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime eventTime;
+
+    @Column(name = "event_end_time")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+    private LocalDateTime eventEndTime;
 }
