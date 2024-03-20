@@ -42,9 +42,9 @@ function Event({ schedule, iconUrl }) {
         <>
             <div className="mx-3 my-5">
                 <div className="flex border-b-2 border-b-slate-300">
-                    <div className=" rounded-full bg-red-500 w-3 h-3 mt-1 mr-1 mb-2">
+                    <div className={`rounded-full ${isTimeConflict ? 'bg-green-600' : 'bg-red-600'} w-3 h-3 mt-1 mr-1 mb-2`}>
                     </div>
-                    <p className="text-sm font-bold">온라인</p>
+                    <p className="text-sm font-bold">{isTimeConflict ? '온라인' : '오프라인'}</p>
                 </div>
                 <div className="flex mt-1">
                     {(schedule.imageUrl!=='') && (
