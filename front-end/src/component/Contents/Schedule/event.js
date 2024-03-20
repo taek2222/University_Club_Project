@@ -16,7 +16,6 @@ function Event({ schedule, iconUrl }) {
 
     const formatEventEndTime = () => {
         const dateObject = new Date(schedule.eventTime);
-        dateObject.setMinutes(dateObject.getMinutes() + 30);
         const formattedTime = `${String(dateObject.getHours()).padStart(2, '0')}:${String(dateObject.getMinutes()).padStart(2, '0')}`;
         return formattedTime;
     };
@@ -33,8 +32,7 @@ function Event({ schedule, iconUrl }) {
         const currentTime = new Date();
     
         const eventStartTime = new Date(schedule.eventTime);
-        const eventEndTime = new Date(schedule.eventTime);
-        eventEndTime.setMinutes(eventEndTime.getMinutes() + 30);
+        const eventEndTime = new Date(schedule.eventEndTime);
     
         const isTimeConflict = currentTime >= eventStartTime && currentTime <= eventEndTime;
     

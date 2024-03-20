@@ -15,8 +15,7 @@ function Event({ schedule, iconUrl }) {
     };
 
     const formatEventEndTime = () => {
-        const dateObject = new Date(schedule.eventTime);
-        dateObject.setMinutes(dateObject.getMinutes() + 180);
+        const dateObject = new Date(schedule.eventEndTime);
         const formattedTime = `${String(dateObject.getHours()).padStart(2, '0')}:${String(dateObject.getMinutes()).padStart(2, '0')}`;
         return formattedTime;
     };
@@ -33,9 +32,7 @@ function Event({ schedule, iconUrl }) {
         const currentTime = new Date();
     
         const eventStartTime = new Date(schedule.eventTime);
-        const eventEndTime = new Date(schedule.eventTime);
-        eventEndTime.setMinutes(eventEndTime.getMinutes() + 180);
-    
+        const eventEndTime = new Date(schedule.eventEndTime);
         const isTimeConflict = currentTime >= eventStartTime && currentTime <= eventEndTime;
     
         setIsTimeConflict(isTimeConflict);
@@ -44,8 +41,13 @@ function Event({ schedule, iconUrl }) {
     return(
         <>
             <div className="mx-3 my-5">
-                <div className="flex">
-                    {(isTimeConflict && schedule.imageUrl!=='') && (
+                <div className="flex border-b-2 border-b-slate-300">
+                    <div className=" rounded-full bg-red-500 w-3 h-3 mt-1 mr-1 mb-2">
+                    </div>
+                    <p className="text-sm font-bold">온라인</p>
+                </div>
+                <div className="flex mt-1">
+                    {(schedule.imageUrl!=='') && (
                         <div className="flex flex-col items-center hover:cursor-pointer" onClick={openModal}>
                             <div className={`rounded-full p-[1.8px] mt-2 mb-1 bg-gradient-to-r from-yellow-400 via-pink-400 to-pink-600 transform transition-transform`}>
                                 <div className="rounded-full bg-white w-9 h-9 overflow-hidden flex justify-center items-center">
@@ -59,7 +61,7 @@ function Event({ schedule, iconUrl }) {
                             </div>
                         </div>
                     )}
-                    {(!isTimeConflict || schedule.imageUrl==='') && (
+                    {(schedule.imageUrl==='') && (
                         <div className="rounded-full bg-white w-10 h-10 mt-2 overflow-hidden flex justify-center items-center">
                             <div className="flex w-[2.6rem] h-[2.6rem] border-0 rounded-full justify-center items-center">
                                 <img

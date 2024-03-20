@@ -10,9 +10,9 @@ function Schedule() {
 
   const categories = ["day1[부스]", "day2[부스]", "day3[공연]"];
   const categoryMapping = {
-    "day1[부스]": "2024-03-12",
-    "day2[부스]": "2024-03-13",
-    "day3[공연]": "2024-03-14",
+    "day1[부스]": "2024-04-01",
+    "day2[부스]": "2024-04-02",
+    "day3[공연]": "2024-04-03",
   };
 
   const getMaxPart = (schedules) => {
