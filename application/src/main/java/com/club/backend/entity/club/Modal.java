@@ -19,8 +19,8 @@ public class Modal {
     @Column(name="title")
     private String modalTitle;
 
-    @Column(name="contents")
     @Lob
+    @Column(name="contents")
     private String modalContents;
 
     @ElementCollection

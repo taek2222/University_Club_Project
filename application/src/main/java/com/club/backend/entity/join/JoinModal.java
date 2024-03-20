@@ -17,16 +17,16 @@ public class JoinModal {
     @Column(name="club_id")
     private int clubId;
 
-    @Column(name="image")
     @ElementCollection
+    @Column(name="image")
     private List<String> modalImage;
 
     @Column(name="contents")
     @Lob
     private String modalContents;
 
-    @Column(name = "url")
     @ElementCollection
+    @Column(name = "url")
     private List<String> joinUrl;
 
     @OneToOne

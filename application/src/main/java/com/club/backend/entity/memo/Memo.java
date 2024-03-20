@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Memo {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long memoId;
