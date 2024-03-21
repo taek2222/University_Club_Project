@@ -16,7 +16,7 @@ function Footer() {
       </div>
 
       <p className="mt-3 text-xs">
-        강릉원주대학교 원주 캠퍼스 | TEL : 033-642-7001
+        강릉원주대학교 원주 캠퍼스 | 총동아리 연합회 'EUM'
       </p>
 
       <p className="mt-1 text-xs">
