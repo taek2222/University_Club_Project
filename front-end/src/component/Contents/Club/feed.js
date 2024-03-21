@@ -10,12 +10,28 @@ function Feed({ category }) {
   useEffect(() => {
       apiClient.get(`/clubs/${category}`)
       .then((Response) => {
+        shuffleArray(Response.data);
         setData(Response.data);
       })
       .catch((Error) => {
         console.log(Error);
       });
   }, [category]);
+
+  function shuffleArray(array) {
+    let currentIndex = array.length, randomIndex;
+
+    while (currentIndex !== 0) {
+
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+  }
 
   return (
     <>
