@@ -1,19 +1,21 @@
+// REVIEWED: 2024-03-21 by [Oh Yeon Taek]
 import React from "react";
 
 // Header 재사용
 import HeaderRecycle from "./header_recycle";
 
 // Header 이미지 import
-import Main from "../../image/header_image/main.png";
-import Club from "../../image/header_image/club.png";
-import Emergency from "../../image/header_image/emergency.png";
-import Join from "../../image/header_image/join.png";
-import Calendar from "../../image/header_image/calendar.png";
+import Main from "image/header_image/main.png";
+import Club from "image/header_image/club.png";
+import Emergency from "image/header_image/emergency.png";
+import Join from "image/header_image/join.png";
+import Calendar from "image/header_image/calendar.png";
 
 function Header({ activeMainContent, setActiveMainContent }) {
   return (
     <header className="sticky top-0 w-full bg-white z-10">
-      <div className="flex justify-center items-center space-x-6 pt-3 mb-3">
+      <div className="flex justify-center items-center space-x-6 pt-3 mb-2">
+        {/* 헤더 재사용 */}
         <HeaderRecycle
           imageSrc={Main}
           altText="메인"

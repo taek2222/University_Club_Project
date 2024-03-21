@@ -1,3 +1,4 @@
+// REVIEWED: 2024-03-21 by [Oh Yeon Taek]
 import React from "react"
 
 function HeaderRecycle({ onClick, imageSrc, altText, label, scale }) {

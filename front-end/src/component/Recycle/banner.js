@@ -1,5 +1,7 @@
+// REVIEWED: 2024-03-21 by [Oh Yeon Taek]
 import React, { useEffect, useRef, useState } from 'react';
 
+// Banner 이미지 import
 import BannerImage from "image/banner.png";
 
 function Banner({ title, subtitle }) {

@@ -1,7 +1,9 @@
+// REVIEWED: 2024-03-21 by [Oh Yeon Taek]
 import React from "react";
 
-import Instagram from "../../image/footer_image/instagram.png";
-import Eum from "../../image/footer_image/eum.png";
+// Footer 이미지 import
+import Instagram from "image/footer_image/instagram.png";
+import Eum from "image/footer_image/eum.png";
 
 function Footer() {
   return (
