@@ -10,7 +10,7 @@ import Banner from "image/content_image/banner.png";
 function Main() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const CHEER_TITLE = "응원 문구"
+  const CHEER_TITLE = "축제 응원"
   const CHEER_ALT_TEXT = "cheer logo"
 
   const openModal = () => setIsModalOpen(true);

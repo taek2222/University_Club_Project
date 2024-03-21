@@ -6,13 +6,13 @@ import Booth from "./Booth/booth.js";
 
 function Schedule() {
   const [schedules, setSchedules] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("day1[부스]");
+  const [selectedCategory, setSelectedCategory] = useState("Day1 [부스]");
 
-  const categories = ["day1[부스]", "day2[부스]", "day3[공연]"];
+  const categories = ["Day1 [부스]", "Day2 [부스]", "Day3 [공연]"];
   const categoryMapping = {
-    "day1[부스]": "2024-03-20",
-    "day2[부스]": "2024-04-02",
-    "day3[공연]": "2024-04-03",
+    "Day1 [부스]": "2024-04-01",
+    "Day2 [부스]": "2024-04-02",
+    "Day3 [공연]": "2024-04-03",
   };
 
   const getMaxPart = (schedules) => {
@@ -59,7 +59,7 @@ function Schedule() {
 
   return (
     <>
-      <Banner title="📆 홍보제 축제 일정" subtitle="일정을 확인하고 참여하자! 🕒" />
+      <Banner title="📆 홍보제 축제 일정" subtitle="행사 일정을 확인하고 참여하자! 🕒" />
       <div className="flex justify-center space-x-1.5 mb-1">
         {categories.map((category) => (
           <div
@@ -84,7 +84,7 @@ function Schedule() {
       <p className="flex justify-center mt-5 text-lg font-bold">{categoryMapping[selectedCategory]}</p>
       
       <div className="mt-3">
-        {selectedCategory!=='day3[공연]'
+        {selectedCategory!=='Day3 [공연]'
         ? 
         <Booth 
           category={categoryMapping[selectedCategory] || selectedCategory}
@@ -96,7 +96,7 @@ function Schedule() {
             <div className="flex justify-between border rounded-lg mx-5 my-3 px-5 shadow-lg max-w-[500px]">
               <div className="mx-3 my-5">
                 <div className="mx-3 mt-4 font-bold text-xl">
-                  Part {partIndex + 1}.
+                  Part {partIndex + 1}
                 </div>
                 {events
                   .filter(
