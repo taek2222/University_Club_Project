@@ -6,12 +6,18 @@ import Card from "./Feed/card.js";
 
 function Feed({ category }) {
   const [data, setData] = useState([]); // API 데이터 값
+  const fixedClubId = 1;
 
   useEffect(() => {
       apiClient.get(`/clubs/${category}`)
       .then((Response) => {
-        shuffleArray(Response.data);
-        setData(Response.data);
+        const fixedData = Response.data.filter(club => club.clubId === fixedClubId);
+        const restData = Response.data.filter(club => club.clubId !== fixedClubId);
+
+        const shuffledRestData = shuffleArray(restData);
+        const finalData = [...fixedData, ...shuffledRestData];
+
+        setData(finalData);
       })
       .catch((Error) => {
         console.log(Error);
