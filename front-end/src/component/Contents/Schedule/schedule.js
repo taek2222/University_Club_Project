@@ -3,6 +3,7 @@ import Event from "./event.js";
 import Banner from "component/Recycle/banner.js";
 import apiClient from "api.js";
 import Booth from "./Booth/booth.js";
+import Location from "image/schedule_image/location.png";
 
 function Schedule() {
   const [schedules, setSchedules] = useState([]);
@@ -119,6 +120,14 @@ function Schedule() {
         ))
       }
       </div>
+      <div className="px-3 mt-5">
+        <img
+          className="rounded-xl shadow-xl"
+          src={Location}
+          alt="Location"
+        />
+      </div>
+
     </>
   );
 }

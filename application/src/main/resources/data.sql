@@ -41,15 +41,9 @@ INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (4, 'feed_test.png', 
 INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (5, 'feed_test.png', 'feed_test.png');
 INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (6, 'feed_test.png', 'feed_test.png');
 INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (7, 'feed_test.png', 'feed_test.png');
--- INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (8, 'feed_test.png', 'feed_test.png');
 INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (9, 'feed_test.png', 'feed_test.png');
--- INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (10, 'feed_test.png', 'feed_test.png');
--- INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (11, 'feed_test.png', 'feed_test.png');
 INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (12, 'feed_test.png', 'feed_test.png');
--- INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (13, 'feed_test.png', 'feed_test.png');
 INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (14, 'feed_test.png', 'feed_test.png');
--- INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (15, 'feed_test.png', 'feed_test.png');
--- INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (16, 'feed_test.png', 'feed_test.png');
 INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (17, 'feed_test.png', 'feed_test.png');
 INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (18, 'feed_test.png', 'feed_test.png');
 INSERT INTO PROPERTY (club_id, image_url, icon_url) VALUES (19, 'feed_test.png', 'feed_test.png');
@@ -63,15 +57,9 @@ INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (4, '테스트1'), (4,
 INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (5, '테스트2'), (5, '테스트2');
 INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (6, '테스트1'), (6, '테스트2');
 INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (7, '테스트2'), (7, '테스트2');
--- INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (8, '테스트1'), (8, '테스트2');
 INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (9, '테스트2'), (9, '테스트2');
--- INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (10, '테스트1'), (10, '테스트2');
--- INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (11, '테스트2'), (11, '테스트2');
 INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (12, '테스트1'), (12, '테스트2');
--- INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (13, '테스트2'), (13, '테스트2');
 INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (14, '테스트1'), (14, '테스트2');
--- INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (15, '테스트2'), (15, '테스트2');
--- INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (16, '테스트1'), (16, '테스트2');
 INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (17, '테스트2'), (17, '테스트2');
 INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (18, '테스트1'), (18, '테스트2');
 INSERT INTO PROPERTY_TAGS (property_club_id, tags) VALUES (19, '테스트2'), (19, '테스트2');
@@ -85,15 +73,9 @@ INSERT INTO MODAL (club_id, contents, title, location_url) values (4, '테스트
 INSERT INTO MODAL (club_id, contents, title, location_url) values (5, '테스트_제목', '테스트_내용', '0_map.png');
 INSERT INTO MODAL (club_id, contents, title, location_url) values (6, '테스트_제목', '테스트_내용', '0_map.png');
 INSERT INTO MODAL (club_id, contents, title, location_url) values (7, '테스트_제목', '테스트_내용', '0_map.png');
--- INSERT INTO MODAL (club_id, contents, title, location_url) values (8, '테스트_제목', '테스트_내용', '0_map.png');
 INSERT INTO MODAL (club_id, contents, title, location_url) values (9, '테스트_제목', '테스트_내용', '0_map.png');
--- INSERT INTO MODAL (club_id, contents, title, location_url) values (10, '테스트_제목', '테스트_내용', '0_map.png');
--- INSERT INTO MODAL (club_id, contents, title, location_url) values (11, '테스트_제목', '테스트_내용', '0_map.png');
 INSERT INTO MODAL (club_id, contents, title, location_url) values (12, '테스트_제목', '테스트_내용', '0_map.png');
--- INSERT INTO MODAL (club_id, contents, title, location_url) values (13, '테스트_제목', '테스트_내용', '0_map.png');
 INSERT INTO MODAL (club_id, contents, title, location_url) values (14, '테스트_제목', '테스트_내용', '0_map.png');
--- INSERT INTO MODAL (club_id, contents, title, location_url) values (15, '테스트_제목', '테스트_내용', '0_map.png');
--- INSERT INTO MODAL (club_id, contents, title, location_url) values (16, '테스트_제목', '테스트_내용', '0_map.png');
 INSERT INTO MODAL (club_id, contents, title, location_url) values (17, '테스트_제목', '테스트_내용', '0_map.png');
 INSERT INTO MODAL (club_id, contents, title, location_url) values (18, '테스트_제목', '테스트_내용', '0_map.png');
 INSERT INTO MODAL (club_id, contents, title, location_url) values (19, '테스트_제목', '테스트_내용', '0_map.png');
@@ -107,15 +89,9 @@ INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (4, '0_1.png');
 INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (5, '0_1.png');
 INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (6, '0_1.png');
 INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (7, '0_1.png');
--- INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (8, '0_1.png');
 INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (9, '0_1.png');
--- INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (10, '0_1.png');
--- INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (11, '0_1.png');
 INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (12, '0_1.png');
--- INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (13, '0_1.png');
 INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (14, '0_1.png');
--- INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (15, '0_1.png');
--- INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (16, '0_1.png');
 INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (17, '0_1.png');
 INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (18, '0_1.png');
 INSERT INTO MODAL_MODAL_IMAGE (modal_club_id, url) values (19, '0_1.png');
@@ -129,15 +105,9 @@ INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (4, 0);
 INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (5, 0);
 INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (6, 0);
 INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (7, 0);
--- INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (8, 0);
 INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (9, 0);
--- INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (10, 0);
--- INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (11, 0);
 INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (12, 0);
--- INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (13, 0);
 INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (14, 0);
--- INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (15, 0);
--- INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (16, 0);
 INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (17, 0);
 INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (18, 0);
 INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (19, 0);
@@ -157,15 +127,12 @@ INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, co
 
 -- 가입 신청 동아리
 INSERT INTO JOIN_TABLE(club_id, icon_image, title) values (1, '1_1.png', '2024년도 총동아리연합회 \n 🎉신입생 모집 안내🎉');
-INSERT INTO JOIN_TABLE(club_id, icon_image, title) values (2, '1_1.png', '테스트 임원진 모집');
 
 -- 가입 경로 ( 네이버, 구글, 카카오, 인스타 )
-INSERT INTO JOIN_PATHS(join_club_id, paths) values (1, true), (1, true), (1, true), (1, true);
-INSERT INTO JOIN_PATHS(join_club_id, paths) values (2, true), (2, true), (2, true), (2, false);
+INSERT INTO JOIN_PATHS(join_club_id, paths) values (1, true), (1, false), (1, false), (1, true);
 
 -- 가입 기간
 INSERT INTO TERM(club_id, start_date, end_date) values (1, '2024-03-08', '2024-04-12');
-INSERT INTO TERM(club_id, start_date, end_date) values (2, '2024-03-17', '2024-04-12');
 
 -- 가입 모달 내용
 INSERT INTO JOIN_MODAL(club_id, contents) values (1, '안녕하십니까, 제39대 총동아리연합회 ''EUM''입니다. \n \n 총동아리연합회 2024학년도 부원을 모집합니다.\n \n *📋모집 대상* \n-2024년 강릉원주대학교 원주캠퍼스 신입생 \n \n *📆모집 기간* \n -1차 서류 접수 기간 : 3월 11일(월) ~ 3월 15일(금) \n -2차 대면 면접 : 추후 개별 연락 \n \n 1차 서류 지원서는 모집 공고에 첨부된 QR 및 URL을 통해 네이버 폼으로 작성 부탁드립니다!');
