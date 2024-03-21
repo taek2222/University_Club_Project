@@ -175,7 +175,7 @@ const Modal = ({ isOpen, onClose }) => {
                     <label className="text-lg font-bold mt-3">
                       내용 :
                       <p className={`text-sm ${charCount===50?'text-red-500':''}`}>{charCount}/50</p>
-                      <textarea type="text" name="content" placeholder="글자 수 100자 이하로 작성" value={formData.content} onChange={handleInputChange} className="min-h-28 w-full border-2 border-inherit p-2 font-normal" />
+                      <textarea type="text" name="content" placeholder="글자 수 50자 이하로 작성" value={formData.content} onChange={handleInputChange} className="min-h-28 w-full border-2 border-inherit p-2 font-normal" />
                     </label>
                 </form>
             </div>

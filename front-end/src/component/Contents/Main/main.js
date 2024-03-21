@@ -25,13 +25,13 @@ function Main() {
       />
       <ImageSwiper />
 
-      <div className="m-5 mt-16 flex">
+      <div className="mx-6 mt-8 flex">
         <img
-            className="w-10 h-10"
+            className="w-10 h-10 mt-1"
             src={cheerLogo}
             alt={CHEER_ALT_TEXT}
         />
-        <div className="mx-3 mt-1 text-xl md:text-2xl font-bold">{CHEER_TITLE}</div>
+        <div className="mx-3 mt-2 text-xl md:text-2xl font-bold">{CHEER_TITLE}</div>
         <div 
           className="ml-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-full hover:cursor-pointer text-sm md:text-md"
           onClick={openModal}
