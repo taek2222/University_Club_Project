@@ -5,14 +5,14 @@ import Club from "./club";
 function Booth({ category, groupedEvents }) {
     const [selectedClubCategory, setSelectedClubategory] = useState("전체");
     const [clubsData, setClubsData] = useState([]);
-    const clubCategories = ["전체", "체육", "취미", "종교", "봉사"];
+    const clubCategories = ["전체", "체육", "취미", "종교", "기타"];
     const clubCategoryMapping = useMemo(() => ({
         "전체": "all",
         "공연": "1",
         "체육": "2",
         "취미": "3",
         "종교": "4",
-        "봉사": "5"
+        "기타": "5"
     }), []);
     
     useEffect(() => {

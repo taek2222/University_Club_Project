@@ -4,7 +4,7 @@ INSERT INTO TYPE (field) VALUES ('체육');
 INSERT INTO TYPE (field) VALUES ('취미');
 INSERT INTO TYPE (field) VALUES ('종교');
 INSERT INTO TYPE (field) VALUES ('봉사');
-INSERT INTO TYPE (field) VALUES ('학회');
+INSERT INTO TYPE (field) VALUES ('기타');
 
 -- 동아리
 INSERT INTO CLUB (club_id, club_name, type_id) VALUES (1, '총동연', 6);
