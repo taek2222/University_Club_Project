@@ -1,19 +1,17 @@
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 package com.club.backend.service.join;
 
-import com.club.backend.dto.join.JoinDTO;
 import com.club.backend.dto.join.JoinModalDTO;
 import com.club.backend.entity.join.JoinModal;
 import com.club.backend.repository.join.JoinModalRepository;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
+@RequiredArgsConstructor
 public class JoinModalService {
-    @Autowired
-    private JoinModalRepository joinModalRepository;
+    private final JoinModalRepository joinModalRepository;
 
     public JoinModalDTO getJoinModalSearch(int clubId) {
         JoinModal joinModal = joinModalRepository.findById(clubId)

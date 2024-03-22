@@ -1,8 +1,7 @@
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 package com.club.backend.service.join;
 
 import com.club.backend.entity.join.Term;
-import com.club.backend.repository.join.TermRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.temporal.ChronoUnit;

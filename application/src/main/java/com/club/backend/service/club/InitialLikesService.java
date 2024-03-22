@@ -1,10 +1,10 @@
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 package com.club.backend.service.club;
-import com.club.backend.dto.club.InitialLikesDTO;
+
 import com.club.backend.entity.club.InitialLikes;
 import com.club.backend.repository.club.InitialLikesRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
