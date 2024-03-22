@@ -19,7 +19,7 @@ function Memo() {
   const [memos, setMemos] = useState([]);
 
   useEffect(() => {
-    apiClient.get('/memos/all')
+    apiClient.get('/memos/confirmed')
       .then(response => {
         setMemos(response.data);
       })

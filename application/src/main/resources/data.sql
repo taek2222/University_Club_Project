@@ -114,16 +114,16 @@ INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (19, 0);
 INSERT INTO INITIAL_LIKES(club_id, initial_likes) values (20, 0);
 
 -- 메모 실험용 데이터
-INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color) values (101, '컴퓨터공학과', '20191758', false, '유재현', '해시태그 화이팅!', 'bg-red-200');
-INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color) values (102, '유아교육과', '10000000', false, '카리나', '응원문구 테스트1', 'bg-yellow-100');
-INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color) values (103, '간호학과', '20000000', false, '윈터', '응원문구 테스트2', 'bg-orange-200');
-INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color) values (104, '산업경영공학과', '30000000', false, '지젤', '응원문구 테스트3', 'bg-green-100');
-INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color) values (105, '자동차공학과', '40000000', false, '닝닝', '응원문구 테스트4', 'bg-teal-100');
-INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color) values (106, '기계공학과', '50000000', false, '김채원', '응원문구 테스트5', 'bg-cyan-100');
-INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color) values (107, '사회복지학과', '60000000', false, '카즈하', '응원문구 테스트6', 'bg-indigo-200');
-INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color) values (108, '전기공학과', '70000000', false, '홍은채', '응원문구 테스트7', 'bg-violet-200');
-INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color) values (109, '다문화학과', '80000000', false, '장원영', '응원문구 테스트8', 'bg-purple-200');
-INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color) values (1010, '멀티미디어학과', '90000000', false, '안유진', '응원문구 테스트9', 'bg-fuchsia-200');
+INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color, confirm) values (101, '컴퓨터공학과', '20191758', false, '유재현', '해시태그 화이팅!', 'bg-red-200', true);
+INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color, confirm) values (102, '유아교육과', '10000000', false, '카리나', '응원문구 테스트1', 'bg-yellow-100', true);
+INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color, confirm) values (103, '간호학과', '20000000', false, '윈터', '응원문구 테스트2', 'bg-orange-200', true);
+INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color, confirm) values (104, '산업경영공학과', '30000000', false, '지젤', '응원문구 테스트3', 'bg-green-100', false);
+INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color, confirm) values (105, '자동차공학과', '40000000', false, '닝닝', '응원문구 테스트4', 'bg-teal-100', false);
+INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color, confirm) values (106, '기계공학과', '50000000', false, '김채원', '응원문구 테스트5', 'bg-cyan-100', true);
+INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color, confirm) values (107, '사회복지학과', '60000000', false, '카즈하', '응원문구 테스트6', 'bg-indigo-200', true);
+INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color, confirm) values (108, '전기공학과', '70000000', false, '홍은채', '응원문구 테스트7', 'bg-violet-200', false);
+INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color, confirm) values (109, '다문화학과', '80000000', false, '장원영', '응원문구 테스트8', 'bg-purple-200', false);
+INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color, confirm) values (1010, '멀티미디어학과', '90000000', false, '안유진', '응원문구 테스트9', 'bg-fuchsia-200', true);
 
 -- 가입 신청 동아리
 INSERT INTO JOIN_TABLE(club_id, icon_image, title) values (1, '1_1.png', '2024년도 총동아리연합회 \n 🎉신입생 모집 안내🎉');

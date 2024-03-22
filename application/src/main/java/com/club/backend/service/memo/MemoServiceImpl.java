@@ -23,6 +23,7 @@ public class MemoServiceImpl implements MemoService {
         memo.setStudentName(memoDTO.getStudentName());
         memo.setContent(memoDTO.getContent());
         memo.setColor(memoDTO.getColor());
+        memo.setConfirm(memoDTO.getConfirm());
 
         return Optional.ofNullable(memoRepository.save(memo));
     }
@@ -30,5 +31,15 @@ public class MemoServiceImpl implements MemoService {
     @Override
     public Optional<List<Memo>> getAllMemos() {
         return Optional.ofNullable(memoRepository.findAll());
+    }
+
+    @Override
+    public List<Memo> getAllConfirmedMemos() {
+        return memoRepository.findByConfirm(true);
+    }
+
+    @Override
+    public List<Memo> getAllUnconfirmedMemos() {
+        return memoRepository.findByConfirm(false);
     }
 }
