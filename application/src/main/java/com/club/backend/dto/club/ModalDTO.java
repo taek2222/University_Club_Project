@@ -1,11 +1,11 @@
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 package com.club.backend.dto.club;
 
 import lombok.*;
 
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 public class ModalDTO {
     // Modal
     private String modalTitle;

@@ -1,12 +1,11 @@
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 package com.club.backend.dto.club;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 public class ClubDTO {
     // Club
     private int clubId; // 동아리 아이디

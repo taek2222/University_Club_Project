@@ -1,12 +1,11 @@
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 package com.club.backend.dto.join;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 public class JoinModalDTO {
     private List<String> modalImage; // 모달 이미지
     private String modalContents; // 모달 내용

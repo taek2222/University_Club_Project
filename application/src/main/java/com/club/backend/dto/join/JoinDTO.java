@@ -1,14 +1,11 @@
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 package com.club.backend.dto.join;
 
+import lombok.Data;
 
-import lombok.Getter;
-import lombok.Setter;
-
-import java.time.LocalDate;
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 public class JoinDTO {
     // Join
     private int clubId; // 동아리 아이디
