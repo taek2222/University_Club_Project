@@ -14,18 +14,21 @@ const ScheduleComponent = ({clubId}) => {
       };
 
       const eventTimeDate = item.eventTime.split("T")[0]; // 날짜 부분
-      const eventTimeTime = item.eventTime.split("T")[1]; // 시간 부분
+      const eventStartTime = item.eventTime.split("T")[1]; // 시간 부분
+      const eventEndTime = item.eventEndTime.split("T")[1]; // 종료 시간 부분
 
       const dateMap = {
-        "2024-03-14": "Day 1",
-        "2024-03-15": "Day 2",
-        "2024-03-16": "Day 3",
+        "2024-04-01": "Day 1",
+        "2024-04-02": "Day 2",
+        "2024-04-03": "Day 3",
       };
+
+      const timeRange = `${eventStartTime.split(":").slice(0, 2).join(":")} ~ ${eventEndTime.split(":").slice(0, 2).join(":")}`;
 
       return {
         date: dateMap[eventTimeDate] || eventTimeDate,
         event: categoryMap[item.category] || item.category,
-        time: `${eventTimeTime.split(":").slice(0, 2).join(":")} ~`, // "HH:MM ~" 형식
+        time: timeRange, // "HH:MM ~ HH:MM" 형식
       };
     });
   };
@@ -35,6 +38,7 @@ const ScheduleComponent = ({clubId}) => {
     apiClient
       .get(`/schedules/modal/${clubId}`)
       .then((response) => {
+        console.log(response);
         const transformedData = transformData(response.data);
         setData(transformedData);
         setIsLoading(false);
