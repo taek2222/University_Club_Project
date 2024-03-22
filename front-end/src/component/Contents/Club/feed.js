@@ -1,12 +1,12 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 import React, { useEffect, useState } from "react";
 import apiClient from 'api';
 
 import Card from "./Feed/card.js";
 
 function Feed({ category }) {
-  const [data, setData] = useState([]); // API 데이터 값
-  const fixedClubId = 1;
+  const [data, setData] = useState([]);
+  const fixedClubId = 1; // ClubId 1번은 자리 고정
 
   useEffect(() => {
       apiClient.get(`/clubs/${category}`)
@@ -44,14 +44,14 @@ function Feed({ category }) {
       <div className="container mx-auto p-4">
         {/* 반응형 그리드 레이아웃을 설정합니다. */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"> {/* 최소 2개 ~ 최대 5개 */}
-          {data.map((club, index) => (
+          {data.map((club) => (
             <Card
               clubId={club.clubId} // 동아리 순서
               clubName={club.clubName} // 동아리 이름
               tags={club.tags} // 태그
               initialLikes={club.initialLikes} // 좋아요 수
-              imageUrl={require(`../../../image/club_image/feed/${club.imageUrl}`)} // 상단 이미지
-              iconUrl={require(`../../../image/club_image/feed/${club.iconUrl}`)} // 아이콘 이미지
+              imageUrl={require(`image/club_image/feed/${club.imageUrl}`)} // 상단 이미지
+              iconUrl={require(`image/club_image/feed/${club.iconUrl}`)} // 아이콘 이미지
             />
           ))}
         </div>

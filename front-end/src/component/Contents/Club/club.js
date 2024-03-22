@@ -1,12 +1,15 @@
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 import React, { useState } from "react";
 
 import Feed from "./feed.js";
 import Banner from "component/Recycle/banner";
 
 function Club() {
-  const [selectedCategory, setSelectedCategory] = useState("전체"); // 초기 선택 분류
-  const categories = ["전체", "공연", "체육", "취미", "종교", "기타"]; // 분류 목록
-  const categoryMapping = { // Feed 치환 호출
+  const [selectedCategory, setSelectedCategory] = useState("전체");
+  const categories = ["전체", "공연", "체육", "취미", "종교", "기타"];
+
+  // 데이터 치환
+  const categoryMapping = {
     "전체": "all",
     "공연": "1",
     "체육": "2",
@@ -17,6 +20,7 @@ function Club() {
 
   return (
     <div className="flex flex-col items-center">
+      
       {/* 배너 */}
       <Banner
         title="🎊 축제 참여 동아리 목록"
@@ -40,7 +44,7 @@ function Club() {
             {/* 선택 O */}
             <div
               className={`absolute bottom-0 left-0 right-0 h-1 mx-auto w-full ${
-                selectedCategory === category ? "bg-black" : "bg-transparent"
+                selectedCategory === category ? "bg-black drop-shadow-md" : "bg-transparent"
               }`}
               style={{ marginBottom: "-1px" }}
             />

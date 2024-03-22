@@ -1,3 +1,4 @@
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 import React, { useEffect, useRef, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 

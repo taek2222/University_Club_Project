@@ -1,6 +1,7 @@
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 import React from "react";
 
-import ModalTitleIcon from "../../../../image/join_image/modal/invite.png";
+import ModalTitleIcon from "image/join_image/modal/invite.png";
 
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
@@ -9,7 +10,7 @@ const Modal = ({ isOpen, onClose, children }) => {
     e.stopPropagation();
     onClose(); 
   };
-// API 수작업 필요 아이패드 참고
+
   return (
     <div
       className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-20"

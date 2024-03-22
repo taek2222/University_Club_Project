@@ -1,4 +1,6 @@
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 import React, { useState } from 'react';
+
 import iconUrl from 'image/club_image/modal/location.png';
 
 const LocationButton = ({ locationImage }) => {

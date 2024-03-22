@@ -1,6 +1,8 @@
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 import React, { useState, useEffect } from "react";
-import CalendarIcon from "image/club_image/modal/calendar.png";
 import apiClient from 'api';
+
+import CalendarIcon from "image/club_image/modal/calendar.png";
 
 const ScheduleComponent = ({clubId}) => {
   const [data, setData] = useState([]);
@@ -28,7 +30,7 @@ const ScheduleComponent = ({clubId}) => {
       return {
         date: dateMap[eventTimeDate] || eventTimeDate,
         event: categoryMap[item.category] || item.category,
-        time: timeRange, // "HH:MM ~ HH:MM" 형식
+        time: timeRange
       };
     });
   };
@@ -38,7 +40,6 @@ const ScheduleComponent = ({clubId}) => {
     apiClient
       .get(`/schedules/modal/${clubId}`)
       .then((response) => {
-        console.log(response);
         const transformedData = transformData(response.data);
         setData(transformedData);
         setIsLoading(false);

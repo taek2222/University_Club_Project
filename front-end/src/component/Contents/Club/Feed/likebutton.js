@@ -1,3 +1,4 @@
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 import React from "react";
 
 const LikeButton = ({ isLiked, likes, toggleLike }) => {

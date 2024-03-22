@@ -1,6 +1,7 @@
+// REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 import React, { useState } from "react";
-import ApplicationPaths from "./applicationpaths";
 
+import ApplicationPaths from "./applicationpaths";
 import Modal from "./Modal/modal";
 import ModalContents from "./Modal/modalcontent";
 
@@ -32,6 +33,7 @@ const Join_Recycle = ({
     <>
       <div onClick={openModal}>
         <div className="flex flex-row w-full border-2 border-gray-400 rounded-2xl mb-4 h-24 md:h-28">
+
           {/* [왼쪽] 동아리 이미지 */}
           <div className="flex w-2/12 border-r-2 justify-center border-gray-400 rounded-l-2xl overflow-hidden">
             <img className="object-contain" src={iconImage} alt="Club_Image" />
@@ -64,6 +66,7 @@ const Join_Recycle = ({
           </div>
         </div>
       </div>
+      
       <Modal
         isOpen={isModalOpen}
         onClose={closeModal}
