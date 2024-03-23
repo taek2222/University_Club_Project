@@ -23,6 +23,7 @@ public class ScheduleService {
         return schedules.stream().map(schedule -> {
             ScheduleDTO scheduleDTO = new ScheduleDTO();
 
+            scheduleDTO.setScheduleId(schedule.getScheduleId());
             scheduleDTO.setClubId(schedule.getClub().getClubId());
             scheduleDTO.setClubName(schedule.getClub().getClubName());
             scheduleDTO.setField(schedule.getClub().getType().getField());
