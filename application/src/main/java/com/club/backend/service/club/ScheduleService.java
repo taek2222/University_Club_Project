@@ -33,6 +33,7 @@ public class ScheduleService {
             scheduleDTO.setCategory(schedule.getCategory());
             scheduleDTO.setEventTime(schedule.getEventTime());
             scheduleDTO.setEventEndTime(schedule.getEventEndTime());
+            scheduleDTO.setStatus(schedule.getStatus());
             return scheduleDTO;
         }).collect(Collectors.toList());
     }

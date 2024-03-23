@@ -21,4 +21,5 @@ public class ScheduleDTO {
     private String category;
     private LocalDateTime eventTime;
     private LocalDateTime eventEndTime;
+    private String status;
 }
