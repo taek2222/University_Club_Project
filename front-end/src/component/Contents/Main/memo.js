@@ -8,13 +8,6 @@ import 'swiper/css/scrollbar';
 
 import pin from '../../../image/content_image/pin.png'
 
-// function getRandomColor() {
-//   const colors = ['bg-red-200', 'bg-yellow-100', 'bg-orange-200', 'bg-green-100', 'bg-teal-100', 'bg-cyan-100', 'bg-indigo-200', 'bg-violet-200',
-//                   'bg-purple-200', 'bg-fuchsia-200', 'bg-pink-200', 'bg-rose-100', ];
-//   const randomIndex = Math.floor(Math.random() * colors.length);
-//   return colors[randomIndex];
-// }
-
 function Memo() {
   const [memos, setMemos] = useState([]);
 
