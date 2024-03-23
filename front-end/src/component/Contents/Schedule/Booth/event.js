@@ -1,9 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, { useState, useEffect } from 'react';
 import Modal from "../Modal/modal.js";
 
 function Event({ schedule, iconUrl }) {
     const [isTimeConflict, setIsTimeConflict] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [status, setStatus] = useState('오프라인');
+    const [statusBgColor, setStatusBgColor] = useState('bg-red-600');
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
@@ -30,21 +32,38 @@ function Event({ schedule, iconUrl }) {
 
     useEffect(() => {
         const currentTime = new Date();
-    
         const eventStartTime = new Date(schedule.eventTime);
         const eventEndTime = new Date(schedule.eventEndTime);
         const isTimeConflict = currentTime >= eventStartTime && currentTime <= eventEndTime;
-    
         setIsTimeConflict(isTimeConflict);
+
+        if (schedule.status === '운영중') {
+            setStatus('운영중');
+            setStatusBgColor('bg-green-500');
+        }
+        else if (schedule.status === '종료') {
+            setStatus('종료');
+            setStatusBgColor('bg-gray-500');
+        } else if (schedule.status === '혼잡') {
+            setStatus('혼잡');
+            setStatusBgColor('bg-red-500');
+        }
+        else if (schedule.status === '조기마감') {
+            setStatus('조기마감');
+            setStatusBgColor('bg-orange-300');
+        } else if (schedule.status === '일시중지') {
+            setStatus('일시중지');
+            setStatusBgColor('bg-yellow-500');
+        }
       }, [schedule]);
 
     return(
         <>
             <div className="mx-3 my-5">
                 <div className="flex border-b-2 border-b-slate-300">
-                    <div className={`rounded-full ${isTimeConflict ? 'bg-green-600' : 'bg-red-600'} w-3 h-3 mt-1 mr-1 mb-2`}>
+                    <div className={`rounded-full ${statusBgColor} w-3 h-3 mt-1 mr-1 mb-2`}>
                     </div>
-                    <p className="text-sm font-bold">{isTimeConflict ? '온라인' : '오프라인'}</p>
+                    <p className="text-sm font-bold">{status}</p>
                 </div>
                 <div className="flex mt-1">
                     {(schedule.imageUrl!=='') && (

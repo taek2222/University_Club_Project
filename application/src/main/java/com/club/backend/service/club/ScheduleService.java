@@ -1,9 +1,7 @@
 package com.club.backend.service.club;
 
 import com.club.backend.dto.club.ScheduleDTO;
-import com.club.backend.entity.club.Club;
 import com.club.backend.entity.club.Schedule;
-import com.club.backend.repository.club.ClubRepository;
 import com.club.backend.repository.club.ScheduleRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -38,6 +36,9 @@ public class ScheduleService {
             return scheduleDTO;
         }).collect(Collectors.toList());
     }
+    public Schedule getScheduleById(int scheduleId) {
+        return scheduleRepository.findById(scheduleId).orElse(null);
+    }
     public List<ScheduleDTO> getBySchedules(int clubId) {
         List<Schedule> schedules = scheduleRepository.findByClub_ClubId(clubId);
 
@@ -54,5 +55,23 @@ public class ScheduleService {
 
     public Boolean ScheduleUse(int clubId) {
         return scheduleRepository.existsByClub_ClubId(clubId);
+    }
+
+    public ScheduleDTO updateSchedule(int scheduleId, ScheduleDTO scheduleDTO) {
+        Schedule schedule = scheduleRepository.findById(scheduleId)
+                .orElseThrow(() -> new EntityNotFoundException("Schedule not found"));
+
+        schedule.setPart(scheduleDTO.getPart());
+        schedule.setLocation(scheduleDTO.getLocation());
+        schedule.setIconUrl(scheduleDTO.getIconUrl());
+        schedule.setImageUrl(scheduleDTO.getImageUrl());
+        schedule.setCategory(scheduleDTO.getCategory());
+        schedule.setEventTime(scheduleDTO.getEventTime());
+        schedule.setEventEndTime(scheduleDTO.getEventEndTime());
+        schedule.setStatus(scheduleDTO.getStatus());
+
+        scheduleRepository.save(schedule);
+
+        return scheduleDTO;
     }
 }
