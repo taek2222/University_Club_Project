@@ -1,10 +1,14 @@
 import React, {useState, useEffect, useMemo} from "react";
 import apiClient from 'api';
+import Loader from 'component/Recycle/loader.js';
+
 import Club from "./club";
 
 function Booth({ category, groupedEvents }) {
     const [selectedClubCategory, setSelectedClubategory] = useState("전체");
     const [clubsData, setClubsData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
     const clubCategories = ["전체", "체육", "취미", "종교", "기타"];
     const clubCategoryMapping = useMemo(() => ({
         "전체": "all",
@@ -16,15 +20,22 @@ function Booth({ category, groupedEvents }) {
     }), []);
     
     useEffect(() => {
+        setIsLoading(true);
         const category = clubCategoryMapping[selectedClubCategory] || selectedClubCategory;
         apiClient.get(`/clubs/${category}`)
             .then((response) => {
                 setClubsData(response.data);
+                setIsLoading(false);
             })
             .catch((error) => {
-                console.error("Error fetching clubs data:", error);
+                console.error("네트워크 오류 [Booth]", error);
+                setIsLoading(false);
             });
     }, [selectedClubCategory, clubCategoryMapping]);
+
+    if (isLoading) {
+        return <Loader/>;
+    }
 
     return(
         <>

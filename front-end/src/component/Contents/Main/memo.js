@@ -2,24 +2,33 @@ import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar } from 'swiper/modules';
 import apiClient from 'api.js';
+import Loader from 'component/Recycle/loader.js';
 
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 
-import pin from '../../../image/content_image/pin.png'
+import pin from 'image/content_image/pin.png'
 
 function Memo() {
   const [memos, setMemos] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     apiClient.get('/memos/confirmed')
       .then(response => {
         setMemos(response.data);
+        setIsLoading(false);
       })
       .catch(error => {
-        console.error('Error fetching memos:', error);
+        console.error("네트워크 오류 [Memo]", error);
+        setIsLoading(false);
       });
   }, []);
+
+  if (isLoading) {
+    return <Loader/>;
+  }
 
   return (
     <>

@@ -3,6 +3,7 @@ import Event from "./event.js";
 import Banner from "component/Recycle/banner.js";
 import apiClient from "api.js";
 import Booth from "./Booth/booth.js";
+import Loader from 'component/Recycle/loader.js';
 
 import Location from "image/schedule_image/location.png";
 import gym from "image/schedule_image/gym.png";
@@ -10,6 +11,7 @@ import gym from "image/schedule_image/gym.png";
 function Schedule() {
   const [schedules, setSchedules] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Day1 [부스]");
+  const [isLoading, setIsLoading] = useState(true);
 
   const categories = ["Day1 [부스]", "Day2 [부스]", "Day3 [공연]"];
   const categoryMapping = {
@@ -50,15 +52,22 @@ function Schedule() {
   };
 
   useEffect(() => {
+    setIsLoading(true);
     apiClient
       .get("/schedules/all")
       .then((response) => {
         setSchedules(response.data);
+        setIsLoading(false);
       })
       .catch((error) => {
-        console.error("Error fetching memos:", error);
+        console.error("네트워크 오류 [Schedule]", error);
+        setIsLoading(false);
       });
   }, []);
+
+  if (isLoading) {
+    return <Loader/>;
+  }
 
   return (
     <>

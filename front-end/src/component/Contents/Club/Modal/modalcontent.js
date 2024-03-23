@@ -1,6 +1,7 @@
 // REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 import React, { useState, useEffect } from "react";
 import apiClient from "api";
+import Loader from 'component/Recycle/loader.js';
 
 import SwiperImage from "./swiperimage";
 import { TextComponent } from "./formatText";
@@ -20,13 +21,13 @@ const ModalContents = ({ clubId, tags }) => {
         setIsLoading(false);
       })
       .catch((Error) => {
-        console.log(Error);
+        console.log("네트워크 오류 [ModalContents_club]", Error);
         setIsLoading(false);
       });
   }, [clubId]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }
 
   return (

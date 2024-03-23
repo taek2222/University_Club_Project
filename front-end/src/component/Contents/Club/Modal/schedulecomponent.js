@@ -1,6 +1,7 @@
 // REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 import React, { useState, useEffect } from "react";
 import apiClient from 'api';
+import Loader from 'component/Recycle/loader.js';
 
 import CalendarIcon from "image/club_image/modal/calendar.png";
 
@@ -45,13 +46,13 @@ const ScheduleComponent = ({clubId}) => {
         setIsLoading(false);
       })
       .catch((error) => {
-        console.log(error);
+        console.log("네트워크 오류 [ScheduleComponent]",error);
         setIsLoading(false);
       });
   }, [clubId]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }
 
   return (

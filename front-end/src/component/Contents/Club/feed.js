@@ -1,14 +1,17 @@
 // REVIEWED: 2024-03-22 by [Oh Yeon Taek]
 import React, { useEffect, useState } from "react";
 import apiClient from 'api';
+import Loader from 'component/Recycle/loader.js';
 
 import Card from "./Feed/card.js";
 
 function Feed({ category }) {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const fixedClubId = 1; // ClubId 1번은 자리 고정
 
   useEffect(() => {
+    setIsLoading(true);
       apiClient.get(`/clubs/${category}`)
       .then((Response) => {
         const fixedData = Response.data.filter(club => club.clubId === fixedClubId);
@@ -18,11 +21,17 @@ function Feed({ category }) {
         const finalData = [...fixedData, ...shuffledRestData];
 
         setData(finalData);
+        setIsLoading(false);
       })
       .catch((Error) => {
-        console.log(Error);
+        console.log("네트워크 오류 [Feed]", Error);
+        setIsLoading(false);
       });
   }, [category]);
+
+  if (isLoading) {
+    return <Loader/>;
+  }
 
   function shuffleArray(array) {
     let currentIndex = array.length, randomIndex;
