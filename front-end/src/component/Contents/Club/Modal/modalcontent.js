@@ -67,7 +67,7 @@ const ModalContents = ({ clubId, tags }) => {
       {data.modalLocationImage && (
         <div className="flex justify-center space-x-3 mb-4">
           <LocationButton
-            locationImage={require(`image/club_image/modal/${data.modalLocationImage}`)}
+            locationImage={require(`image/club_image/modal/location/${data.modalLocationImage}`)}
           />
         </div>
       )}
