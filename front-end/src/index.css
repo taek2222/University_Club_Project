@@ -19,3 +19,9 @@ code {
 .gradient-border {
   background: linear-gradient(40deg, #FBFF67 0%, #F96C48 45%, #EF2F88 85%);
 }
+
+@layer utilities {
+  .spin {
+    @apply animate-spin;
+  }
+}
