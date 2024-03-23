@@ -6,6 +6,7 @@ import com.club.backend.entity.club.Modal;
 import com.club.backend.repository.club.ModalRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,6 +15,7 @@ public class ModalService {
     private final ModalRepository modalRepository;
     private final ScheduleService scheduleService;
 
+    @Cacheable(value = "clubModalCache")
     public ModalDTO getClubModalSearch(int clubId) {
         Modal modal = modalRepository.findById(clubId).orElseThrow(() -> new EntityNotFoundException("Not Found ClubId " + clubId));
         ModalDTO dto = new ModalDTO();

@@ -10,6 +10,7 @@ import com.club.backend.repository.club.InitialLikesRepository;
 import com.club.backend.repository.club.PropertyRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,11 +23,13 @@ public class ClubService {
     private final PropertyRepository propertyRepository;
     private final InitialLikesRepository initialLikesRepository;
 
+    @Cacheable(value = "clubAllCache")
     public List<ClubDTO> getClubAllSearch() { // 동아리 전체 요청
         List<Club> clubs = clubRepository.findAll();
         return clubs.stream().map(this::convertToDTO).collect(Collectors.toList());
     }
 
+    @Cacheable(value = "clubTypeCache")
     public List<ClubDTO> getClubTypeSearch(int typeId) { // 동아리 소속 요청
         List<Club> clubs = clubRepository.findByType_TypeId(typeId);
         return clubs.stream().map(this::convertToDTO).collect(Collectors.toList());
