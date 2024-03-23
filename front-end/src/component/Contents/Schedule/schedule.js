@@ -3,7 +3,9 @@ import Event from "./event.js";
 import Banner from "component/Recycle/banner.js";
 import apiClient from "api.js";
 import Booth from "./Booth/booth.js";
+
 import Location from "image/schedule_image/location.png";
+import gym from "image/schedule_image/gym.png";
 
 function Schedule() {
   const [schedules, setSchedules] = useState([]);
@@ -27,7 +29,7 @@ function Schedule() {
     }, 0);
 
     return maxPart;
-  }
+  };
 
   const maxPart = getMaxPart(schedules);
 
@@ -60,7 +62,10 @@ function Schedule() {
 
   return (
     <>
-      <Banner title="📆 홍보제 축제 일정" subtitle="행사 일정을 확인하고 참여하자! 🕒" />
+      <Banner
+        title="📆 홍보제 축제 일정"
+        subtitle="행사 일정을 확인하고 참여하자! 🕒"
+      />
       <div className="flex justify-center space-x-1.5 mb-1">
         {categories.map((category) => (
           <div
@@ -82,52 +87,49 @@ function Schedule() {
           </div>
         ))}
       </div>
-      <p className="flex justify-center mt-5 text-lg font-bold">{categoryMapping[selectedCategory]}</p>
-      
+      <p className="flex justify-center mt-5 text-lg font-bold">
+        {categoryMapping[selectedCategory]}
+      </p>
+
       <div className="mt-3">
-        {selectedCategory!=='Day3 [공연]'
-        ? 
-        <Booth 
-          category={categoryMapping[selectedCategory] || selectedCategory}
-          groupedEvents={groupedEvents}
-        />
-        : 
-        groupedEvents.map((events, partIndex) => (
-          <div key={partIndex} className="flex justify-center items-center">
-            <div className="flex justify-between border rounded-lg mx-5 my-3 px-5 shadow-lg max-w-[500px]">
-              <div className="mx-3 my-5">
-                <div className="mx-3 mt-4 font-bold text-xl">
-                  Part {partIndex + 1}
+        {selectedCategory !== "Day3 [공연]" ? (
+          <Booth
+            category={categoryMapping[selectedCategory] || selectedCategory}
+            groupedEvents={groupedEvents}
+          />
+        ) : (
+          groupedEvents.map((events, partIndex) => (
+            <div key={partIndex} className="flex justify-center items-center">
+              <div className="flex justify-between border rounded-lg mx-5 my-3 px-5 shadow-lg max-w-[500px]">
+                <div className="mx-3 my-5">
+                  <div className="mx-3 mt-4 font-bold text-xl">
+                    Part {partIndex + 1}
+                  </div>
+                  {events
+                    .filter(
+                      (schedule) =>
+                        schedule.eventTime &&
+                        schedule.eventTime.startsWith(
+                          categoryMapping[selectedCategory]
+                        )
+                    )
+                    .map((schedule, index) => (
+                      <Event
+                        key={index}
+                        schedule={schedule}
+                        iconUrl={getIconUrl(schedule.iconUrl)}
+                      />
+                    ))}
                 </div>
-                {events
-                  .filter(
-                    (schedule) =>
-                      schedule.eventTime &&
-                      schedule.eventTime.startsWith(
-                        categoryMapping[selectedCategory]
-                      )
-                  )
-                  .map((schedule, index) => (
-                    <Event
-                      key={index}
-                      schedule={schedule}
-                      iconUrl={getIconUrl(schedule.iconUrl)}
-                    />
-                  ))}
               </div>
             </div>
-          </div>
-        ))
-      }
+          ))
+        )}
       </div>
       <div className="px-3 mt-5">
-        <img
-          className="rounded-xl shadow-xl"
-          src={Location}
-          alt="Location"
-        />
+        <img className="rounded-xl shadow-xl" src={Location} alt="Location" />
+        <img className="mt-8 rounded-xl shadow-xl" src={gym} alt="gym" />
       </div>
-
     </>
   );
 }
