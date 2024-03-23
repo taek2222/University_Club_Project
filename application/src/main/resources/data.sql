@@ -25,7 +25,7 @@ INSERT INTO club (club_id, club_name, type_id) VALUES (17, 'CCC', 4);
 INSERT INTO club (club_id, club_name, type_id) VALUES (18, 'JDM', 4);
 
 INSERT INTO club (club_id, club_name, type_id) VALUES (19, 'GHOST', 5);
-INSERT INTO club (club_id, club_name, type_id) VALUES (20, '학군단', 5);
+INSERT INTO club (club_id, club_name, type_id) VALUES (20, 'ROTC', 5);
 
 -- 동아리 속성
 INSERT INTO property (club_id, image_url, icon_url) VALUES (1, 'main.JPG', 'icon.png');
