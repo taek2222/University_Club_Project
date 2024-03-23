@@ -10,6 +10,7 @@ import com.club.backend.repository.join.JoinRepository;
 import com.club.backend.repository.join.TermRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,6 +24,7 @@ public class JoinService {
     private final TermRepository termRepository;
     private final TermService termService;
 
+    @Cacheable(value = "joinAllCache")
     public List<JoinDTO> getJoinAllSearch() {
         List<Join> joins = joinRepository.findAll();
 

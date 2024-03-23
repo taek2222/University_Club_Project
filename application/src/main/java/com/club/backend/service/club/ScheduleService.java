@@ -5,6 +5,8 @@ import com.club.backend.entity.club.Schedule;
 import com.club.backend.repository.club.ScheduleRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.stream.Collectors;
 public class ScheduleService {
     private final ScheduleRepository scheduleRepository;
 
+    @Cacheable(value = "ScheduleAllCache")
     public List<ScheduleDTO> getAllSchedules() {
         List<Schedule> schedules = scheduleRepository.findAll();
 
@@ -36,9 +39,12 @@ public class ScheduleService {
             return scheduleDTO;
         }).collect(Collectors.toList());
     }
+
     public Schedule getScheduleById(int scheduleId) {
         return scheduleRepository.findById(scheduleId).orElse(null);
     }
+
+    @Cacheable(value = "ScheduleCache")
     public List<ScheduleDTO> getBySchedules(int clubId) {
         List<Schedule> schedules = scheduleRepository.findByClub_ClubId(clubId);
 
@@ -57,6 +63,7 @@ public class ScheduleService {
         return scheduleRepository.existsByClub_ClubId(clubId);
     }
 
+    @CacheEvict(value = {"ScheduleAllCache", "ScheduleCache"}, allEntries = true)
     public ScheduleDTO updateSchedule(int scheduleId, ScheduleDTO scheduleDTO) {
         Schedule schedule = scheduleRepository.findById(scheduleId)
                 .orElseThrow(() -> new EntityNotFoundException("Schedule not found"));

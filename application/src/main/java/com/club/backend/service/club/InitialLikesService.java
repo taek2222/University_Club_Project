@@ -5,6 +5,7 @@ import com.club.backend.entity.club.InitialLikes;
 import com.club.backend.repository.club.InitialLikesRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 public class InitialLikesService {
     private final InitialLikesRepository initialLikesRepository;
 
+    @CacheEvict(value = {"clubAllCache", "clubTypeCache"}, allEntries = true)
     public int likesUp(int clubId) {
         InitialLikes initialLikes = initialLikesRepository.findById(clubId)
                 .orElseThrow(() -> new EntityNotFoundException("[Like] (Up) Not Found Id: " + clubId));
@@ -21,6 +23,7 @@ public class InitialLikesService {
         return initialLikes.getInitialLikes();
     }
 
+    @CacheEvict(value = {"clubAllCache", "clubTypeCache"}, allEntries = true)
     public int likesDown(int clubId) {
         InitialLikes initialLikes = initialLikesRepository.findById(clubId)
                 .orElseThrow(() -> new EntityNotFoundException("[Like] (Down) Not Found Id: " + clubId));
