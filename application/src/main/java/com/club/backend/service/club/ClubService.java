@@ -39,14 +39,10 @@ public class ClubService {
         Property property = propertyRepository.findById(club.getClubId())
                 .orElseThrow(() -> new EntityNotFoundException("Property not found for club id: " + club.getClubId()));
 
-        InitialLikes initialLikes = initialLikesRepository.findById(club.getClubId())
-                .orElseThrow(() -> new EntityNotFoundException("InitialLikes not found for club id: " + club.getClubId()));
-
         ClubDTO dto = new ClubDTO();
         dto.setClubId(club.getClubId());
         dto.setClubName(club.getClubName());
         dto.setTags(property.getTags());
-        dto.setInitialLikes(initialLikes.getInitialLikes());
         dto.setImageUrl(property.getImageUrl());
         dto.setIconUrl(property.getIconUrl());
 

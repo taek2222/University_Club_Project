@@ -13,9 +13,7 @@ public class ClubDTO {
 
     // Property
     private List<String> tags; // 태그
-    private int initialLikes; // 좋아요 수
     private String imageUrl; // 이미지 Url
     private String iconUrl; // 아이콘 Url
-
 
 }
