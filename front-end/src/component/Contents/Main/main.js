@@ -1,10 +1,9 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from "react";
 import ImageSwiper from "./image_swiper";
-import cheerLogo from "../../../image/content_image/notes.png"
+import cheerLogo from "image/content_image/notes.png"
 import Memo from "./memo";
 import Modal from "./Modal/modal";
-
 import Banner from "image/content_image/banner.png";
 
 function Main() {
