@@ -6,5 +6,6 @@ import lombok.Data;
 @Data
 public class InitialLikesDTO {
     private int clubId;
+    private int initialLikes;
     private Boolean isLiked;
 }
