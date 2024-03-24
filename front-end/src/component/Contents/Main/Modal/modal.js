@@ -11,7 +11,8 @@ const Modal = ({ isOpen, onClose }) => {
     anonymous: false,
     studentName: "",
     content: "",
-    color: ""
+    color: "",
+    confirm: false,
   };
 
   const majors = ["간호학과", "기계공학과", "다문화학과", "멀티미디어공학과", "사회복지학과", "산업경영공학과", "유아교육과", "자동차공학과", "전기공학과", "정보통신공학과", "컴퓨터공학과"];
@@ -88,6 +89,7 @@ const Modal = ({ isOpen, onClose }) => {
         studentName: formData.studentName,
         content: formData.content,
         color: formData.color,
+        confirm: formData.confirm,
       };
 
       const response = await apiClient.post('/memos/memo', memoDTO);
