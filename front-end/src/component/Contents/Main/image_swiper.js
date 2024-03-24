@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 const importAll = (context) => context.keys().filter(key => /image\d+\.jpg$/.test(key)).map(context);
-const images = importAll(require.context("../../../image/content_image/", false, /\.(jpg)$/));
+const images = importAll(require.context("image/content_image/", false, /\.(jpg)$/));
 
 function ImageSwiper() {
     const slidesPerView = window.innerWidth < 700 ? 1.4 : 2;
