@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import apiClient from 'api.js';
+import notes from 'image/content_image/notes.png'
 
 const Modal = ({ isOpen, onClose }) => {
 
@@ -115,8 +116,11 @@ const Modal = ({ isOpen, onClose }) => {
 
         {/* 제목 */}
         <div className="flex pb-3 items-center justify-between"> 
-          <div className="flex items-center ml-3 text-lg font-bold">
-            응원글 남기기
+          <div className="flex ml-3">
+            <img src={notes} alt="notes" className="w-7 h-7" />
+            <div className="flex items-center ml-3 text-lg font-bold">
+              응원글 남기기
+            </div>
           </div>
           <button onClick={onClose} className="text-md font-bold mr-5">닫기</button>
         </div>
