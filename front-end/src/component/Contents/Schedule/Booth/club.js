@@ -25,17 +25,14 @@ function Club({ schedule, clubsData }) {
 
     return(
         <div>
-            <div>
-                {schedule.clubId>=minClubId&&schedule.clubId<=maxClubId
-                ? 
+            {schedule.clubId >= minClubId && schedule.clubId <= maxClubId && (
+                <div>
                     <Event 
                         schedule={schedule}
                         iconUrl={getIconUrl(schedule.iconUrl)}
                     />
-                :
-                    ''
-                }
-            </div>
+                </div>
+            )}
         </div>
     )
 }
