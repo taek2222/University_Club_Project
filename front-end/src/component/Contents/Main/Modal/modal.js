@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import SaveModal from './save_modal';
 import apiClient from 'api.js';
 import notes from 'image/content_image/notes.png'
 
@@ -22,12 +23,16 @@ const Modal = ({ isOpen, onClose }) => {
   const [charCount, setCharCount] = useState(0);
   const [isSaveEnabled, setIsSaveEnabled] = useState(false);
   const [isValidClassOf, setIsValidClassOf] = useState(true);
+  const [showSaveModal, setShowSaveModal] = useState(false);
 
   useEffect(() => {
     setIsSaveEnabled(formData.content.trim() !== "" && isValidClassOf);
   }, [formData.content, isValidClassOf]);
 
   if (!isOpen) return null;
+
+  const openModal = () => setShowSaveModal(true);
+  const closeModal = () => setShowSaveModal(false);
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
@@ -90,7 +95,11 @@ const Modal = ({ isOpen, onClose }) => {
       console.log('Memo saved successfully', response.data);
       setFormData(initialFormData);
       setIsAnonymous(false);
-      onClose();
+      openModal();
+
+      setTimeout(() => {
+        onClose();
+      }, 3000);
     } catch (error) {
       console.error('Error saving memo:', error);
     }
@@ -199,6 +208,7 @@ const Modal = ({ isOpen, onClose }) => {
                 취소
             </div>
         </div>
+        <SaveModal isOpen={showSaveModal} onClose={closeModal} />
       </div>
     </div>
   );
