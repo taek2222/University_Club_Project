@@ -10,24 +10,48 @@ function Feed({ category }) {
   const [isLoading, setIsLoading] = useState(true);
   const fixedClubId = 1; // ClubId 1번은 자리 고정
 
-  useEffect(() => {
-    setIsLoading(true);
-      apiClient.get(`/clubs/${category}`)
-      .then((Response) => {
-        const fixedData = Response.data.filter(club => club.clubId === fixedClubId);
-        const restData = Response.data.filter(club => club.clubId !== fixedClubId);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        // 클럽 데이터와 좋아요 수 데이터를 병렬로 요청
+        const clubDataPromise = apiClient.get(`/clubs/${category}`);
+        const likesDataPromise = apiClient.get(`/initialLikes/${category}`);
+
+        // Promise.all을 사용하여 두 요청의 결과를 기다림
+        const [clubResponse, likesResponse] = await Promise.all([clubDataPromise, likesDataPromise]);
+
+        // 좋아요 수 데이터를 clubId를 키로 하는 객체로 변환
+        const likesMap = likesResponse.data.reduce((acc, current) => {
+          acc[current.clubId] = current.initialLikes;
+          return acc;
+        }, {});
+
+        // 클럽 데이터에 좋아요 수 데이터를 병합
+        const mergedData = clubResponse.data.map(club => ({
+          ...club,
+          initialLikes: likesMap[club.clubId] || 0, // 좋아요 수가 없는 경우 0으로 처리
+        }));
+
+        // 데이터 처리 로직
+        const fixedData = mergedData.filter(club => club.clubId === fixedClubId);
+        const restData = mergedData.filter(club => club.clubId !== fixedClubId);
         const shuffledRestData = shuffleArray(restData);
         const finalData = [...fixedData, ...shuffledRestData];
 
         setData(finalData);
+      } catch (error) {
+        console.log("네트워크 오류 [Feed]", error);
+      } finally {
         setIsLoading(false);
-      })
-      .catch((Error) => {
-        console.log("네트워크 오류 [Feed]", Error);
-        setIsLoading(false);
-      });
+      }
+    };
+
+    fetchData();
   }, [category]);
+
+  
 
   if (isLoading) {
     return <Loader/>;
