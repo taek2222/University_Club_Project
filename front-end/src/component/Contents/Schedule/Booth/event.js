@@ -50,10 +50,10 @@ function Event({ schedule, iconUrl }) {
         }
         else if (schedule.status === '조기마감') {
             setStatus('조기마감');
-            setStatusBgColor('bg-orange-300');
+            setStatusBgColor('bg-orange-500');
         } else if (schedule.status === '일시중지') {
             setStatus('일시중지');
-            setStatusBgColor('bg-yellow-500');
+            setStatusBgColor('bg-yellow-300');
         }
       }, [schedule]);
 

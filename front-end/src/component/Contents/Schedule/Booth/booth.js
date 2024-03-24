@@ -74,7 +74,7 @@ function Booth({ category, groupedEvents }) {
                             <p className="text-sm font-bold mr-2">: 종료</p>
                             <div className={`rounded-full bg-orange-500 w-3 h-3 mt-1 mr-1 mb-2`}>
                             </div>
-                            <p className="text-sm font-bold">: 조기종료</p>
+                            <p className="text-sm font-bold">: 조기마감</p>
                         </div>
                         <div className="flex justify-center">
                             <div className={`rounded-full bg-yellow-300 w-3 h-3 mt-1 mr-1 mb-2`}>
