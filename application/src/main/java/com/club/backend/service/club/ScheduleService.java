@@ -3,9 +3,7 @@ package com.club.backend.service.club;
 import com.club.backend.dto.club.ScheduleDTO;
 import com.club.backend.entity.club.Schedule;
 import com.club.backend.repository.club.ScheduleRepository;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -40,10 +38,6 @@ public class ScheduleService {
         }).collect(Collectors.toList());
     }
 
-    public Schedule getScheduleById(int scheduleId) {
-        return scheduleRepository.findById(scheduleId).orElse(null);
-    }
-
     @Cacheable(value = "ScheduleCache")
     public List<ScheduleDTO> getBySchedules(int clubId) {
         List<Schedule> schedules = scheduleRepository.findByClub_ClubId(clubId);
@@ -61,24 +55,5 @@ public class ScheduleService {
 
     public Boolean ScheduleUse(int clubId) {
         return scheduleRepository.existsByClub_ClubId(clubId);
-    }
-
-    @CacheEvict(value = {"ScheduleAllCache", "ScheduleCache"}, allEntries = true)
-    public ScheduleDTO updateSchedule(int scheduleId, ScheduleDTO scheduleDTO) {
-        Schedule schedule = scheduleRepository.findById(scheduleId)
-                .orElseThrow(() -> new EntityNotFoundException("Schedule not found"));
-
-        schedule.setPart(scheduleDTO.getPart());
-        schedule.setLocation(scheduleDTO.getLocation());
-        schedule.setIconUrl(scheduleDTO.getIconUrl());
-        schedule.setImageUrl(scheduleDTO.getImageUrl());
-        schedule.setCategory(scheduleDTO.getCategory());
-        schedule.setEventTime(scheduleDTO.getEventTime());
-        schedule.setEventEndTime(scheduleDTO.getEventEndTime());
-        schedule.setStatus(scheduleDTO.getStatus());
-
-        scheduleRepository.save(schedule);
-
-        return scheduleDTO;
     }
 }
