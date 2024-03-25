@@ -12,6 +12,9 @@ public class TermService {
     public String calculate(Term term) {
         long daysBetween = ChronoUnit.DAYS.between(term.getStartDate(), term.getEndDate());
 
+        if(daysBetween > 100)
+            return "상시 모집";
+
         return "D-" + daysBetween;
     }
 }
