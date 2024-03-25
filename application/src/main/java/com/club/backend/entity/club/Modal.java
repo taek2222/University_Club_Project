@@ -22,7 +22,6 @@ public class Modal {
     @Column(name="title")
     private String modalTitle;
 
-    @Lob
     @Column(name="contents")
     private String modalContents;
 
