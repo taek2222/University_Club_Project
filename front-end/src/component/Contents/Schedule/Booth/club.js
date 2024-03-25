@@ -7,9 +7,9 @@ function Club({ schedule, clubsData }) {
 
     const getIconUrl = (iconUrl) => {
         try {
-          return require(`image/club_image/modal/${iconUrl}`);
+          return require(`image/club_image/feed/${iconUrl}`);
         } catch (error) {
-          console.error("Error loading image:", error);
+          
         }
     };
 
