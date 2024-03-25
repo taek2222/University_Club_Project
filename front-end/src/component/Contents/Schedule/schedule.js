@@ -52,17 +52,19 @@ function Schedule() {
   };
 
   useEffect(() => {
-    setIsLoading(true);
-    apiClient
-      .get("/schedules/all")
-      .then((response) => {
+    const fetchSchedules = async () => {
+      setIsLoading(true);
+      try {
+        const response = await apiClient.get("/schedules/all");
         setSchedules(response.data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("네트워크 오류 [Schedule]", error);
+      } finally {
         setIsLoading(false);
-      });
+      }
+    };
+  
+    fetchSchedules();
   }, []);
 
   if (isLoading) {

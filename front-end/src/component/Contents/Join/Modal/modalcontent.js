@@ -12,17 +12,19 @@ const ModalContents = ({ clubId, title, pathsIcons, paths }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
-    apiClient
-      .get(`/join/modal/${clubId}`)
-      .then((Response) => {
-        setData(Response.data);
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const response = await apiClient.get(`/join/modal/${clubId}`);
+        setData(response.data);
+      } catch (error) {
+        console.log("네트워크 오류 [ModalContent_Join]", error);
+      } finally {
         setIsLoading(false);
-      })
-      .catch((Error) => {
-        console.log("네트워크 오류 [ModalContent_Join]", Error);
-        setIsLoading(false);
-      });
+      }
+    };
+  
+    fetchData();
   }, [clubId]);
 
   if (isLoading) {
