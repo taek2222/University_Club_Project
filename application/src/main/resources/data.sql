@@ -28,8 +28,8 @@ INSERT INTO club (club_id, club_name, type_id) VALUES (19, 'GHOST', 5);
 INSERT INTO club (club_id, club_name, type_id) VALUES (20, 'ROTC', 5);
 
 -- 동아리 속성
-INSERT INTO property (club_id, image_url, icon_url) VALUES (1, 'main.JPG', 'icon.png');
-INSERT INTO property (club_id, image_url, icon_url) VALUES (2, 'feed_test.png', 'feed_test.png');
+INSERT INTO property (club_id, image_url, icon_url) VALUES (1, '1_2.JPG', '1_1.png');
+INSERT INTO property (club_id, image_url, icon_url) VALUES (2, '2_2.jpeg', '2_1.jpeg');
 INSERT INTO property (club_id, image_url, icon_url) VALUES (3, 'feed_test.png', 'feed_test.png');
 INSERT INTO property (club_id, image_url, icon_url) VALUES (4, 'feed_test.png', 'feed_test.png');
 INSERT INTO property (club_id, image_url, icon_url) VALUES (5, 'feed_test.png', 'feed_test.png');
@@ -45,7 +45,7 @@ INSERT INTO property (club_id, image_url, icon_url) VALUES (20, 'feed_test.png',
 
 -- 동아리 태그
 INSERT INTO tags (club_id, tag) VALUES (1, '축제 협회'), (1, '안내 부스');
-INSERT INTO tags (club_id, tag) VALUES (2, '테스트1'), (2, '테스트2');
+INSERT INTO tags (club_id, tag) VALUES (2, '대학응원단'), (2, '루시우스');
 INSERT INTO tags (club_id, tag) VALUES (3, '테스트2'), (3, '테스트2');
 INSERT INTO tags (club_id, tag) VALUES (4, '테스트1'), (4, '테스트2');
 INSERT INTO tags (club_id, tag) VALUES (5, '테스트2'), (5, '테스트2');
@@ -77,7 +77,7 @@ INSERT INTO modal (club_id, contents, title, location_url) values (20, '테스�
 
 -- 동아리 모달 이미지
 INSERT INTO modal_image (club_id, url) values (1, '1_1.JPG'), (1, '1_2.JPG'), (1, '1_3.JPG');
-INSERT INTO modal_image (club_id, url) values (2, '0_1.png');
+INSERT INTO modal_image (club_id, url) values (2, '2_1.jpeg'), (2, '2_2.jpeg'), (2, '2_3.jpeg');
 INSERT INTO modal_image (club_id, url) values (3, '0_1.png');
 INSERT INTO modal_image (club_id, url) values (4, '0_1.png');
 INSERT INTO modal_image (club_id, url) values (5, '0_1.png');
@@ -120,22 +120,27 @@ INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, co
 INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color, confirm) values (1010, '멀티미디어학과', '90000000', false, '안유진', '응원문구 테스트9', 'bg-fuchsia-200', true);
 
 -- 가입 신청 동아리
-INSERT INTO join_table(club_id, icon_image, title) values (1, '1_1.png', '2024년도 총동아리연합회 \n 🎉신입생 모집 안내🎉');
+INSERT INTO join_table(club_id, icon_image, title) values (1, '1.png', '2024년도 총동아리연합회 \n 🎉신입생 모집 안내🎉');
+INSERT INTO join_table(club_id, icon_image, title) values (2, '2.jpeg', '17기 치어리딩 동아리 \n 📣루시우스📣 단원모집'); -- 추가
 
 -- 가입 경로 ( 네이버, 구글, 카카오, 인스타 )
 INSERT INTO join_paths(club_id, path) values (1, true), (1, false), (1, false), (1, true);
+INSERT INTO join_paths(club_id, path) values (2, false), (2, false), (2, true), (2, true); -- 추가
 
 -- 가입 기간
 INSERT INTO term(club_id, start_date, end_date) values (1, '2024-03-08', '2024-04-12');
-
+INSERT INTO term(club_id, start_date, end_date) values (2, '2023-03-08', '2024-04-12'); -- 추가
 -- 가입 모달 내용
 INSERT INTO join_modal(club_id, contents) values (1, '안녕하십니까, 제39대 총동아리연합회 ''EUM''입니다. \n \n 총동아리연합회 2024학년도 부원을 모집합니다.\n \n *📋모집 대상* \n-2024년 강릉원주대학교 원주캠퍼스 신입생 \n \n *📆모집 기간* \n -1차 서류 접수 기간 : 3월 11일(월) ~ 3월 15일(금) \n -2차 대면 면접 : 추후 개별 연락 \n \n 1차 서류 지원서는 모집 공고에 첨부된 QR 및 URL을 통해 네이버 폼으로 작성 부탁드립니다!');
+INSERT INTO join_modal(club_id, contents) values (2, '안녕하세요. \n *강릉원주대학교 원주캠퍼스 치어리딩 동아리 루시우스*입니다! \n 새학기를 맞이하여 24년도 17기 루시우스 신입단원을 모집합니다. \n 무대 경험이 없어도, 춤을 잘 추지 못해도 한번 쯤 치어리딩 해보고 싶으셨다면 모두 환영입니다 🤗 \n \n 저희 루시우스는 \n *1️⃣ 액션 치어리딩 연습합니다!* \n *2️⃣ 기본 동작 알려드립니다!* \n *3️⃣ 안무는 같이 연습합니다!* \n \n - 지원 방법은 포스터에 기재된 방법대로 지원하시면 됩니다. \n *🙅🏻‍♀️면접 & 오디션은 따로 없습니다🙅🏻‍♀️* \n \n 루시우스에서 같이 좋은 추억 만들어 가셨으면 좋겠습니다. 🫶🏻 \n 많은 지원 부탁드립니다. \n 인스타: gwnu.lucius \n \n *17기 루시우스 🌙*'); -- 추가
 
 -- 가입 모달 이미지
 INSERT INTO join_modal_image(club_id, url) values (1, '1_1.JPG'), (1, '1_2.JPG');
+INSERT INTO join_modal_image(club_id, url) values (2, '2_1.jpeg'), (2, '2_2.jpeg'), (2, '2_3.jpeg'), (2, '2_4.jpeg'); -- 추가
 
 -- 가입 모달 Url
 INSERT INTO join_paths_url(club_id, url) values (1, 'https://form.naver.com/response/JEMUf_nDTieSnZ3QUEJr8w'), (1, 'false'), (1, 'false'), (1, 'https://www.instagram.com/gwnu_eum_wonju?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==');
+INSERT INTO join_paths_url(club_id, url) values (2, 'false'), (2, 'false'), (2, 'https://open.kakao.com/o/suF9FQ6f'), (2, 'https://www.instagram.com/gwnu.lucius?igsh=YXJkemI4MGR6YzBx'); -- 추가
 
 -- 부스 동아리 day1
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (1, 1, '0_1.png', '', 1, '중앙부스', 'booth', '2024-04-01 10:00', '2024-04-01 18:00', '운영중');
