@@ -13,18 +13,21 @@ const ModalContents = ({ clubId, tags }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
-    apiClient
-      .get(`/club/modal/${clubId}`)
-      .then((Response) => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const Response = await apiClient.get(`/club/modal/${clubId}`);
         setData(Response.data);
-        setIsLoading(false);
-      })
-      .catch((Error) => {
+      } catch (Error) {
         console.log("네트워크 오류 [ModalContents_club]", Error);
+      } finally {
         setIsLoading(false);
-      });
+      }
+    };
+  
+    fetchData();
   }, [clubId]);
+  
 
   if (isLoading) {
     return <Loader/>;

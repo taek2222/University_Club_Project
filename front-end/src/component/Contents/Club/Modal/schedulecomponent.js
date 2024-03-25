@@ -37,18 +37,20 @@ const ScheduleComponent = ({clubId}) => {
   };
 
   useEffect(() => {
-    setIsLoading(true);
-    apiClient
-      .get(`/schedules/modal/${clubId}`)
-      .then((response) => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const response = await apiClient.get(`/schedules/modal/${clubId}`);
         const transformedData = transformData(response.data);
         setData(transformedData);
+      } catch (error) {
+        console.log("네트워크 오류 [ScheduleComponent]", error);
+      } finally {
         setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log("네트워크 오류 [ScheduleComponent]",error);
-        setIsLoading(false);
-      });
+      }
+    };
+  
+    fetchData();
   }, [clubId]);
 
   if (isLoading) {

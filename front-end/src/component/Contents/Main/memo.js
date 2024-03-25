@@ -14,16 +14,19 @@ function Memo() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
-    apiClient.get('/memos/confirmed')
-      .then(response => {
+    const fetchMemos = async () => {
+      setIsLoading(true);
+      try {
+        const response = await apiClient.get('/memos/confirmed');
         setMemos(response.data);
-        setIsLoading(false);
-      })
-      .catch(error => {
+      } catch (error) {
         console.error("네트워크 오류 [Memo]", error);
+      } finally {
         setIsLoading(false);
-      });
+      }
+    };
+  
+    fetchMemos();
   }, []);
 
   if (isLoading) {

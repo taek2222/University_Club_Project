@@ -1,7 +1,7 @@
 // REVIEWED: 2024-03-22 by [Oh Yeon Taek]
-import React, { useState ,useEffect } from "react";
-import apiClient from 'api';
-import Loader from 'component/Recycle/loader.js';
+import React, { useState, useEffect } from "react";
+import apiClient from "api";
+import Loader from "component/Recycle/loader.js";
 
 import JoinRecycle from "./joinrecycle";
 import Banner from "component/Recycle/banner";
@@ -11,22 +11,25 @@ function Join() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
-    apiClient.get(`/joins/all`)
-    .then((Response) => {
-      setData(Response.data);
-      setIsLoading(false);
-    })
-    .catch((Error) => {
-      console.log("네트워크 오류 [Join]",Error);
-      setIsLoading(false);
-    });
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const response = await apiClient.get(`/joins/all`);
+        setData(response.data);
+      } catch (error) {
+        console.log("네트워크 오류 [Join]", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
   if (isLoading) {
-    return <Loader/>;
+    return <Loader />;
   }
-  
+
   return (
     <div className="flex flex-col items-center justify-center w-full">
       {/* 배너 */}

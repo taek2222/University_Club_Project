@@ -20,18 +20,22 @@ function Booth({ category, groupedEvents }) {
     }), []);
     
     useEffect(() => {
-        setIsLoading(true);
-        const category = clubCategoryMapping[selectedClubCategory] || selectedClubCategory;
-        apiClient.get(`/clubs/${category}`)
-            .then((response) => {
-                setClubsData(response.data);
-                setIsLoading(false);
-            })
-            .catch((error) => {
-                console.error("네트워크 오류 [Booth]", error);
-                setIsLoading(false);
-            });
-    }, [selectedClubCategory, clubCategoryMapping]);
+        const fetchData = async () => {
+          setIsLoading(true);
+          const category = clubCategoryMapping[selectedClubCategory] || selectedClubCategory;
+          try {
+            const response = await apiClient.get(`/clubs/${category}`);
+            setClubsData(response.data);
+          } catch (error) {
+            console.error("네트워크 오류 [Booth]", error);
+          } finally {
+            setIsLoading(false);
+          }
+        };
+      
+        fetchData();
+      }, [selectedClubCategory, clubCategoryMapping]);
+      
 
     if (isLoading) {
         return <Loader/>;
