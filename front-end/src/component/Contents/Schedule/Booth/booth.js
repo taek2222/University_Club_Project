@@ -87,21 +87,22 @@ function Booth({ category, groupedEvents }) {
                     </div>
                         {groupedEvents.map((events, index) => (
                             <div key={index}>
-                            {events
-                            .filter(
-                                (schedule) =>
-                                schedule.eventTime &&
-                                schedule.eventTime.startsWith(
-                                    category
+                                {events
+                                .filter(
+                                    (schedule) =>
+                                    schedule.eventTime &&
+                                    schedule.eventTime.startsWith(
+                                        category
+                                    )
                                 )
-                            )
-                            .map((schedule) => (
-                                <Club
-                                    schedule={schedule}
-                                    category={clubCategoryMapping[selectedClubCategory] || selectedClubCategory}
-                                    clubsData={clubsData}
-                                />
-                            ))}
+                                .map((schedule, index) => (
+                                    <Club
+                                        key={index}
+                                        schedule={schedule}
+                                        category={clubCategoryMapping[selectedClubCategory] || selectedClubCategory}
+                                        clubsData={clubsData}
+                                    />
+                                ))}
                             </div>
                         ))}
                     </div>

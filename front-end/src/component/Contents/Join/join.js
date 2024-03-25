@@ -36,8 +36,9 @@ function Join() {
       />
 
       <div className="relative flex flex-col justify-center w-full max-w-xl mx-auto px-3 mt-10">
-        {data.map((join) => (
+        {data.map((join, index) => (
           <JoinRecycle
+            key={index}
             clubId={join.clubId}
             iconImage={require(`image/join_image/icon/${join.iconImage}`)}
             title={join.title}

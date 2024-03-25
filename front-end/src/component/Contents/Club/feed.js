@@ -77,8 +77,9 @@ function Feed({ category }) {
       <div className="container mx-auto p-4">
         {/* 반응형 그리드 레이아웃을 설정합니다. */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"> {/* 최소 2개 ~ 최대 5개 */}
-          {data.map((club) => (
+          {data.map((club, index) => (
             <Card
+              key={index}
               clubId={club.clubId} // 동아리 순서
               clubName={club.clubName} // 동아리 이름
               tags={club.tags} // 태그
