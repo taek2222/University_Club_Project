@@ -38,7 +38,7 @@ function Memo() {
         scrollbar={true}
         modules={[Scrollbar]}
       >
-        {memos.slice(0, memos.length / 2).map((memo, index) => (
+        {memos.slice(0, memos.length / 2).map((_, index) => (
           <SwiperSlide key={index} style={{fontFamily:"Nanum Pen Script"}}>
             <div className='mt-6'>
               <div className="flex justify-center">
