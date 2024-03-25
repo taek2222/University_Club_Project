@@ -32,7 +32,7 @@ function Memo() {
 
   return (
     <>
-      {/* <Swiper
+      <Swiper
         slidesPerView={2}
         className='mt-5 w-full h-full max-w-[800px]'
         scrollbar={true}
@@ -66,7 +66,7 @@ function Memo() {
             </div>
           </SwiperSlide>
         ))}
-      </Swiper> */}
+      </Swiper>
     </>
   );
 }
