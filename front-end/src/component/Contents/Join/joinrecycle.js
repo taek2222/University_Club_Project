@@ -35,7 +35,7 @@ const Join_Recycle = ({
         <div className="flex flex-row w-full border-2 border-gray-400 rounded-2xl mb-4 h-24 md:h-28">
 
           {/* [왼쪽] 동아리 이미지 */}
-          <div className="flex w-2/12 border-r-2 justify-center border-gray-400 rounded-l-2xl overflow-hidden">
+          <div className="flex w-2/12 border-r-2 justify-center border-gray-400 rounded-l-2xl overflow-hidden p-1">
             <img className="object-contain" src={iconImage} alt="Club_Image" />
           </div>
 
