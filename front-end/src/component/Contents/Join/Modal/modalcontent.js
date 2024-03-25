@@ -30,7 +30,13 @@ const ModalContents = ({ clubId, title, pathsIcons, paths }) => {
   }
   
   const navigateTo = (url) => {
-    window.open(url, "_blank").focus();
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  
+    if (isMobile) {
+      window.location.href = url;
+    } else {
+      window.open(url, "_blank").focus();
+    }
   };
 
   const titleLines = title.split('\\n').map((line, index) => (
