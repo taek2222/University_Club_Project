@@ -6,13 +6,12 @@ import Banner from "component/Recycle/banner";
 
 function Club() {
   const [selectedCategory, setSelectedCategory] = useState("전체");
-  const categories = ["전체", "공연", "체육", "취미", "종교", "기타"];
+  const categories = ["전체", "공연", "취미", "종교", "기타"];
 
   // 데이터 치환
   const categoryMapping = {
     "전체": "all",
     "공연": "1",
-    "체육": "2",
     "취미": "3",
     "종교": "4",
     "기타": "5"
