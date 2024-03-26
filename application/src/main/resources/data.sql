@@ -83,7 +83,7 @@ INSERT INTO modal (club_id, contents, title) values (6, '안녕하세요.👋 \n
 -- 삭제
 INSERT INTO modal (club_id, contents, title, location_url) values (7, '테스트_제목', '테스트_내용', '7_map.png');
 -- INSERT INTO modal (club_id, contents, title, location_url) values (9, '테스트_제목', '테스트_내용', '9_map.png');
-INSERT INTO modal (club_id, contents, title, location_url) values (12, '안녕하세요! 사진 동아리 *''해시태그''*입니다! \n \n *🎈행사 내용* \n 해시태그가 찍은 학교 속 사진과 같은 장소를 찾아 사진을 찍어오기! \n \n 학교 예시 사진은 부스에서 보실 수 있습니다! \n \n 찍어오신 사진 & 사진첩의 원하는 사진을 인화해 드립니다!', '📸 순간포착 학교에 이런곳이?!', '12_map.png');
+INSERT INTO modal (club_id, contents, title, location_url) values (12, '안녕하세요! 사진 동아리 *''해시태그''*입니다! \n \n *🎈행사 내용* \n 해시태그가 찍은 학교 속 사진과 같은 장소를 찾아 \n 📸사진을 찍어오기! \n \n 학교 예시 사진은 부스에서 보실 수 있습니다! \n \n 찍어오신 *사진 & 사진첩의 원하는 사진을 인화*해 드립니다!', '📸 순간포착 학교에 이런곳이?!', '12_map.png');
 INSERT INTO modal (club_id, contents, title, location_url) values (14, '안녕하세요! \n 강릉원주대학교 동아리 *''보드홀릭''*입니다! \n \n 저희 동아리 부스 행사에 참여하셔서 준비한 게임 \n *🕹️복불복 꼬치의 달인* \n *🕹악어 룰렛* \n *🕹카지노 블랙잭* \n 체험하고 가세요! \n \n *🍯 꿀잼* 보장합니다! \n 감사합니다. 👋', '🎲 보드홀릭 🧩', '14_map.png');
 INSERT INTO modal (club_id, contents, title, location_url) values (17, '테스트_제목', '테스트_내용', '17_map.png');
 INSERT INTO modal (club_id, contents, title, location_url) values (18, '테스트_제목', '테스트_내용', '18_map.png');
@@ -168,8 +168,8 @@ INSERT INTO term(club_id, end_date) values (2, '2025-01-01');
 -- 추가
 INSERT INTO term(club_id, end_date) values (6, '2025-01-01');
 INSERT INTO term(club_id, end_date) values (7, '2025-01-01');
-INSERT INTO term(club_id, end_date) values (19, '2024-04-26');
-INSERT INTO term(club_id, end_date) values (20, '2025-01-01');
+INSERT INTO term(club_id, end_date) values (19, '2024-04-03');
+INSERT INTO term(club_id, end_date) values (20, '2024-04-26');
 
 -- 가입 모달 내용
 -- 수정
