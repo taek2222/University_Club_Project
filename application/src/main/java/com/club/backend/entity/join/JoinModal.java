@@ -28,6 +28,7 @@ public class JoinModal {
     private List<String> modalImage = new ArrayList<>();
 
     @Column(name="contents")
+    @Lob
     private String modalContents;
 
     @ElementCollection
