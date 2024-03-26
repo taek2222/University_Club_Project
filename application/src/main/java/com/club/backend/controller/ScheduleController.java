@@ -18,6 +18,11 @@ public class ScheduleController {
         return scheduleService.getAllSchedules();
     }
 
+    @GetMapping("/all/cache/reset")
+    public String cacheReset() {
+        return scheduleService.cacheReset();
+    }
+
     @GetMapping("/modal/{clubId}")
     public List<ScheduleDTO> getBySchedules(@PathVariable("clubId") int clubId) {
         return scheduleService.getBySchedules(clubId);
