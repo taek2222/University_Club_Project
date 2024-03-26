@@ -19,6 +19,7 @@ function Memo() {
       try {
         const response = await apiClient.get('/memos/confirmed');
         setMemos(response.data);
+        setMemos(response.data.reverse());
       } catch (error) {
         console.error("네트워크 오류 [Memo]", error);
       } finally {
