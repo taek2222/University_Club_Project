@@ -26,7 +26,7 @@ function Event({ schedule, iconUrl }) {
         try {
             return require(`image/content_image/${imageUrl}`);
         } catch (error) {
-            console.error("Error loading image:", error);
+            
         }
     };
 

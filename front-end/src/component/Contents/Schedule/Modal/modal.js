@@ -23,7 +23,7 @@ const Modal = ({ isOpen, onClose, imageUrl }) => {
         {/* 제목 */}
         <div className="flex pb-3 items-center justify-between"> 
           <div className="flex items-center ml-3 text-lg font-bold">
-            공연 곡 리스트
+            포스터
           </div>
           <button onClick={onClose} className="text-md font-bold mr-5">닫기</button>
         </div>
