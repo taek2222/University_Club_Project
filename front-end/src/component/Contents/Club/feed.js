@@ -24,8 +24,9 @@ function Feed({ category }) {
           acc[current.clubId] = current.initialLikes;
           return acc;
         }, {});
+        const filteredData = clubResponse.data.filter(club => club.clubId !== 7);
 
-        const mergedData = clubResponse.data.map(club => ({
+        const mergedData = filteredData.map(club => ({
           ...club,
           initialLikes: likesMap[club.clubId] || 0,
         }));
