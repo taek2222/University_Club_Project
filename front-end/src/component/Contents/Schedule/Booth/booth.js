@@ -9,11 +9,10 @@ function Booth({ category, groupedEvents }) {
     const [clubsData, setClubsData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    const clubCategories = ["전체", "체육", "취미", "종교", "기타"];
+    const clubCategories = ["전체", "취미", "종교", "기타"];
     const clubCategoryMapping = useMemo(() => ({
         "전체": "all",
         "공연": "1",
-        "체육": "2",
         "취미": "3",
         "종교": "4",
         "기타": "5"
