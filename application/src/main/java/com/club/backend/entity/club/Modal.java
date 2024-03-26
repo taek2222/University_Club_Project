@@ -23,7 +23,6 @@ public class Modal {
     private String modalTitle;
 
     @Column(name="contents")
-    @Lob
     private String modalContents;
 
     @ElementCollection
