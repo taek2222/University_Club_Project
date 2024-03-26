@@ -15,7 +15,7 @@ function Event({ schedule, iconUrl }) {
     };
 
     const formatEventEndTime = () => {
-        const dateObject = new Date(schedule.eventTime);
+        const dateObject = new Date(schedule.eventEndTime);
         const formattedTime = `${String(dateObject.getHours()).padStart(2, '0')}:${String(dateObject.getMinutes()).padStart(2, '0')}`;
         return formattedTime;
     };
