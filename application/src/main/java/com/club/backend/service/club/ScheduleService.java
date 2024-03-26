@@ -4,6 +4,7 @@ import com.club.backend.dto.club.ScheduleDTO;
 import com.club.backend.entity.club.Schedule;
 import com.club.backend.repository.club.ScheduleRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -55,5 +56,10 @@ public class ScheduleService {
 
     public Boolean ScheduleUse(int clubId) {
         return scheduleRepository.existsByClub_ClubId(clubId);
+    }
+
+    @CacheEvict(value = "ScheduleAllCache", allEntries = true)
+    public String cacheReset() {
+        return "Cache is reset";
     }
 }
