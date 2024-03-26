@@ -1,4 +1,5 @@
 import React from "react";
+import poster from "image/content_image/poster.png"
 
 const Modal = ({ isOpen, onClose, imageUrl }) => {
   if (!isOpen) return null;
@@ -22,8 +23,11 @@ const Modal = ({ isOpen, onClose, imageUrl }) => {
 
         {/* 제목 */}
         <div className="flex pb-3 items-center justify-between"> 
-          <div className="flex items-center ml-3 text-lg font-bold">
-            포스터
+          <div className="flex ml-3">
+            <img src={poster} alt="poster" className="w-7" />
+            <div className="flex items-center ml-2 text-lg font-bold">
+              포스터
+            </div>
           </div>
           <button onClick={onClose} className="text-md font-bold mr-5">닫기</button>
         </div>
