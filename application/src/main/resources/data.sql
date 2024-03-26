@@ -187,7 +187,7 @@ INSERT INTO join_modal_image(club_id, url) values (2, '2_1.jpeg'), (2, '2_2.jpeg
 -- 추가
 INSERT INTO join_modal_image(club_id, url) values (6, '6_1.jpeg'), (6, '6_2.jpeg'), (6, '6_3.jpeg');
 INSERT INTO join_modal_image(club_id, url) values (7, '7_1.jpeg');
-INSERT INTO join_modal_image(club_id, url) values (19, '19_1.png'), (19, '19_2.jpeg'), (19, '19_3.jpeg');
+INSERT INTO join_modal_image(club_id, url) values (19, '19_1.jpeg'), (19, '19_2.jpeg'), (19, '19_3.jpeg');
 INSERT INTO join_modal_image(club_id, url) values (20, '20_1.png'), (20, '20_2.jpeg'), (20, '20_3.jpeg');
 
 -- 가입 모달 Url
