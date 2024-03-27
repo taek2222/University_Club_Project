@@ -8,9 +8,8 @@ import java.util.Optional;
 
 public interface MemoService {
     Optional<Memo> saveMemo(MemoDTO memoDTO);
-    Optional<List<Memo>> getAllMemos();
 
     List<Memo> getAllConfirmedMemos();
 
-    List<Memo> getAllUnconfirmedMemos();
+    String cacheReset();
 }
