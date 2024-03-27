@@ -2,7 +2,7 @@
 <included>
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>INFO</level>
+            <level>DEBUG</level>
         </filter>
         <!-- 파일경로 설정 -->
         <file>${FOLDER}/${LOG_FILE_NAME}.log</file>
