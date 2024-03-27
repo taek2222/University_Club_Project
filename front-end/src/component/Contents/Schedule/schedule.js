@@ -6,7 +6,6 @@ import Booth from "./Booth/booth.js";
 import Loader from 'component/Recycle/loader.js';
 
 import Location from "image/schedule_image/location.png";
-import gym from "image/schedule_image/gym.png";
 
 function Schedule() {
   const [schedules, setSchedules] = useState([]);
@@ -139,7 +138,6 @@ function Schedule() {
       </div>
       <div className="px-3 mt-5">
         <img className="rounded-xl shadow-xl" src={Location} alt="Location" />
-        <img className="mt-8 rounded-xl shadow-xl" src={gym} alt="gym" />
       </div>
     </>
   );
