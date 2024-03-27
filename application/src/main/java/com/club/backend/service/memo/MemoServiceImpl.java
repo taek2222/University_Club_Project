@@ -4,6 +4,9 @@ import com.club.backend.dto.memo.MemoDTO;
 import com.club.backend.entity.memo.Memo;
 import com.club.backend.repository.memo.MemoRepository;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.annotations.Cascade;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,17 +32,14 @@ public class MemoServiceImpl implements MemoService {
     }
 
     @Override
-    public Optional<List<Memo>> getAllMemos() {
-        return Optional.ofNullable(memoRepository.findAll());
-    }
-
-    @Override
+    @Cacheable(value = "memoAllCache")
     public List<Memo> getAllConfirmedMemos() {
         return memoRepository.findByConfirm(true);
     }
 
     @Override
-    public List<Memo> getAllUnconfirmedMemos() {
-        return memoRepository.findByConfirm(false);
+    @CacheEvict(value = "memoAllCache", allEntries = true)
+    public String cacheReset() {
+        return "Cache is reset";
     }
 }

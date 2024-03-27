@@ -16,23 +16,14 @@ import java.util.Optional;
 public class MemoController {
     private final MemoService memoService;
 
-    @GetMapping("/all")
-    public ResponseEntity<Optional<List<Memo>>> getAllMemos() {
-        Optional<List<Memo>> memos = memoService.getAllMemos();
-        return ResponseEntity.ok().body(memos);
-    }
-
     @GetMapping("/confirmed")
     public ResponseEntity<List<Memo>> getConfirmedMemos() {
         List<Memo> memos = memoService.getAllConfirmedMemos();
         return ResponseEntity.ok().body(memos);
     }
 
-    @GetMapping("/unconfirmed")
-    public ResponseEntity<List<Memo>> getUnconfirmedMemos() {
-        List<Memo> memos = memoService.getAllUnconfirmedMemos();
-        return ResponseEntity.ok().body(memos);
-    }
+    @GetMapping("/confirmed/cache/reset")
+    public String cacheReset() { return memoService.cacheReset(); }
 
     @PostMapping("/memo")
     public ResponseEntity<Memo> createMemo(@RequestBody MemoDTO memoDTO) {
