@@ -100,35 +100,27 @@ function Booth({ category, groupedEvents }) {
                                 <p className="text-sm font-bold">: 혼잡</p>
                             </div>
                         </div>
-                        {selectedClubCategory === "공연" ?
-                            <Club
-                                key={0}
-                                schedule={groupedEvents[0]}
-                                category={clubCategoryMapping[selectedClubCategory] || selectedClubCategory}
-                                clubsData={clubsData}
-                            />
-                            :
-                            groupedEvents.map((events, index) => (
-                                <div key={index}>
-                                    {events
-                                        .filter(
-                                            (schedule) =>
-                                                schedule.eventTime &&
-                                                schedule.eventTime.startsWith(
-                                                    category
-                                                )
-                                        )
-                                        .map((schedule, index) => (
-                                            <Club
-                                                key={index}
-                                                schedule={schedule}
-                                                category={clubCategoryMapping[selectedClubCategory] || selectedClubCategory}
-                                                clubsData={clubsData}
-                                            />
-                                        ))}
-                                </div>
-                            ))
-                        }
+                        {groupedEvents.map((events, index) => (
+                            <div key={index}>
+                                {events
+                                    .filter(
+                                        (schedule) =>
+                                            schedule.eventTime &&
+                                            schedule.eventTime.startsWith(
+                                                category
+                                            )
+                                    )
+                                    .map((schedule, index) => (
+                                        <Club
+                                            key={index}
+                                            schedule={schedule}
+                                            category={clubCategoryMapping[selectedClubCategory] || selectedClubCategory}
+                                            clubsData={clubsData}
+                                        />
+                                    )
+                                )}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
