@@ -86,7 +86,8 @@ INSERT INTO modal_image (club_id, url) values (6, '6_1.jpeg'), (6, '6_2.jpeg');
 INSERT INTO modal_image (club_id, url) values (7, '1_1.JPG');
 INSERT INTO modal_image (club_id, url) values (12, '12_1.jpg'), (12, '12_2.jpeg'), (12, '12_3.jpeg'), (12, '12_4.jpeg'), (12, '12_5.jpeg');
 INSERT INTO modal_image (club_id, url) values (14, '14_1.jpg');
-INSERT INTO modal_image (club_id, url) values (17, '17_1.png'), (17, '17_2.png'), (17, '17_3.png');
+-- 수정
+INSERT INTO modal_image (club_id, url) values (17, '17_1.jpeg'), (17, '17_2.png'), (17, '17_3.png'), (17, '17_4.png'), (17, '17_5.png');
 INSERT INTO modal_image (club_id, url) values (18, '18_1.jpeg'), (18, '18_2.jpeg'), (18, '18_3.jpeg'), (18, '18_4.jpeg'), (18, '18_5.jpeg');
 INSERT INTO modal_image (club_id, url) values (19, '19_1.jpeg'), (19, '19_2.jpeg'), (19, '19_3.jpeg'), (19, '19_4.jpeg'), (19, '19_5.jpeg');
 INSERT INTO modal_image (club_id, url) values (20, '20_1.jpeg'), (20, '20_2.jpeg'), (20, '20_3.jpeg');
@@ -202,6 +203,7 @@ INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, 
 -- 부스 동아리 day3
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (23, 2, '2_1.jpeg', '', 1, '연화홀', 'performance', '2024-04-03 18:00', '2024-04-03 21:00', '');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (24, 3, '3_1.jpeg', '', 1, '연화홀', 'performance', '2024-04-03 18:00', '2024-04-03 21:00', '');
+-- 수정
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (25, 4, '4_1.png', 'ph.jpeg', 2, '연화홀', 'performance', '2024-04-03 18:00', '2024-04-03 21:00', '');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (26, 6, '6_1.png', 'new.jpeg', 2, '연화홀', 'performance', '2024-04-03 18:00', '2024-04-03 21:00', '');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (27, 21, '21_1.png', 'ego.jpeg', 2, '연화홀', 'performance', '2024-04-03 18:00', '2024-04-03 21:00', '');
