@@ -34,7 +34,8 @@ INSERT INTO property (club_id, image_url, icon_url) VALUES (2, '2_2.jpeg', '2_1.
 INSERT INTO property (club_id, image_url, icon_url) VALUES (3, '3_2.jpeg', '3_1.jpeg');
 INSERT INTO property (club_id, image_url, icon_url) VALUES (4, '4_2.jpeg', '4_1.png');
 INSERT INTO property (club_id, image_url, icon_url) VALUES (5, '5_2.jpeg', '5_1.png');
-INSERT INTO property (club_id, image_url, icon_url) VALUES (6, '6_2.jpeg', '6_1.png');
+-- 수정
+INSERT INTO property (club_id, image_url, icon_url) VALUES (6, '6_2.png', '6_1.png');
 INSERT INTO property (club_id, image_url, icon_url) VALUES (7, '6_2.jpeg', '6_2.jpeg');
 INSERT INTO property (club_id, image_url, icon_url) VALUES (12, '12_2.jpg', '12_1.png');
 INSERT INTO property (club_id, image_url, icon_url) VALUES (14, '14_2.jpg', '14_1.png');
@@ -82,7 +83,7 @@ INSERT INTO modal_image (club_id, url) values (2, '2_1.jpeg'), (2, '2_2.jpeg'), 
 INSERT INTO modal_image (club_id, url) values (3, '3_1.jpeg'), (3, '3_2.jpeg'), (3, '3_3.jpeg'), (3, '3_4.jpeg'), (3, '3_5.jpeg');
 INSERT INTO modal_image (club_id, url) values (4, '4_1.jpeg');
 INSERT INTO modal_image (club_id, url) values (5, '5_1.jpeg'), (5, '5_2.jpeg'), (5, '5_3.jpeg'), (5, '5_4.png');
-INSERT INTO modal_image (club_id, url) values (6, '6_1.jpeg'), (6, '6_2.jpeg');
+INSERT INTO modal_image (club_id, url) values (6, '6_1.png'), (6, '6_2.jpeg'), (6, '6_3.jpeg'), (6, '6_4.jpeg'), (6, '6_5.jpeg');
 INSERT INTO modal_image (club_id, url) values (7, '1_1.JPG');
 INSERT INTO modal_image (club_id, url) values (12, '12_1.jpg'), (12, '12_2.jpeg'), (12, '12_3.jpeg'), (12, '12_4.jpeg'), (12, '12_5.jpeg');
 INSERT INTO modal_image (club_id, url) values (14, '14_1.jpg');
@@ -164,7 +165,8 @@ INSERT INTO join_modal(club_id, contents) values (20, '*📣2024년 학군사관
 -- 가입 모달 이미지
 INSERT INTO join_modal_image(club_id, url) values (1, '1_1.jpg'), (1, '1_2.jpeg'), (1, '1_3.jpeg');
 INSERT INTO join_modal_image(club_id, url) values (2, '2_1.jpeg'), (2, '2_2.jpeg'), (2, '2_3.jpeg'), (2, '2_4.jpeg');
-INSERT INTO join_modal_image(club_id, url) values (6, '6_1.jpeg'), (6, '6_2.jpeg'), (6, '6_3.jpeg');
+-- 수정
+INSERT INTO join_modal_image(club_id, url) values (6, '6_1.jpeg'), (6, '6_2.png'), (6, '6_3.jpeg'), (6, '6_4.jpeg'), (6, '6_5.jpeg');
 INSERT INTO join_modal_image(club_id, url) values (7, '7_1.jpeg');
 INSERT INTO join_modal_image(club_id, url) values (17, '17_1.png'), (17, '17_2.png'), (17, '17_3.png');
 INSERT INTO join_modal_image(club_id, url) values (18, '18_1.jpeg');
