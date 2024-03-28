@@ -9,7 +9,7 @@ function Booth({ category, groupedEvents }) {
     const [clubsData, setClubsData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    const clubCategories = ["전체", "취미", "종교", "기타"];
+    const [clubCategories, setClubCategories] = useState(["전체", "공연", "취미", "종교", "기타"]);
     const clubCategoryMapping = useMemo(() => ({
         "전체": "all",
         "공연": "1",
@@ -35,6 +35,12 @@ function Booth({ category, groupedEvents }) {
         fetchData();
       }, [selectedClubCategory, clubCategoryMapping]);
       
+    // Day2 [부스] 선택 시 공연 카테고리 제거
+    useEffect(() => {
+        if (category === "2024-04-02") {
+            setClubCategories(prevCategories => prevCategories.filter(cat => cat !== "공연"));
+        }
+    }, [category]);
 
     if (isLoading) {
         return <Loader/>;
