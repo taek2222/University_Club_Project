@@ -31,7 +31,7 @@ export const formatText = (text) => {
 };
 
 export const TextComponent = ({ Content }) => {
-  const maxLength = 300;
+  const maxLength = 320;
   const [isExpanded, setIsExpanded] = useState(false);
   const [displayContent, setDisplayContent] = useState("");
 

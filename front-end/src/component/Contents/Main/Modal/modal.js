@@ -183,7 +183,10 @@ const Modal = ({ isOpen, onClose }) => {
                       <label className="">익명</label>
                       <input type="checkbox" name="anonymous" checked={isAnonymous} onChange={handleAnonymousCheckboxChange} className="ml-3" />
                       <p className="text-xs text-left font-bold text-blue-600">
-                        익명 체크시 응원글이 홈페이지에 익명으로 표시됩니다. 상품 추첨을 위해 이름을 작성해주시길 바랍니다.
+                        익명 ✔️체크 시 응원글이 홈페이지에 익명으로 표시됩니다.
+                      </p>
+                      <p className="text-xs mt-2 text-left font-bold text-blue-600">
+                        📣 상품 추첨을 위해 익명 체크 시에도 이름, 학번 작성부탁드리겠습니다.
                       </p>
                     </label>
                     <p className="mt-2" />
