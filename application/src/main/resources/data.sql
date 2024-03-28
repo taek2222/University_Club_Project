@@ -29,7 +29,8 @@ INSERT INTO club (club_id, club_name, type_id) VALUES (20, 'ROTC', 5);
 INSERT INTO club (club_id, club_name, type_id) VALUES (21, 'EGO', 1);
 
 -- 동아리 속성
-INSERT INTO property (club_id, image_url, icon_url) VALUES (1, '1_2.jpeg', '1_1.png');
+-- 수정
+INSERT INTO property (club_id, image_url, icon_url) VALUES (1, '1_2.jpeg', '1_1.jpg');
 INSERT INTO property (club_id, image_url, icon_url) VALUES (2, '2_2.jpeg', '2_1.jpeg');
 -- 수정
 INSERT INTO property (club_id, image_url, icon_url) VALUES (3, '3_2.jpeg', '3_1.jpeg');
@@ -39,7 +40,8 @@ INSERT INTO property (club_id, image_url, icon_url) VALUES (6, '6_2.jpeg', '6_1.
 INSERT INTO property (club_id, image_url, icon_url) VALUES (7, '6_2.jpeg', '6_2.jpeg');
 INSERT INTO property (club_id, image_url, icon_url) VALUES (12, '12_2.jpg', '12_1.png');
 INSERT INTO property (club_id, image_url, icon_url) VALUES (14, '14_2.jpg', '14_1.png');
-INSERT INTO property (club_id, image_url, icon_url) VALUES (17, 'test.jpeg', '17_1.jpeg');
+-- 수정
+INSERT INTO property (club_id, image_url, icon_url) VALUES (17, '17_2.jpeg', '17_1.jpeg');
 INSERT INTO property (club_id, image_url, icon_url) VALUES (18, '18_2.jpeg', '18_1.png');
 INSERT INTO property (club_id, image_url, icon_url) VALUES (19, '19_2.png', '19_1.jpeg');
 INSERT INTO property (club_id, image_url, icon_url) VALUES (20, '20_2.png', '20_1.jpeg');
@@ -66,7 +68,7 @@ INSERT INTO tags (club_id, tag) VALUES (21, '힙합'), (21, '공연');
 INSERT INTO modal (club_id, contents, title, location_url) values (1, '안녕하세요👋, \n 2024 동아리 홍보제 주관 \n 강릉원주대 *총동아리연합회 ''EUM''*입니다! \n \n 새학기를 맞아 원주캠퍼스에 어떤 동아리들이 있는지 궁금한 새내기 또는 재학생분들을 위해 원주캠퍼스의 다양한 동아리들을 두 눈으로 확인해보고 직접 체험해 볼 수 있는 기회를 마련했습니다!📣 \n \n ‼️즐겁고 안전하게 이번 *2024 동아리 홍보제*를 즐겨주시면 감사하겠습니다! \n \n *📅 동아리홍보제 일시:* \n 2024년 4월 1일~ 3일 (총 3일) \n  *동아리 부스:* 4월 1일~ 2일 10:00~18:00 \n  *동아리 공연:* 4월 3일 18:00 \n \n *📍동아리부스장소:* 보건복지대학1호관 W5 건물 앞 \n *📍동아리공연장소:* 대학본부 W3 연화홀 \n * 📣자세한 내용은 부스 배치도를 확인해주세요 \n \n *🎪 행사 내용:* \n *동아리부스체험:* 각동아리들의 부스를 다양하게 체험해보며 자신과맞는 동아리를 찾아보세요! \n *동아리공연:* 공연 분과 동아리들의 멋진 무대와 공연을 즐겨보세요! \n \n *🎪 부스 내용:* \n 저희 총동아리연합회 이음도 부스를 준비했습니다! \n \n *👥 참여 방법:* \n 총동연 부스에서 도장판을 받으신 후 각자 원하시는 동아리 부스를 참여한 다음 도장을 받아오시면 다양한 🎁선물을 드립니다! \n \n 총동연 도장을 받기 위해서는 저희가 준비한 2가지 중 하나에 참여해야 합니다! \n \n *1. 로고 맞추기:* 총동연이 준비한 로고를 보시고 둘 중에 올바른 로고를 고르시면 총동연 부스 도장을 찍어드립니다! \n \n *2. 총동연 홈페이지 응원문구 메모지 달기:* 홈페이지에 들어가셔서 메인화면에 총동연 또는 이번 동아리 홍보제 응원 글을 남겨주시면 총동연 부스 도장을 찍어드립니다 \n \n 📣 모든 도장을 찍으신 후 응모함에 넣어주시면 4월 3일 동아리 공연에서 직접 추첨하여 다양한 상품을 증정해드릴 예정입니다! \n \n * 👀자세한 내용은 총동연 인스타를 확인해주세요 \n \n *🎁 특별 이벤트: ⭐동아리홍보제 축제응원문구 메모지 이벤트⭐* \n 동아리 홍보제 홈페이지에 들어가서 메인화면의 응원문구 메모지를 작성해주시면 자동응모❕ \n \n 추첨은 4월 3일 5시에 추첨할 예정이며 당첨자는 총동연 인스타를 통해 공지할 예정입니다 \n *@gwnu_eum_wonju* \n \n *👋감사합니다!*', '⭐총동아리연합회 EUM ⭐️', '1_map.png');
 INSERT INTO modal (club_id, contents, title) values (2, '안녕하세요! 👋 \n 치어리딩 동아리 *''루시우스''* 입니다! \n \n 이번에 신입단원과 함께 한 페이지가 될 수 있게 곡을 치어리딩으로 변화시켜 준비했습니다! \n \n 부족한 점이 있을 수도 있겠지만 24년도 첫 무대인 만큼 많은 호응과 격려, 관심 부탁드립니다 ✨ \n \n  공연 일정은 아래 *🗓️행사 일정*을 참고해주세요! \n \n  감사합니다 👋 ', '🎈 치어리딩 루시우스 공연 많관부 🤍');
 -- 수정
-INSERT INTO modal (club_id, contents, title) values (3, '안녕하세요! \n 어쿠스틱 밴드동아리 *''페르마타''*입니다 🪇 \n \n 이번 공연은 새롭게 동아리에 들어오신 *신입 부원*분들과 함께 \n 🎤*다양한 곡*들을 준비했습니다! \n \n 📣페르마타의 분위기가 잔뜩 들어간 곡들을 열심히 준비했으니, \n *많은 관심과 호응 부탁드립니다!🥰*', '🪇어쿠스틱 밴드동아리 페르마타🪇');
+INSERT INTO modal (club_id, contents, title) values (3, '안녕하세요! \n 어쿠스틱 밴드동아리 *''페르마타''*입니다 🪇 \n \n 이번 공연은 새롭게 동아리에 들어오신 *신입 부원*분들과 함께 \n 🎤*다양한 곡*들을 준비했습니다! \n \n 📣페르마타의 분위기가 잔뜩 들어간 곡들을 열심히 준비했으니, \n \n *많은 관심과 호응 부탁드립니다!🥰*', '🪇어쿠스틱 밴드동아리 페르마타🪇');
 INSERT INTO modal (club_id, contents, title) values (4, '안녕하세요! 국립강릉원주대학교 밴드부 \n *''프레이즈''*입니다! \n \n 이번 동아리 홍보제에서 많은 부원들이 다채로운 곡들을 준비했습니다! \n \n 부디 오셔서 자리를 ✨빛내주시면 감사하겠습니다! \n \n *많은 관심과 격려 부탁드립니다🤭*', '🎸밴드');
 INSERT INTO modal (club_id, contents, title, location_url) values (5, '연극동아리 *O.S.T* 부스에서는 \n ‼️*오징어게임 의상*과 가오나시 \n ‼️*추억의 옛날 교복*등을 입어보실 수 있습니다! \n \n 부스에 잠깐 들러👋 *실제 공연의상*👕도 구경 해보고 \n 직접 체험해 보면서 O.S.T의 분위기를 느껴보는건 어떨까요?😍', '👕O.S.T와 함께하는 코스프레 체험👖', '5_map.png');
 INSERT INTO modal (club_id, contents, title) values (6, '안녕하세요.👋 \n 강릉원주대학교 원주캠퍼스 댄스동아리 *''뉴를리''* 입니다. \n \n 저희가 이번 2024 동아리 홍보제에서 총 *2곡*을 준비했는데요! \n \n 부족하더라도 열심히 준비했으니까 \n *많은 관심 부탁드립니다!❤️‍🔥* \n \n *‼️포스터는 ''뉴를리''를 참고해주세요!*', '💫댄스동아리 뉴를리 공연💫');
@@ -82,7 +84,7 @@ INSERT INTO modal (club_id, contents, title) values (21, '📣 안녕하세요! 
 
 -- 동아리 모달 이미지
 -- 수정
-INSERT INTO modal_image (club_id, url) values (1, '1_2.JPG'), (1, '1_3.jpeg'), (1, '1_4.jpeg');
+INSERT INTO modal_image (club_id, url) values (1, '1_2.jpg'), (1, '1_3.jpeg'), (1, '1_4.jpeg');
 INSERT INTO modal_image (club_id, url) values (2, '2_1.jpeg'), (2, '2_2.jpeg'), (2, '2_3.jpeg');
 -- 수정
 INSERT INTO modal_image (club_id, url) values (3, '3_1.jpeg'), (3, '3_2.jpeg'), (3, '3_3.jpeg'), (3, '3_4.jpeg'), (3, '3_5.jpeg');
@@ -128,9 +130,10 @@ INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, co
 INSERT INTO memo (memo_id, major, class_of, anonymous, student_name, content, color, confirm) values (1010, '멀티미디어학과', '90000000', false, '안유진', '응원문구 테스트9', 'bg-fuchsia-200', true);
 
 -- 가입 신청 동아리
-INSERT INTO join_table(club_id, icon_image, title) values (1, '1.png', '2024년도 총동아리연합회 \n 🎉신입생 모집 안내🎉');
+-- 수정
+INSERT INTO join_table(club_id, icon_image, title) values (1, '1.jpg', '2024년도 총동아리연합회 \n 🎉신입생 모집 안내🎉');
 INSERT INTO join_table(club_id, icon_image, title) values (2, '2.jpeg', '17기 치어리딩 동아리 \n 📣루시우스📣 단원모집');
-INSERT INTO join_table(club_id, icon_image, title) values (6, '6.png', '💫2024 댄스동아리 NEWLY 💫 \n 📣신입부원 오디션 공고');
+INSERT INTO join_table(club_id, icon_image, title) values (6, '6.png', '💫댄스동아리 NEWLY 💫 \n 📣신입부원 오디션 공고');
 INSERT INTO join_table(club_id, icon_image, title) values (7, '7.png', '2024년도 새학기 농구동아리 \n 🏀''스핀'' 부원 모집');
 INSERT INTO join_table(club_id, icon_image, title) values (17, '17.jpeg', '샬롬☝️✨ \n 중앙동아리 CCC 부원 모집');
 INSERT INTO join_table(club_id, icon_image, title) values (18, '18.png', '✨JDM✨ \n 📣신입 부원 모집');
@@ -169,7 +172,8 @@ INSERT INTO join_modal(club_id, contents) values (19, '안녕하세요!👋 \n �
 INSERT INTO join_modal(club_id, contents) values (20, '*📣2024년 학군사관 후보생 65기, 66기를 모집합니다.📣* \n \n *👉모집 기간:* 24. 03. 04(월)~''24. 04. 26(금) \n *👉지원 자격:* 1, 2학년 재/휴학생이라면 누구나 가능! \n *👉지원 방법:* 육군학생군사학교 홈페이지 (www.armyofficer.mil.kr)에 지원서 제출선발 \n \n *👉 세부 일정* \n *신체검사:* 3월 4일(월)~ 7월 5일(금) \n *인성검사:* 4월 29일(월)~ 5월 10일(금) \n *가서류, 체력인증서 제출:* 5월 1일(수) ~ 7월 31일(수) \n *AI면접:* 5월 13일(월)~ 6월 7일(금) \n *신원조사:* 5월 16일(목)~ 6월 7일(금) \n *합격자 발표:* 9월 13일(금) \n \n *😳학군사관 후보생 혜택!* \n 1. 강릉원주대 163학군단 사관후보생 기숙사 우선제공 혜택 보장 \n 2. 미 TEXAS A&M 대학 어학연수 선발 기회제공 \n 3. 다양한 국·내외 전사적지 탐방 프로그램 지원 \n 4. 단기 복무장교 장려금 지급 1200만원(2024년 기준), 매년 증진 예정 \n 5. 2년간 매월 부교재비 지원 (2년간 총 163만원) \n 6. 학기 중 학군생활지원금 지급(월 18만원) \n 7. 매학기 우수후보생 장학금 지급 \n 8. 학군사관 후보생증 발급을 통해 군마트(px) 및 육군 휴양시설 이용가능 및 문화 공연 등 협약된 업체 할인 혜택 \n \n 궁금한 것이 있으시다면 인스타그램 DM 또는 카카오톡 오픈채팅 방을 통해 연락해주시면, 친절하고 자세하게 답변해 드리겠습니다! \n \n *📞지원문의* \n *학군단 행정실 : 033-640-2650*');
 
 -- 가입 모달 이미지
-INSERT INTO join_modal_image(club_id, url) values (1, '1_1.JPG'), (1, '1_2.jpeg'), (1, '1_3.jpeg');
+-- 수정
+INSERT INTO join_modal_image(club_id, url) values (1, '1_1.jpg'), (1, '1_2.jpeg'), (1, '1_3.jpeg');
 INSERT INTO join_modal_image(club_id, url) values (2, '2_1.jpeg'), (2, '2_2.jpeg'), (2, '2_3.jpeg'), (2, '2_4.jpeg');
 INSERT INTO join_modal_image(club_id, url) values (6, '6_1.jpeg'), (6, '6_2.jpeg'), (6, '6_3.jpeg');
 INSERT INTO join_modal_image(club_id, url) values (7, '7_1.jpeg');
@@ -190,7 +194,7 @@ INSERT INTO join_paths_url(club_id, url) values (19, 'false'), (19, 'false'), (1
 INSERT INTO join_paths_url(club_id, url) values (20, 'false'), (20, 'false'), (20, 'https://open.kakao.com/o/g3Ii8A5e'), (20, 'https://instagram.com/gwnu_163rotc?');
 
 -- 부스 동아리 day1
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (1, 1, '1_1.png', '', 1, '중앙부스', 'booth', '2024-04-01 10:00', '2024-04-01 18:00', '운영중');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (1, 1, '1_1.jpg', '', 1, '중앙부스', 'booth', '2024-04-01 10:00', '2024-04-01 18:00', '운영중');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (3, 5, '5_1.png', '', 1, '중앙부스', 'booth', '2024-04-01 11:00', '2024-04-01 14:00', '혼잡');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (6, 12, '12_1.png', '12.jpg', 1, '중앙부스', 'booth', '2024-04-01 10:00', '2024-04-01 18:00', '일시중지');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (7, 14, '14_1.png', '', 1, '중앙부스', 'booth', '2024-04-01 10:00', '2024-04-01 18:00', '조기마감');
@@ -200,7 +204,7 @@ INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, 
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (11, 20, '20_1.jpeg', '', 1, '중앙부스', 'booth', '2024-04-01 10:00', '2024-04-01 17:00', '일시중지');
 
 -- 부스 동아리 day2
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (12, 1, '1_1.png', '', 1, '중앙부스', 'booth', '2024-04-02 10:00', '2024-04-02 18:00', '운영중');
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (12, 1, '1_1.jpg', '', 1, '중앙부스', 'booth', '2024-04-02 10:00', '2024-04-02 18:00', '운영중');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (17, 12, '12_1.png', '12.jpg', 1, '중앙부스', 'booth', '2024-04-02 10:00', '2024-04-02 18:00', '운영중');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (18, 14, '14_1.png', '', 1, '중앙부스', 'booth', '2024-04-02 10:00', '2024-04-02 18:00', '운영중');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (19, 17, '17_1.jpeg', 'ccc.jpeg', 1, '중앙부스', 'booth', '2024-04-02 10:00', '2024-04-01 17:00', '운영중');
@@ -210,7 +214,8 @@ INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, 
 
 -- 부스 동아리 day3
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (23, 2, '2_1.jpeg', '', 1, '연화홀', 'performance', '2024-04-03 18:00', '2024-04-03 21:00', '');
-INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (24, 3, '1_1.png', '', 1, '연화홀', 'performance', '2024-04-03 18:00', '2024-04-03 21:00', '');
+-- 수정
+INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (24, 3, '3_1.jpeg', '', 1, '연화홀', 'performance', '2024-04-03 18:00', '2024-04-03 21:00', '');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (25, 4, '4_1.png', '', 2, '연화홀', 'performance', '2024-04-03 18:00', '2024-04-03 21:00', '');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (26, 6, '6_1.png', 'new.jpeg', 2, '연화홀', 'performance', '2024-04-03 18:00', '2024-04-03 21:00', '');
 INSERT INTO schedule(schedule_id, club_id, icon_url, image_url, part, location, category, event_time, event_end_time, status) values (27, 21, '21_1.png', 'ego.jpeg', 2, '연화홀', 'performance', '2024-04-03 18:00', '2024-04-03 21:00', '');
