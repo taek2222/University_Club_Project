@@ -27,13 +27,21 @@ const Modal = ({ isOpen, onClose }) => {
   const [showSaveModal, setShowSaveModal] = useState(false);
 
   useEffect(() => {
-    setIsSaveEnabled(formData.content.trim() !== "" && isValidClassOf);
-  }, [formData.content, isValidClassOf]);
+    setIsSaveEnabled(
+      formData.content.trim() !== "" &&
+      isValidClassOf &&
+      formData.major.trim() !== "" &&
+      formData.studentName.trim() !== "" &&
+      formData.color.trim() !== ""
+    );
+  }, [formData, isValidClassOf]);
 
   if (!isOpen) return null;
 
   const openModal = () => setShowSaveModal(true);
-  const closeModal = () => setShowSaveModal(false);
+  const closeModal = () => {
+    setShowSaveModal(false);
+  };
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
@@ -77,6 +85,7 @@ const Modal = ({ isOpen, onClose }) => {
     e.stopPropagation();
     setFormData(initialFormData);
     setIsAnonymous(false);
+    setCharCount(0);
     onClose(); 
   };
 
@@ -110,6 +119,7 @@ const Modal = ({ isOpen, onClose }) => {
   const handleCancelClick = () => {
     setFormData(initialFormData);
     setIsAnonymous(false);
+    setCharCount(0);
     onClose();
   };
 
