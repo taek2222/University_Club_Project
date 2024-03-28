@@ -1,9 +1,15 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Event from "./event";
 
 function Club({ schedule, clubsData }) {
-    const [minClubId, setMinClubId] = useState(null);
-    const [maxClubId, setMaxClubId] = useState(null);
+    const [clubIds, setClubIds] = useState([]);
+
+    useEffect(() => {
+        if (clubsData.length > 0) {
+            const extractedClubIds = clubsData.map((club) => club.clubId);
+            setClubIds(extractedClubIds);
+        }
+    }, [clubsData]);
 
     const getIconUrl = (iconUrl) => {
         try {
@@ -13,28 +19,18 @@ function Club({ schedule, clubsData }) {
         }
     };
 
-    useEffect(() => {
-        if (clubsData.length > 0) {
-            const clubIds = clubsData.map((club) => club.clubId);
-            const minId = Math.min(...clubIds);
-            const maxId = Math.max(...clubIds);
-            setMinClubId(minId);
-            setMaxClubId(maxId);
-        }
-    }, [clubsData]);
-
-    return(
+    return (
         <div>
-            {schedule.clubId >= minClubId && schedule.clubId <= maxClubId && (
+            {clubIds.includes(schedule.clubId) && (
                 <div>
-                    <Event 
+                    <Event
                         schedule={schedule}
                         iconUrl={getIconUrl(schedule.iconUrl)}
                     />
                 </div>
             )}
         </div>
-    )
+    );
 }
 
 export default Club;
