@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# 강릉원주대학교 동아리 홍보제 웹 사이트 [Front] - README.md 수정 실험
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
