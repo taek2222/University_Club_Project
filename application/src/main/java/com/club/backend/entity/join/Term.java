@@ -19,9 +19,6 @@ public class Term {
     @Column(name="club_id")
     private int clubId;
 
-    @Column(name="start_date")
-    private LocalDate startDate;
-
     @Column(name="end_date")
     private LocalDate endDate;
 
